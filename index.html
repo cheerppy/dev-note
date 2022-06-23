@@ -4,10 +4,15 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
         <link rel="stylesheet" href="css/main.css"/>
     </head>
+
 <body>
     <div class="container">
         <h1>開発noteコンテンツ仮置き場</h1>
+
+
+    <!-- html -->
         <h2>html</h2>
+
         <h3>HTMLタグのエスケープ</h3>
         <p>
             &amp;amp;などの特殊文字に置き換えることでエスケープする。<br>
@@ -16,14 +21,105 @@
 
             </table><br>
             変換してくれるサイトもある<br>
-            <a href="https://tech-unlimited.com/escape.html">https://tech-unlimited.com/escape.html</a>
-
-
+            <a href="https://tech-unlimited.com/escape.html" target="_blank" rel="noopener noreferrer">https://tech-unlimited.com/escape.html</a>
         </p>
-        <p> </p>
+
+        <h3>コメントアウト</h3>
+        <p>
+            一行コメントアウトはなし。
+            ブロックコメントは<code>&lt;!-- --!&gt;</code>で囲む。<br>
+            コメント中は<code>-</code>の連続使用を避け、<code>=</code>などで代用する。
+        </p>
+       
+        <h3>脆弱性対策</h3>
+        <p>
+            aタグで<code>target="_blank"</code>するときに<code>rel="noopener noreferrer"</code>を付ける。
+        </p>
+        <aside><p>
+            <code>window.opener</code>によって移動先リンクから攻撃される脆弱性への対策。<br>
+            アフィリエイトする場合は<code>rel="noopener"</code>のみとする。ただし、IEはnoopener非対応。
+        </p></aside>
+        
+        <h3>タグの使い分け</h3>
+        <p>
+            <table border="1">
+                <caption>HTMLタグとその使い方</caption>
+                <tr>
+                    <th><code>p</code></th>
+                    <td>本文</td>>
+                </tr>
+                <tr>
+                    <th><code>br</code></th>
+                    <td>改行</td>>
+                </tr>
+                <tr>
+                    <th><code>h1</code></th>
+                    <td>ページタイトルなど。ページに一度だけ使う。</td>
+                </tr>
+                <tr>
+                    <th><code>h2</code></th>
+                    <td>大きな見出し。SEO対策に関わる。</td>>
+                </tr>
+                <tr>
+                    <th><code>h3</code></th>
+                    <td>小見出し。章タイトルやコンテンツタイトル。</td>>
+                </tr>
+                <tr>
+                    <th><code>a</code></th>
+                    <td>リンク。必ず<code>href</code>を伴う。</td>>
+                </tr>
+                <tr>
+                    <th><code>span</code></th>
+                    <td>インライン装飾</td>>
+                </tr>
+                <tr>
+                    <th><code>code</code></th>
+                    <td>インラインコードブロック</td>>
+                </tr>
+                <tr>
+                    <th><code>pre</code></th>
+                    <td>コードブロック</td>>
+                </tr>
+                <tr>
+                    <th><code>table</code>, <code>tr</code></th>
+                    <td>表</td>>
+                </tr>
+                <tr>
+                    <th><code>caption</code></th>
+                    <td>図表の見出し</td>>
+                </tr>
+                <tr>
+                    <th><code>ul</code>, <code>li</code></th>
+                    <td>リスト</td>>
+                </tr>
+                <tr>
+                    <th><code>aside</code></th>
+                    <td>補足</td>>
+                </tr>
+                <tr>
+                    <th><code></code></th>
+                    <td></td>>
+                </tr>
+                <tr>
+                    <th><code></code></th>
+                    <td></td>>
+                </tr>
+
+            </table>
+        </p>
+
+
+    <!-- CSS -->
         <h2>CSS</h2>
+
+        <h3>コメントアウト</h3>
+        <p>
+            一行コメントアウトはなし。
+            ブロックコメントは<code>/* */</code>で囲む。
+        </p>
+
         <h3>可読性</h3>
-        <p>可読性について言及したサイト <a href="https://japan-design.jp/design/0052/">https://japan-design.jp/design/0052/</a></p>
+        <p>可読性について言及したサイト <a href="https://japan-design.jp/design/0052/" target="_blank" rel="noopener noreferrer">https://japan-design.jp/design/0052/</a></p>
         <br>
         <h3>width</h3>
         <p>
@@ -44,6 +140,8 @@
         <h3>textbox</h3>
         <p>width: auto</p>
 
+
+    <!-- LISENCE -->
         <h2>LISENCE</h2>
         <h3>おすすめ</h3>
         <p>MIT</p>
