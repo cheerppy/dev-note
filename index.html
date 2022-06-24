@@ -220,13 +220,14 @@
     colors.push(new Color("pinkLace", "ffddf4"));
     colors.push(new Color("rosePink", "ff66cc"));
     colors.push(new Color("raspberry", "e30b5d", "ピンクっぽい赤"));
+    colors.push(new Color("lavenderblush", "fff0f5", "one of HTML color code and names"));
     colors.push(new Color("", ""));
     colors.push(new Color("", ""));
     colors.push(new Color("", ""));
 
     for(color of colors){
         if(!color.code)continue;
-        elem.insertAdjacentHTML("beforeend", `<p id = ${color.name}>${color.name}<br>${color.code}</p>`);
+        elem.insertAdjacentHTML("beforeend", `<p id = ${color.name}>${color.name}<br>#${color.code}</p>`);
         const box = document.getElementById(color.name);
         box.style.height = boxSize[0] + "px";
         box.style.width = "25%";
