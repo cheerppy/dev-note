@@ -160,6 +160,10 @@
         <p>width: auto</p>
 
         <h3>color code usage</h3>
+        <p>
+            参考サイト<br>
+            <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank" rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
+        </p>
         <div id="colorCode"></div>
         <!-- body下scriptタグにJSで記述 -->
 
@@ -188,10 +192,11 @@
 
 <script>
     const elem = document.getElementById("colorCode");
-    const boxSize = [200, 780, 160];//height, width, minWidth
+    const boxSize = [50, 780, 160];//height, width, minWidth
     elem.style.height = "auto";
     elem.style.maxwidth = boxSize[1] * 4 + "px";
     elem.style.width = "100%";
+    elem.style.border = "solid 1px #000000"
 
     class Color {
         constructor(name, code, disc){
@@ -204,13 +209,17 @@
     }
 
     const colors = [];
-    colors.push(new Color("", ""));
+    colors.push(new Color("pink", "ffc0cb", "normal color"));
     colors.push(new Color("valentine", "f6adc6", "透過度0.5くらい"));
     colors.push(new Color("bubblegum", "ffc1cc"));
     colors.push(new Color("brightPink", "ff007f", "結構原色っぽい"));
     colors.push(new Color("palePink", "fadadd", "若干灰っぽい"));
-    colors.push(new Color("", ""));
-    colors.push(new Color("", ""));
+    colors.push(new Color("carnation", "ffa6c9"));
+    colors.push(new Color("cherryBlossomPink", "ffb7c5"));
+    colors.push(new Color("cottonCandy", "ffbcd9"));
+    colors.push(new Color("pinkLace", "ffddf4"));
+    colors.push(new Color("rosePink", "ff66cc"));
+    colors.push(new Color("raspberry", "e30b5d", "ピンクっぽい赤"));
     colors.push(new Color("", ""));
     colors.push(new Color("", ""));
     colors.push(new Color("", ""));
@@ -225,6 +234,7 @@
         box.style.backgroundColor = "#" + color.code;
         box.style.textAlign = "midle";
         box.style.verticalAlign = "middle";
+        box.style.float = "left";
         const codes = color.code? [color.code.slice(0,2),color.code.slice(2,4),color.code.slice(4,6)].map(hex=>parseInt(hex, 16)):[];
         if(
             codes && codes[0]+codes[1]+codes[2] <= 512
