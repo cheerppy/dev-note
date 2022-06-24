@@ -159,6 +159,9 @@
         <h3>textbox</h3>
         <p>width: auto</p>
 
+        <h3>color code usage</h3>
+        <div id="colorCode"></div>
+        <!-- body下scriptタグにJSで記述 -->
 
     <!-- LISENCE -->
         <h2>LISENCE</h2>
@@ -182,5 +185,59 @@
     </p>
     </div>
 </body>
+
+<script>
+    const elem = document.getElementById("colorCode");
+    const boxSize = [200, 780, 160];//height, width, minWidth
+    elem.style.height = "auto";
+    elem.style.maxwidth = boxSize[1] * 4 + "px";
+    elem.style.width = "100%";
+
+    class Color {
+        constructor(name, code, disc){
+            this.name = name;
+            this.code = code;
+            this.disc = disc | "";
+        }
+
+
+    }
+
+    const colors = [];
+    colors.push(new Color("", ""));
+    colors.push(new Color("valentine", "f6adc6", "透過度0.5くらい"));
+    colors.push(new Color("bubblegum", "ffc1cc"));
+    colors.push(new Color("brightPink", "ff007f", "結構原色っぽい"));
+    colors.push(new Color("palePink", "fadadd", "若干灰っぽい"));
+    colors.push(new Color("", ""));
+    colors.push(new Color("", ""));
+    colors.push(new Color("", ""));
+    colors.push(new Color("", ""));
+    colors.push(new Color("", ""));
+
+    for(color of colors){
+        elem.insertAdjacentHTML("beforeend", `<p id = ${color.name}>${color.name}<br>${color.code}</p>`);
+        const box = document.getElementById(color.name);
+        box.style.height = boxSize[0] + "px";
+        box.style.width = "25%";
+        box.style.minWidth = boxSize[2] + "px";
+        box.style.backgroundColor = "#" + color.code;
+        box.style.textAlign = "midle";
+        box.style.verticalAlign = "middle";
+        const codes = color.code? [color.code.slice(0,2),color.code.slice(2,4),color.code.slice(4,6)].map(hex=>parseInt(hex, 16)):[];
+        if(
+            codes && codes[0]+codes[1]+codes[2] <= 512
+        ){box.style.color = "#ffffff"}else{box.style.color = "#000000"}
+        
+
+    }
+
+
+
+
+
+
+
+</script>
 
 </html>
