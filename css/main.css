@@ -14,9 +14,12 @@ aside{font-size: 0.8em;}
 
 /*-------------------------------*/
 a{cursor: pointer;}
-table{border: solid 1px #000000;}
+table,tr,th{
+    border: solid 1px #000000;
+    border-collapse: collapse;
+}
 table{background-color: red;}
-tr:nth-child{background: #ffffff}
+tr:nth-child{background-color: #ffffff}
 /*-------------------------------*/
 /*  -----------------------------*/
 /*----*/
