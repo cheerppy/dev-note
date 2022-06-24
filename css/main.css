@@ -15,12 +15,13 @@ aside{font-size: 0.8em;}
 /*-------------------------------*/
 a{cursor: pointer;}
 /* table ------------------------*/
-table{background-color: red;}
-tr,th{
+table{border-collapse: collapse;}
+td,th{
     border: solid 1px #000000;
     border-collapse: collapse;
 }
-tr:nth-child{background-color: #ffffff}
+tr{background-color: red;}
+tr:nth-of-type(2n+1){background-color: #ffffff}
 /*-------------------------------*/
 /*  -----------------------------*/
 /*----*/
