@@ -216,6 +216,7 @@
     colors.push(new Color("", ""));
 
     for(color of colors){
+        if(!color.code)continue;
         elem.insertAdjacentHTML("beforeend", `<p id = ${color.name}>${color.name}<br>${color.code}</p>`);
         const box = document.getElementById(color.name);
         box.style.height = boxSize[0] + "px";
