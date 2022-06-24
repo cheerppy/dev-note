@@ -22,7 +22,19 @@ td,th{
 }
 tr{background-color: red;}
 tr:nth-of-type(2n+1){background-color: #ffffff}
-/*-------------------------------*/
+
+
+/* code block --------------------*/
+pre{
+    padding: 10px, 8px;     /*上下, 左右*/
+    background-color: khaki;
+    font-size: 14px;
+}
+code{
+    padding: 2px;
+    background-color: khaki;
+    font-size: 14px;
+}
 /*  -----------------------------*/
 /*----*/
 /*----*/
