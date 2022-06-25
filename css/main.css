@@ -1,4 +1,8 @@
-html{background-color: pink;}
+html{
+    float: clear;
+    background-color: #ffddf4;
+}
+svg {fill: currentColor;}
 
 
 /* font size --------------------*/
@@ -12,11 +16,17 @@ aside{font-size: 0.8em;}
 /* width ------------------------*/
 .textbox{width: auto;}
 
-/*-------------------------------*/
+/* URI --------------------------*/
 a{
     color: blue;
     cursor: pointer;
     text-decoration: underline;
+}
+a[href^="http"]::after{
+    content: "https://note.cheerppy.xyz/src/img/externalLinkMark.svg";
+}
+a[href^="https://note.cheerppy.xyz/"]::after{
+    content: "";
 }
 /* table ------------------------*/
 table{border-collapse: collapse;}
@@ -24,7 +34,7 @@ td,th{
     border: solid 1px #000000;
     border-collapse: collapse;
 }
-tr{background-color: red;}
+tr{background-color: pink;}
 tr:nth-of-type(2n+1){background-color: #ffffff}
 
 
