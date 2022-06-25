@@ -2,6 +2,9 @@ html{
     float: clear;
     background-color: #ffddf4;
 }
+.container{
+    margin:3em;
+}
 svg {fill: currentColor;}
 
 
@@ -23,7 +26,7 @@ a{
     text-decoration: underline;
 }
 a[href^="http"]::after{
-    content: "https://note.cheerppy.xyz/src/img/externalLinkMark.svg";
+    content: url("https://note.cheerppy.xyz/src/img/externalLinkMark.svg");
 }
 a[href^="https://note.cheerppy.xyz/"]::after{
     content: "";
