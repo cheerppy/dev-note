@@ -13,7 +13,11 @@ aside{font-size: 0.8em;}
 .textbox{width: auto;}
 
 /*-------------------------------*/
-a{cursor: pointer;}
+a{
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
 /* table ------------------------*/
 table{border-collapse: collapse;}
 td,th{
