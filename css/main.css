@@ -26,10 +26,12 @@ a{
     text-decoration: underline;
 }
 a[href^="http"]::after{
-    content: url("https://note.cheerppy.xyz/src/img/externalLinkMark.svg");
+    content: "";
+    background-image: url("https://note.cheerppy.xyz/src/img/ext.svg");
+    background-size: 80%;
 }
 a[href^="https://note.cheerppy.xyz/"]::after{
-    content: "";
+    background-image: none;
 }
 /* table ------------------------*/
 table{border-collapse: collapse;}
