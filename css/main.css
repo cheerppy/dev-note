@@ -1,3 +1,10 @@
+/* font download ----------------*/
+@font-face {
+    font-family: "monospace";
+    src: url("https://note.cheerppy.xyz//font/RictyDiminishedDiscord-Regular.ttf") format("truetype");
+  }
+
+/* general ----------------------*/
 html{
     float: clear;
     background-color: #ffddf4;
@@ -26,9 +33,9 @@ a{
     text-decoration: underline;
 }
 a[href^="http"]::after{
-    content: "test";
+    content: "";
     background-image: url("https://note.cheerppy.xyz/src/img/ext.svg");
-    background-size: 80%;
+    background-size: 0.5em;
 }
 a[href^="https://note.cheerppy.xyz/"]::after{
     background-image: none;
@@ -45,15 +52,14 @@ tr:nth-of-type(2n+1){background-color: #ffffff}
 
 
 /* code block --------------------*/
-pre{
+pre,code{
     padding: 10px, 8px;     /*上下, 左右*/
     background-color: khaki;
+    font-family: "monospace";
     font-size: 14px;
 }
 code{
     padding: 2px;
-    background-color: khaki;
-    font-size: 14px;
 }
 /*  -----------------------------*/
 /*----*/
