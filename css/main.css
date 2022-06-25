@@ -32,6 +32,7 @@ a[href^="https://note.cheerppy.xyz/"]::after{
 table{border-collapse: collapse;}
 td,th{
     border: solid 1px #000000;
+    border-style: none, solid, none;
     border-collapse: collapse;
 }
 tr{background-color: pink;}
