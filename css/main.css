@@ -59,7 +59,11 @@ pre,code{
     font-size: 14px;
 }
 code{
+    white-space: pre-line;
     padding: 2px;
+}
+.noCodeColor pre,code{
+    background-color: auto;
 }
 /*  -----------------------------*/
 /*----*/
