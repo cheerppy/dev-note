@@ -60,7 +60,7 @@
             <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/ja/docs/Web/HTML/Element</a>
         </p>
 
-            <table>
+            <table class="noCodeColor">
                 <tr>
                     <th><code>p</code></th>
                     <td>本文</td>
@@ -169,6 +169,22 @@
         </p>
         <div id="colorCode"></div>
         <!-- body下scriptタグにJSで記述 -->
+
+        <h3>複数指定</h3>
+        <p>
+            複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
+        </p>
+        <pre>
+            &lt;div class=&quot;parent&quot;&gt;
+                &lt;p class=&quot;child1&quot;&gt;Hello &lt;/p&gt;
+                &lt;p class=&quot;child1 child2&quot;&gt;World!!&lt;/p&gt;
+            &lt;/div&gt;
+        </pre>
+        <div class="parent">
+            <p class="child1">Hello </p>
+            <p class="child1 child2">World!!</p>
+        </div>
+
 
     <!-- LISENCE -->
         <h2>LISENCE</h2>
