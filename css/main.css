@@ -60,6 +60,9 @@ pre,code{
     font-family: "monospace";
     font-size: 14px;
 }
+pre{
+    margin: 2px;
+}
 code{
     padding: 2px;
 }
