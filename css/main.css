@@ -8,6 +8,7 @@
 html{
     display: flex;
     background-color: #ffddf4;
+    max-width: 1vw;
 }
 div{display: flex;}
 .container{
