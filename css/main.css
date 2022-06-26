@@ -9,6 +9,7 @@ html{
     display: flex;
     background-color: #ffddf4;
 }
+div{display: flex;}
 .container{
     margin:3em;
 }
