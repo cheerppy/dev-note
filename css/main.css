@@ -10,7 +10,7 @@ html{
     background-color: #ffddf4;
     max-width: 1vw;
 }
-div{display: flex;}
+.flexContainer{display: flex;}
 .container{
     margin:3em;
 }
