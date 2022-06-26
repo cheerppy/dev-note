@@ -6,7 +6,7 @@
 
 /* general ----------------------*/
 html{
-    float: clear;
+    display: flex;
     background-color: #ffddf4;
 }
 .container{
