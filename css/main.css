@@ -10,7 +10,10 @@ html{
     background-color: #ffddf4;
     max-width: 1vw;
 }
-.flexContainer{display: flex;}
+.flexContainer{
+    display: flex;
+    max-width: fit-content;
+}
 .container{
     margin:3em;
 }
