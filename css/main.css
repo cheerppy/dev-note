@@ -55,7 +55,6 @@ tr:nth-of-type(2n+1){background-color: #ffffff}
 
 /* code block --------------------*/
 pre,code{
-    white-space: pre-line;
     padding: 10px, 8px;     /*上下, 左右*/
     background-color: khaki;
     font-family: "monospace";
@@ -65,6 +64,7 @@ pre{
     margin: 2px;
 }
 code{
+    white-space: pre-line;
     padding: 2px;
 }
 .noCodeColor pre,code{
