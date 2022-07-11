@@ -59,12 +59,14 @@ tr:nth-of-type(2n+1){background-color: #ffffff}
 /* code block --------------------*/
 pre,code{
     padding: 10px, 8px;     /*上下, 左右*/
-    background-color: khaki;
+    background-color: rgb(196, 183, 142);
     font-family: "monospace";
     font-size: 14px;
 }
 pre{
-    margin: 2px;
+    margin: 10px;
+    padding: 10px;
+    border:solid 2px #616161;
 }
 code{
     white-space: pre-line;
