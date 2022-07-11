@@ -31,6 +31,12 @@ aside{font-size: 0.8em;}
 /* width ------------------------*/
 .textbox{width: auto;}
 
+/* margin and paddings ----------*/
+h2{margin:30px 0}
+h2{border-bottom: 3px solid #f6adc6;}
+h3{margin: 30px 0}
+h3{border-bottom: 1px solid #000000;}
+
 /* URI --------------------------*/
 a{
     color: blue;
@@ -67,6 +73,7 @@ pre,code{
     font-size: 14px;
 }
 pre{
+    width: 100%;
     margin: 10px;
     padding: 10px;
     border:solid 2px #616161;
