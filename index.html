@@ -236,7 +236,7 @@
             const lastmod = jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + ("0" + jst.getMinutes()).slice(-2) + ":" + ("0" + jst.getSeconds()).slice(-2)
             const timezone = (timezoneOffset === -540) ? "(JST)" :
             `GMT ${(timezoneOffset>=0)?"+":""}${Math.floor(timezoneOffset/-60)}:${timezoneOffset/60}`
-            document.write(lastmod + "\nTZ: "+timezone);
+            document.write(lastmod + " "+timezone);
         </script>
     </p>
 </footer>
