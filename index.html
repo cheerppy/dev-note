@@ -229,7 +229,12 @@
     </p>
 </main>
 <footer class="container">
-    <p>～最終更新: <script>new Date(document.lastModified)</script>～</p>
+    <p>最終更新: 
+        <script>
+            const lastmod = new Date(document.lastModified);
+            document.write(lastmod);
+        </script>
+    </p>
 </footer>
 </body>
 
