@@ -231,7 +231,7 @@
 <footer class="container">
     <p>最終更新: 
         <script>
-            const jst = new Date(document.lastModified);
+            const jst = new Date(document.lastModified + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
             const lastmod = jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + ("0" + jst.getMinutes()).slice(-2) + ":" + ("0" + jst.getSeconds()).slice(-2) + ""
             document.write(lastmod);
         </script>
