@@ -229,9 +229,22 @@
     </p>
 </main>
 <footer class="container">
-    <p>最終更新: <script>document.lastModified</script></p>
+    <p>～最終更新: <script>new Date(document.lastModified)</script>～</p>
 </footer>
 </body>
+
+
+
+
+
+
+
+
+
+
+<!-- ############################################### -->
+<!-- ###                   script                ### -->
+<!-- ############################################### -->
 
 <script>
     const elem = document.getElementById("colorCode");
@@ -295,7 +308,7 @@
 </script>
 <script>
     const footer = getElementsByTagName("footer")[0]
-    footer.insertAdjacentHTML( "<p>最終更新：" + document.lastModified + "</p>" )
+    //footer.insertAdjacentHTML( "<p>最終更新：" + document.lastModified + "</p>" )
 </script>
 
 </html>
