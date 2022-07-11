@@ -232,8 +232,10 @@
     <p>最終更新: 
         <script>
             const jst = new Date(document.lastModified);
-            const timezone = new Date().getTimezoneOffset()
-            const lastmod = jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + ("0" + jst.getMinutes()).slice(-2) + ":" + ("0" + jst.getSeconds()).slice(-2) + "(JST)"
+            const timezoneOffset = new Date().getTimezoneOffset()
+            const lastmod = jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + ("0" + jst.getMinutes()).slice(-2) + ":" + ("0" + jst.getSeconds()).slice(-2)
+            const timezone = (timezoneOffset === -540) ? "(JST)" :
+            `GMT ${(timezoneOffset>=0)?"+":""}${Math.floor(timezoneOffset/-60)}:${timezoneOffset/60}`
             document.write(lastmod + "\nTZ: "+timezone);
         </script>
     </p>
