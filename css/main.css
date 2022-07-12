@@ -50,6 +50,7 @@ h1{font-size: 2em;}
 h2{font-size: 2em;}
 h3{font-size: 1.5em;}
 small{font-size: 0.8em;}
+.small{font-size: 0.8em;}
 
 /* width ------------------------*/
 .textbox{width: auto;}
@@ -60,6 +61,7 @@ h2{margin:30px 0;}
 h2{border-bottom: 3px solid #f6adc6;}
 h3{margin: 30px 0;}
 h3{border-bottom: 1px solid #000000;}
+.indented{display: block;text-indent:2em;}
 
 /* URI --------------------------*/
 a{
