@@ -9,12 +9,11 @@
 
     </head>
 <body>
-<header>
-    <div class="container"></div>
+<header class="container" id="header">
+    <h1>開発noteコンテンツ仮置き場</h1>
 </header>
-<div class="pane container" id="leftPane"></div>
+ <!-- pane(予定) <div class="pane container" id="leftPane"></div>  -->
 <main class="container">
-        <h1>開発noteコンテンツ仮置き場</h1>
 
 
     <!-- html -->
@@ -228,7 +227,7 @@
 </pre>
     </p>
 </main>
-<footer class="container">
+<footer class="container" id="footer">
     <p>最終更新: 
         <script>
             const jst = new Date(document.lastModified);
@@ -257,7 +256,7 @@
 
 <script>
     const elem = document.getElementById("colorCode");
-    const boxSize = [50, 780, 160];//height, width, minWidth
+    const boxSize = {height:"50px",width:"780px",minWidth:"160px"}//[50, 780, 160];//height, width, minWidth
     elem.style.height = "auto";
     elem.style.maxwidth = boxSize[1] * 4 + "px";
     elem.style.width = "100%";
@@ -294,9 +293,10 @@
         if(!color.code)continue;
         elem.insertAdjacentHTML("beforeend", `<p id = ${color.name}>${color.name}<br>#${color.code}</p>`);
         const box = document.getElementById(color.name);
-        box.style.height = boxSize[0] + "px";
+        box.style.height = boxSize.height;
         box.style.width = "25%";
-        box.style.minWidth = boxSize[2] + "px";
+        box.style.maxWidth = "25%";
+        box.style.minWidth = boxSize.minWidth;
         box.style.backgroundColor = "#" + color.code;
         box.style.textAlign = "center";
         box.style.verticalAlign = "middle";

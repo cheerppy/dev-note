@@ -1,30 +1,45 @@
 /* font download ----------------*/
-@font-face {
+@font-face{
     font-family: "monospace";
     src: url("https://note.cheerppy.xyz//font/RictyDiminishedDiscord-Regular.ttf") format("truetype");
   }
 
-/* general ----------------------*/
+/* general box-size -------------*/
+html{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 100%;
+    max-width: 90vw;
+    margin:1em;
+}
+.flexContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: fit-content;
+}
 body{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     background-color: #ffddf4;
     max-width: 90vw;
     width: 90%;
     padding: 0 30px;
+}
+header#header{
+    margin: 3em auto;
+}
+footer#footer{
+    margin: 3em auto;
+}
+main{
+    margin: 10%;
+}
 
-}
-.flexContainer{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: fit-content;
-}
-.container{
-    width: 90%;
-    max-width: 90vw;
-    margin:10%;
-}
 svg {fill: currentColor;}
 
 
@@ -53,8 +68,13 @@ a{
 }
 a[href^="http"]::after{
     content: "";
+    display: inline-block;
+    width:1em;
+    height: 1em;
     background-image: url("https://note.cheerppy.xyz/src/img/ext.svg");
-    background-size: 0.5em;
+    background-repeat: no-repeat;
+    background-position: 0.1em 0.25em;
+    background-size: 0.8em;
 }
 a[href^="https://note.cheerppy.xyz/"]::after{
     background-image: none;
