@@ -10,17 +10,15 @@
     </head>
 <body>
 <header class="container" id="header">
-<!-- ###############
-responsive design案:
-以下サブタイを span.indented として2行にする 
-    ############### -->
     <h1>
         ちあぴのデブ活のーと♡
         <span class="small" id="subtitle">～developper活動覚え書き～</span>
     </h1>
     <nav><ul>
-        <a href="#html_contents"><li>HTML/CSS</li></a>
+        <a href="#html_contents"><li>HTML</li></a>
+        <a href="#css_contents"><li>CSS</li></a>
         <a href="#"><li>JavaScript</li></a>
+        <a href="#"><li>node.js</li></a>
         <a href="#"><li>Shell Script</li></a>
         <a href="#"><li>Compiled Language</li></a>
         <a href="#lisence_contents"><li>Note For Lisence</li></a>
@@ -33,223 +31,233 @@ responsive design案:
 <main class="container">
 
 
-    <!-- html -->
-        <h2 id="html_contents">html</h2>
+<!-- html -->
+<div id="html_contents">
+    <h2>html</h2>
 
-        <h3>HTMLタグのエスケープ</h3>
+    <h3>HTMLタグのエスケープ</h3>
 
-        <p>
-            &amp;amp;などの特殊文字に置き換えることでエスケープする。<br>
-            主な記号は以下の通り。<br>
-        </p>
-            <table>
+    <p>
+        &amp;amp;などの特殊文字に置き換えることでエスケープする。<br>
+        主な記号は以下の通り。<br>
+    </p>
+        <table>
 
-            </table><br>
-        <p>
-            
-            変換してくれるサイトもある<br>
-            <a href="https://tech-unlimited.com/escape.html" target="_blank" rel="noopener noreferrer">https://tech-unlimited.com/escape.html</a>
-        </p>
-
-        <h3>コメントアウト</h3>
-        <p>
-            一行コメントアウトはなし。
-            ブロックコメントは<code>&lt;!-- --!&gt;</code>で囲む。<br>
-            コメント内は<code>-</code>の連続使用を避け、<code>=</code>などで代用する。
-        </p>
-
-        <h3>エラーチェック</h3>
-        <p><a href="https://validator.w3.org/nu/#textarea" target="_blank" rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
-
-       
-        <h3>脆弱性対策</h3>
-        <p>
-            aタグで<code>target="_blank"</code>するときに<code>rel="noopener noreferrer"</code>を付ける。
-        </p>
-        <small><p>
-            <code>window.opener</code>によって移動先リンクから攻撃される脆弱性への対策。<br>
-            アフィリエイトする場合は<code>rel="noopener"</code>のみとする。ただし、IEはnoopener非対応。
-        </p></small>
-
-        <h3>タグの使い分け</h3>
-        <p>
-            リファレンスはリンク先で確認できる。<br>
-            <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/ja/docs/Web/HTML/Element</a>
-        </p>
-
-            <table class="noCodeColor">
-                <tr>
-                    <th colspan="2"><code>コンテナ系</code></th>
-                </tr>
-                <tr>
-                    <td><code>head</code></td>
-                    <td>コード、メタ部分</td>
-                </tr>
-                <tr>
-                    <td><code>body</code></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><code>aside</code></td>
-                    <td>左右pane</td>
-                </tr>
-                <tr>
-                    <th colspan="2"><code>文字要素系</code></th>
-                </tr>
-                <tr>
-                    <td><code>h1</code></td>
-                    <td>ページタイトルなど。ページに一度だけ使う。</td>
-                </tr>
-                <tr>
-                    <td><code>h2</code></td>
-                    <td>大きな見出し。SEO対策に関わる。</td>
-                </tr>
-                <tr>
-                    <td><code>h3</code></td>
-                    <td>小見出し。章タイトルやコンテンツタイトル。</td>
-                </tr>
-                <tr>
-                    <td><code>p</code></td>
-                    <td>本文</td>
-                </tr>
-                <tr>
-                    <td><code>br</code></td>
-                    <td>改行</td>
-                </tr>
-                <tr>
-                    <td><code>small</code></td>
-                    <td>注釈、免責等習慣的に文字の小さいもの。</td>
-                </tr>
-                <tr>
-                    <td><code>a</code></td>
-                    <td>リンク。必ず<code>href</code>を伴う。</td>
-                </tr>
-                <tr>
-                    <td><code>span</code></td>
-                    <td>インライン装飾</td>
-                </tr>
-                <tr>
-                    <td><code>code</code></td>
-                    <td>インラインコードブロック</td>
-                </tr>
-                <tr>
-                    <td><code>pre</code></td>
-                    <td>コードブロック</td>
-                </tr>
-                <tr>
-                    <th colspan="2"><code>追加要素系</code></th>
-                </tr>
-                <tr>
-                    <td><code>table</code>, <code>tr</code></td>
-                    <td>表</td>
-                </tr>
-                <tr>
-                    <td><code>caption</code></td>
-                    <td>図表の見出し</td>
-                </tr>
-                <tr>
-                    <td><code>ul</code>, <code>li</code></td>
-                    <td>リスト</td>
-                </tr>
-                <tr>
-                    <td><code></code></td>
-                    <td></td>
-                </tr>
-
-            </table>
-
-
-
-
-    <!-- CSS -->
-        <h2 id="css_contents">CSS</h2>
-
-        <h3>コメントアウト</h3>
-        <p>
-            一行コメントアウトはなし。
-            ブロックコメントは<code>/* */</code>で囲む。
-        </p>
-
-        <h3>改行</h3>
-            <p>行末（中括弧の中）にセミコロンが必要</p>
-            <pre>p{color:black;}</pre>
+        </table><br>
+    <p>
         
-        <h3>エラーチェック</h3>
-        <p><a href="https://validator.w3.org/nu/#textarea" target="_blank" rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
+        変換してくれるサイトもある<br>
+        <a href="https://tech-unlimited.com/escape.html" target="_blank" rel="noopener noreferrer">https://tech-unlimited.com/escape.html</a>
+    </p>
+
+    <h3>コメントアウト</h3>
+    <p>
+        一行コメントアウトはなし。
+        ブロックコメントは<code>&lt;!-- --!&gt;</code>で囲む。<br>
+        コメント内は<code>-</code>の連続使用を避け、<code>=</code>などで代用する。
+    </p>
+
+    <h3>エラーチェック</h3>
+    <p><a href="https://validator.w3.org/nu/#textarea" target="_blank" rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
+
+    
+    <h3>脆弱性対策</h3>
+    <p>
+        aタグで<code>target="_blank"</code>するときに<code>rel="noopener noreferrer"</code>を付ける。
+    </p>
+    <small><p>
+        <code>window.opener</code>によって移動先リンクから攻撃される脆弱性への対策。<br>
+        アフィリエイトする場合は<code>rel="noopener"</code>のみとする。ただし、IEはnoopener非対応。
+    </p></small>
+
+    <h3>タグの使い分け</h3>
+    <p>
+        リファレンスはリンク先で確認できる。<br>
+        <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/ja/docs/Web/HTML/Element</a>
+    </p>
+
+    <table class="noCodeColor">
+        <tr>
+            <th colspan="2"><code>コンテナ系</code></th>
+        </tr>
+        <tr>
+            <td><code>head</code></td>
+            <td>コード、メタ部分</td>
+        </tr>
+        <tr>
+            <td><code>body</code></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><code>aside</code></td>
+            <td>左右pane</td>
+        </tr>
+        <tr>
+            <th colspan="2"><code>文字要素系</code></th>
+        </tr>
+        <tr>
+            <td><code>h1</code></td>
+            <td>ページタイトルなど。ページに一度だけ使う。</td>
+        </tr>
+        <tr>
+            <td><code>h2</code></td>
+            <td>大きな見出し。SEO対策に関わる。</td>
+        </tr>
+        <tr>
+            <td><code>h3</code></td>
+            <td>小見出し。章タイトルやコンテンツタイトル。</td>
+        </tr>
+        <tr>
+            <td><code>p</code></td>
+            <td>本文</td>
+        </tr>
+        <tr>
+            <td><code>br</code></td>
+            <td>改行</td>
+        </tr>
+        <tr>
+            <td><code>small</code></td>
+            <td>注釈、免責等習慣的に文字の小さいもの。</td>
+        </tr>
+        <tr>
+            <td><code>a</code></td>
+            <td>リンク。必ず<code>href</code>を伴う。</td>
+        </tr>
+        <tr>
+            <td><code>span</code></td>
+            <td>インライン装飾</td>
+        </tr>
+        <tr>
+            <td><code>code</code></td>
+            <td>インラインコードブロック</td>
+        </tr>
+        <tr>
+            <td><code>pre</code></td>
+            <td>コードブロック</td>
+        </tr>
+        <tr>
+            <th colspan="2"><code>追加要素系</code></th>
+        </tr>
+        <tr>
+            <td><code>table</code>, <code>tr</code></td>
+            <td>表</td>
+        </tr>
+        <tr>
+            <td><code>caption</code></td>
+            <td>図表の見出し</td>
+        </tr>
+        <tr>
+            <td><code>ul</code>, <code>li</code></td>
+            <td>リスト</td>
+        </tr>
+        <tr>
+            <td><code></code></td>
+            <td></td>
+        </tr>
+
+    </table>
+</div>
+        
 
 
-        <h3>可読性</h3>
-        <p>可読性について言及したサイト <a href="https://japan-design.jp/design/0052/" target="_blank" rel="noopener noreferrer">https://japan-design.jp/design/0052/</a></p>
-        <br>
-        <h3>width</h3>
-        <p>
-            width: auto<br>
-            それ以外→width:100%<br>
-            percentageは親要素に対する割合で指定<br>
-            pxやemで指定するときはmin-width, max-widthを使う<br>
-            画像サイズはmax100%がよい</p>
-        <p>文字コンテンツの幅は640pxくらいがおすすめ</p>
-        <p>16pxのとき約35文字表示される</p>
-        <h3>font-size</h3>
-        <p>標準は16px, 大き目なら18px</p>
-        <p>読む前提の文字は英小文字で12px, 日本語なら10pxが最小サイズ</p>
-        <p>そもそもChromeは基本10px未満にしても10pxで表示される。</p>
-        <p>文字の大きさの参考 <a href="https://blog.upshare.co.jp/2021/07/3730/" target="_blank" rel="noopener noreferrer">https://blog.upshare.co.jp/2021/07/3730/</a></p>
-        <p>html{font-size: 16px}</p>
 
-        <h3>textbox</h3>
-        <p>width: auto</p>
 
-        <h3>marginとpadding</h3>
-            <p>marginがborderの外側、paddingが内側</p>
-            <table>
-                <tr>
-                    <td>margin: 2px</td><td>上下左右</td>
-                </tr>
-                <tr>
-                    <td>margin: 2px 3px</td><td>上下 左右</td>
-                </tr>
-                <tr>
-                    <td>margin: 2px 3px 4px</td><td>上 左右 下</td>
-                </tr>
-                <tr>
-                    <td>margin: 2px 3px 4px 5px</td><td>上 右 下 左</td>
-                </tr>
-            </table>
-        <h3>color code usage</h3>
-        <p>
-            参考サイト<br>
-            <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank" rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
-        </p>
-        <div id="colorCode" class="flexContainer container"></div>
-        <!-- body下scriptタグにJSで記述 -->
+<!-- CSS -->
+<div id="css_contents">
+    <h2>CSS</h2>
 
-        <h3>複数指定</h3>
-        <p>
-            複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
-        </p>
+    <h3>コメントアウト</h3>
+    <p>
+        一行コメントアウトはなし。
+        ブロックコメントは<code>/* */</code>で囲む。
+    </p>
+
+    <h3>改行</h3>
+        <p>行末（中括弧の中）にセミコロンが必要</p>
+        <pre>p{color:black;}</pre>
+    
+    <h3>エラーチェック</h3>
+    <p><a href="https://validator.w3.org/nu/#textarea" target="_blank" rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
+
+
+    <h3>可読性</h3>
+    <p>可読性について言及したサイト <a href="https://japan-design.jp/design/0052/" target="_blank" rel="noopener noreferrer">https://japan-design.jp/design/0052/</a></p>
+    <br>
+    <h3>width</h3>
+    <p>
+        width: auto<br>
+        それ以外→width:100%<br>
+        percentageは親要素に対する割合で指定<br>
+        pxやemで指定するときはmin-width, max-widthを使う<br>
+        画像サイズはmax100%がよい</p>
+    <p>文字コンテンツの幅は640pxくらいがおすすめ</p>
+    <p>16pxのとき約35文字表示される</p>
+    <h3>font-size</h3>
+    <p>標準は16px, 大き目なら18px</p>
+    <p>読む前提の文字は英小文字で12px, 日本語なら10pxが最小サイズ</p>
+    <p>そもそもChromeは基本10px未満にしても10pxで表示される。</p>
+    <p>文字の大きさの参考 <a href="https://blog.upshare.co.jp/2021/07/3730/" target="_blank" rel="noopener noreferrer">https://blog.upshare.co.jp/2021/07/3730/</a></p>
+    <p>html{font-size: 16px}</p>
+
+    <h3>textbox</h3>
+    <p>width: auto</p>
+
+    <h3>marginとpadding</h3>
+        <p>marginがborderの外側、paddingが内側</p>
+        <table>
+            <tr>
+                <td>margin: 2px</td><td>上下左右</td>
+            </tr>
+            <tr>
+                <td>margin: 2px 3px</td><td>上下 左右</td>
+            </tr>
+            <tr>
+                <td>margin: 2px 3px 4px</td><td>上 左右 下</td>
+            </tr>
+            <tr>
+                <td>margin: 2px 3px 4px 5px</td><td>上 右 下 左</td>
+            </tr>
+        </table>
+    <h3>color code usage</h3>
+    <p>
+        参考サイト<br>
+        <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank" rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
+    </p>
+    <div id="colorCode" class="flexContainer container"></div>
+    <!-- body下scriptタグにJSで記述 -->
+
+    <h3>複数指定</h3>
+    <p>
+        複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
+    </p>
 <pre>
 &lt;div class=&quot;parent&quot;&gt;
 &#009;&lt;p class=&quot;child1&quot;&gt;Hello &lt;/p&gt;
 &#009;&lt;p class=&quot;child1 child2&quot;&gt;World!!&lt;/p&gt;
 &lt;/div&gt;
 </pre>
-        <div class="parent">
-            <p class="child1">Hello </p>
-            <p class="child1 child2">World!!</p>
-        </div>
+    <div class="parent">
+        <p class="child1">Hello </p>
+        <p class="child1 child2">World!!</p>
+    </div>
+</div>
+        
 
 
-    <!-- LISENCE -->
-        <h2 id="lisence_contents">LISENCE</h2>
-        <h3>おすすめ</h3>
-        <p>MIT</p>
-        <h3>ライセンス汚染</h3>
-        <p>GNU GPL</p>
-        <p>CC BY-SA</p>
+<!-- LISENCE -->
+<div id="lisence_contents">
+    <h2>LISENCE</h2>
+    <h3>おすすめ</h3>
+    <p>MIT</p>
+    <h3>ライセンス汚染</h3>
+    <p>GNU GPL</p>
+    <p>CC BY-SA</p>
+</div>
 
 
-    <!-- Other -->
+
+<!-- Other -->
+<div>
     <h2 id="other_contents">OTHER</h2>
     <h3>ページの転送（リダイレクト）</h3>
     <p>
@@ -260,7 +268,12 @@ responsive design案:
 &lt;/script&gt;
 </pre>
     </p>
+</div>
+
 </main>
+
+
+<!-- footer -->
 <footer class="container" id="footer">
     <p>最終更新: 
         <script>
