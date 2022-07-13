@@ -31,7 +31,12 @@ body{
     padding: 0 30px;
 }
 header#header{
+    width: 800px;
     margin: 3em auto;
+}
+#subtitle{
+    display: inline-block;
+    text-indent:1.5em;
 }
 footer#footer{
     margin: 3em auto;
@@ -39,8 +44,44 @@ footer#footer{
 main{
     margin: 10%;
 }
-
+a.button{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: inherit;
+}
 svg {fill: currentColor;}
+
+
+/* nav --------------------------*/
+nav{
+    margin: 8px;
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+nav a{
+    flex:1 1 110px;
+    margin: 1px;
+    border: thick ridge pink;
+    background-color: pink;
+}
+nav li{
+    display: table-cell;
+    vertical-align: middle;
+    list-style-type: none;
+    min-width: 100px;
+    width: 100px;
+    height: 3em;
+    text-align: center;
+}
+
+nav a{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: inherit;
+}
 
 
 /* font size --------------------*/

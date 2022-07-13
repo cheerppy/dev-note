@@ -10,14 +10,31 @@
     </head>
 <body>
 <header class="container" id="header">
-    <h1>開発noteコンテンツ仮置き場</h1>
+<!-- ###############
+responsive design案:
+以下サブタイを span.indented として2行にする 
+    ############### -->
+    <h1>
+        ちあぴのデブ活のーと♡
+        <span class="small" id="subtitle">～developper活動覚え書き～</span>
+    </h1>
+    <nav><ul>
+        <a href="#html_contents"><li>HTML/CSS</li></a>
+        <a href="#"><li>JavaScript</li></a>
+        <a href="#"><li>Shell Script</li></a>
+        <a href="#"><li>Compiled Language</li></a>
+        <a href="#lisence_contents"><li>Note For Lisence</li></a>
+        <a href="#other_contents"><li>Other</li></a>
+        <a href="#"><li>Contact</li></a>
+    </ul></nav>
+    
 </header>
  <!-- pane(予定) <div class="pane container" id="leftPane"></div>  -->
 <main class="container">
 
 
     <!-- html -->
-        <h2>html</h2>
+        <h2 id="html_contents">html</h2>
 
         <h3>HTMLタグのエスケープ</h3>
 
@@ -145,7 +162,7 @@
 
 
     <!-- CSS -->
-        <h2>CSS</h2>
+        <h2 id="css_contents">CSS</h2>
 
         <h3>コメントアウト</h3>
         <p>
@@ -224,7 +241,7 @@
 
 
     <!-- LISENCE -->
-        <h2>LISENCE</h2>
+        <h2 id="lisence_contents">LISENCE</h2>
         <h3>おすすめ</h3>
         <p>MIT</p>
         <h3>ライセンス汚染</h3>
@@ -233,7 +250,7 @@
 
 
     <!-- Other -->
-    <h2>OTHER</h2>
+    <h2 id="other_contents">OTHER</h2>
     <h3>ページの転送（リダイレクト）</h3>
     <p>
         以下のように記述する。
