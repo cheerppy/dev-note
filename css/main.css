@@ -11,7 +11,6 @@ html{
 }
 .container{
     width: 100%;
-    max-width: 90vw;
     margin:1em;
 }
 .flexContainer{
@@ -26,12 +25,13 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     background-color: #ffddf4;
-    max-width: 90vw;
-    width: 90%;
-    padding: 0 30px;
+    width: 100%;
 }
 header#header{
-    margin: 3em auto;
+    color: #000000;
+    background: linear-gradient(-20deg, pink,white, pink); 
+    padding: 1rem 3rem;
+    border-bottom: 5px solid #ffddf480;
 }
 #subtitle{
     display: inline-block;
@@ -41,6 +41,8 @@ footer#footer{
     margin: 3em auto;
 }
 main{
+    width: 90%;
+    padding: 0 30px;
     margin: 10%;
 }
 a.button{
