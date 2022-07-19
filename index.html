@@ -2,6 +2,7 @@
 <html lang="ja">
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
+        <link rel="stylesheet" href="css/common.css"/>
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="shortcut icon" href="src/img/ico/cheerppy.png" type="image/png">
         <title>ちあぴのデブ活のーと♡</title>
@@ -198,7 +199,7 @@
     <p>読む前提の文字は英小文字で12px, 日本語なら10pxが最小サイズ</p>
     <p>そもそもChromeは基本10px未満にしても10pxで表示される。</p>
     <p>文字の大きさの参考 <a href="https://blog.upshare.co.jp/2021/07/3730/" target="_blank" rel="noopener noreferrer">https://blog.upshare.co.jp/2021/07/3730/</a></p>
-    <p>html{font-size: 16px}</p>
+    <pre>html{ font-size: 16px; }</pre>
 
     <h3>textbox</h3>
     <p>width: auto</p>
@@ -232,15 +233,35 @@
         複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
     </p>
 <pre>
+&lt;p class=&quot;child2&quot;&gt;outer parent&lt;/p&gt;
 &lt;div class=&quot;parent&quot;&gt;
 &#009;&lt;p class=&quot;child1&quot;&gt;Hello &lt;/p&gt;
 &#009;&lt;p class=&quot;child1 child2&quot;&gt;World!!&lt;/p&gt;
 &lt;/div&gt;
 </pre>
-    <div class="parent">
-        <p class="child1">Hello </p>
-        <p class="child1 child2">World!!</p>
+<pre>
+.parent,.child2{ <span class="comment">/*-- parent or child2 --*/</span>
+    background-color: lawngreen;
+    padding:0.1em 2em;
+}
+.parent .child1{ <span class="comment">/*-- child1 in parent --*/</span>
+    background-color: green;
+    color: lavender;
+}
+.child1.child2::after{ <span class="comment">/*-- child1 and child2 --*/</span>
+    content: &quot;  &lt;- after&quot;;
+}
+</pre>
+    <div id="parent見本" >
+        <p class="child2">outer parent</p>
+        <div class="parent">
+            <p class="child1">Hello </p>
+            <p class="child1 child2">World!!</p></div>
     </div>
+
+    <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
+<pre>
+pre{ white-space: pre-wrap; }</pre>
 </div>
         
 <!-- JavaScript -->
@@ -250,6 +271,11 @@
 <!-- node.js -->
 <div id="node_contents">
     <h2>node.js</h2>
+    <p>wait 関数</p>
+<pre>
+const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
+</pre>
+
 </div>
 <!-- Shell Script -->
 <div id="shell_contents">

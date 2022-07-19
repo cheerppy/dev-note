@@ -1,0 +1,183 @@
+/* font download ----------------*/
+@font-face{
+    font-family: "monospace";
+    src: url("https://note.cheerppy.xyz//font/RictyDiminishedDiscord-Regular.ttf") format("truetype");
+  }
+
+/* general box-size -------------*/
+html{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 100%;
+    margin:1em;
+}
+.flexContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: fit-content;
+}
+body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #ffddf4;
+    width: 100%;
+}
+header#header{
+    color: #000000;
+    background: linear-gradient(-20deg, pink,white, pink); 
+    padding: 1rem 3rem;
+    border-bottom: 5px solid #ffddf480;
+}
+#subtitle{
+    display: inline-block;
+    text-indent:1.5em;
+}
+footer#footer{
+    margin: 3em auto;
+}
+main{
+    width: 90%;
+    padding: 0 30px;
+    margin: 10%;
+}
+a.button{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: inherit;
+}
+svg {fill: currentColor;}
+
+
+/* nav --------------------------*/
+nav{
+    margin: 8px;
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+nav a{
+    flex:1 1 110px;
+    margin: 1px;
+    border: thick ridge pink;
+    background-color: pink;
+}
+nav li{
+    display: table-cell;
+    vertical-align: middle;
+    list-style-type: none;
+    min-width: 100px;
+    width: 100px;
+    height: 3em;
+    text-align: center;
+}
+
+nav a{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+/* font size --------------------*/
+html{font-size: 17px;}
+p{font-size: 1em;}
+h1{font-size: 2em;}
+h2{font-size: 2em;}
+h3{font-size: 1.5em;}
+small{font-size: 0.8em;}
+.small{font-size: 0.8em;}
+
+/* width ------------------------*/
+.textbox{width: auto;}
+
+/* margin and paddings ----------*/
+p{margin: 3px;line-height: 1.4em;}
+h2{margin:30px 0;}
+h2{border-bottom: 3px solid #f6adc6;}
+h3{margin: 30px 0;}
+h3{border-bottom: 1px solid #000000;}
+.indented{display: block;text-indent:2em;}
+
+/* URI --------------------------*/
+a{
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+a[href^="http"]::after{
+    content: "";
+    display: inline-block;
+    width:1em;
+    height: 1em;
+    background-image: url("https://note.cheerppy.xyz/src/img/ext.svg");
+    background-repeat: no-repeat;
+    background-position: 0.1em 0.25em;
+    background-size: 0.8em;
+}
+a[href^="https://note.cheerppy.xyz/"]::after{
+    background-image: none;
+}
+/* table ------------------------*/
+table{
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+td,th{
+    border: solid 1px #000000;
+    border-style: none, solid, none;
+    border-collapse: collapse;
+    padding: 0.3em 0.1em 0em;
+}
+    /* --- change color in every row ---*/
+    tr{background-color: pink;}
+    tr:nth-of-type(2n){background-color: #ffffff}
+
+
+/* code block --------------------*/
+    /* code: inlinecode */
+    /* pre : codeblock  */
+pre,code{
+    /*background-color: rgb(196, 183, 142); or antique-white*/
+    font-family: "monospace";
+    font-size: 1em;
+}
+pre{
+    background-color: antiquewhite;
+    padding: 10px 24px;     /*上下, 左右*/
+    margin: 10px;
+    border:solid 2px #616161;
+    border-radius: 5px;
+	white-space: pre-wrap ;
+}
+
+code{
+    background-color: #faebd7b3;
+    white-space: pre-line;
+    margin: 3px;
+    padding: 3px;
+    font-size: 1em;
+    border-radius: 6px;
+}
+.noCodeColor pre{
+    background-color: transparent;
+}
+.noCodeColor code{
+    background-color: transparent;
+}
+/*  -----------------------------*/
+
+/*----*/
+/*----*/
+/*----*/
+/*----*/
+/*----*/
+/*----*/
+
