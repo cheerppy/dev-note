@@ -21,7 +21,8 @@
         <a href="#css_contents"><li>CSS</li></a>
         <a href="#js_contents"><li>JavaScript</li></a>
         <a href="#node_contents"><li>node.js</li></a>
-        <a href="#shell_contents"><li>Shell Script</li></a>
+        <a href="#bash_contents"><li>Bash Script</li></a>
+        <a href="#bat_contents"><li>bat Script</li></a>
         <a href="#compiled_contents"><li>Compiled Language</li></a>
         <a href="#lisence_contents"><li>Note For Lisence</li></a>
         <a href="#other_contents"><li>Other</li></a>
@@ -277,10 +278,123 @@ const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
 </pre>
 
 </div>
-<!-- Shell Script -->
-<div id="shell_contents">
-    <h2>Shell Script</h2>
+
+
+<!-- Bash Script -->
+<div id="bash_contents">
+    <h2>Bash Script</h2>
 </div>
+
+
+<!-- Bat Script -->
+<div id="bat_contents">
+    <h2>bat script</h2>
+    <p>batファイルのコマンドリファレンス</p>
+    <p><a href="https://www.pg-fl.jp/program/dos/doscmd/" target="_blank" rel="noopener noreferrer">https://www.pg-fl.jp/program/dos/doscmd/</a></p>
+    <p>変数を使いたい場合、scriptの頭で<code>setlocal</code>して環境変数の汚染を防ぐ。</p>
+    
+    <h3>エスケープ</h3>
+    <p><code>&amp;, &lt;, &gt;, |, \</code>は<code>^</code>でエスケープする。</p>
+    <p><code>^</code>自身は<code>^^</code>のようにエスケープする。</p>
+    <p><code>enableDelayedExpansion</code>（<a href="#enableDelayedExpansion">後述</a>）設定時は<code>!</code>も<code>^^!</code>のように<code>^</code>2個でエスケープする。
+    <p>例外的に<code>%</code>は<code>%%</code>のようにエスケープする。</p>
+    <p>正規表現を用いて検索ができるstrfind関数内では、<code>\, [, ], ", ., *, ?</code>が<code>\</code>によりエスケープされる。</p>
+
+
+    
+    <h3>プログラムの成否による分岐</h3>
+    <p></p>
+    <ol>
+        <li><code>||</code>, <code>&&</code>を用いる方法</li>
+        <li> <code>ErrorLevel</code>による分岐</li>
+    </ol>
+<pre>
+@echo off
+setlocal
+
+:setName
+set /p name="What's your name?" || set name=Annonymous
+echo %name% | find /i "cheerppy" && echo Hello World! || echo Hi, %name%
+
+:choice
+choice /c ync /m "Are you sure to exit?" 
+if errorlevel == 1 exit
+if errorlevel == 2 goto setName
+if errorlevel == 3 goto choice
+</pre>
+
+
+    <h3><code class="noCodeColor">If ErrorLevel &lt;int&gt; (...)</code>構文</h3>
+    <p>ErrorLevelが引数<strong>以上</strong>の時<code>(...)</code>を実行する</p>
+<pre>
+@echo off
+setlocal
+
+cd > nul
+echo +++ Error hasn't occured. +++
+echo %%errorlevel%% = %errorlevel%
+if errorlevel 0 echo invoked always
+if errorlevel 1 echo invoked only when Error occured
+
+rem コマンド cd に成功
+rem 期待される出力結果: 
+rem > %errorlevel% = 0
+rem > invoked always
+
+type
+
+echo +++ Error has occured. +++
+echo %%errorlevel%% = %errorlevel%
+if errorlevel 0 echo invoked always
+if errorlevel 1 echo invoked only when Error occured
+pause>nul
+
+rem typeは引数不足なのでエラーを返す
+rem 期待される出力結果: 
+rem > %errorlevel% = 1
+rem > invoked always
+rem > invoked only when Error occured
+</pre>
+
+
+    <h3>遅延環境変数<code class="noCodeColor">!hoge!</code></h3>
+    <p>
+        環境変数は変数が呼び出されるその行へたどり着いたときに展開（＝読み込み）される。<br>
+        また、<code>( )</code>で括られた部分は一行とみなされる。<br>
+        すなわち、<code>( )</code>内での変数の変化には対応できない。
+    </p>
+    <p>遅延環境変数を用いると、その変数が呼び出されるコマンドにたどり着いたときに展開される。</p>
+    <p>使用するときは<code>setlocal enableDelayedExpansion</code>を宣言し、変数を<code>!</code>で囲む。</p>
+<pre>
+@echo off
+setlocal enableDelayedExpansion
+
+set age=20
+
+if %age% == 20 (
+    set /a age=%age%+1
+    echo %%age%%=%age% in the bracket
+    echo ^^!age^^!=!age! in the bracket
+)
+echo %%age%%=%age% outside the blacket
+
+rem 期待される出力結果: 
+rem > %age%=20 in the bracket
+rem > !age!=21 in the bracket
+rem > %age%=21 outside the blacket
+</pre>
+
+    <h3>右クリの送るメニューに表示</h3>
+        <p>作ったbatスクリプトを<code>%AppData%\Microsoft\Windows\SendTo</code>に入れておくと、ファイル右クリックの送るメニューからファイルを引数<code>%1</code>に取ってスクリプトを実行できる。</p>
+        <p>このディレクトリは<code>shell:sendto</code>からも開ける。</p>
+    </div>
+
+    <h3>タイムスタンプの取得</h3>
+<pre>
+echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%
+rem > 20220722_191322
+</pre>
+
 <!-- Compiled Languages -->
 <div id="compiled_contents">
     <h2>Compiled Languages</h2>
