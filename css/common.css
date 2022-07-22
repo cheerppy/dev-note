@@ -30,7 +30,7 @@ body{
 header#header{
     color: #000000;
     background: linear-gradient(-20deg, pink,white, pink); 
-    padding: 1rem 3rem;
+    padding: 1rem 10%;
     border-bottom: 5px solid #ffddf480;
     width: 100%;
 }
