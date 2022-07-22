@@ -172,8 +172,14 @@ code{
 .noCodeColor code{
     background-color: transparent;
 }
-/*  -----------------------------*/
-
+/* list -----------------------------*/
+ul,ol{
+    list-style-position: inside;
+    line-height: 1.4em;
+}
+ol{
+    list-style-type:decimal; /* -- 10進数 -- */
+}
 /*----*/
 /*----*/
 /*----*/
