@@ -155,7 +155,8 @@ pre{
     margin: 10px;
     border:solid 2px #616161;
     border-radius: 5px;
-	white-space: pre-wrap ;
+    /*white-space: pre-wrap;*/
+    overflow: auto;
 }
 
 code{
@@ -170,6 +171,9 @@ code{
     background-color: transparent;
 }
 .noCodeColor code{
+    background-color: transparent;
+}
+.noCodeColor{
     background-color: transparent;
 }
 /* list -----------------------------*/
