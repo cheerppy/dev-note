@@ -178,6 +178,13 @@ code{
 .noCodeColor{
     background-color: transparent;
 }
+
+pre span.comment{
+    color: #6ca01e;
+}
+
+/* use <i></i> tag for italic span. */
+
 /* list -----------------------------*/
 ul,ol{
     list-style-position: inside;
