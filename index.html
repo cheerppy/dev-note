@@ -208,18 +208,10 @@
     <h3>marginとpadding</h3>
         <p>marginがborderの外側、paddingが内側</p>
         <table>
-            <tr>
-                <td>margin: 2px</td><td>上下左右</td>
-            </tr>
-            <tr>
-                <td>margin: 2px 3px</td><td>上下 左右</td>
-            </tr>
-            <tr>
-                <td>margin: 2px 3px 4px</td><td>上 左右 下</td>
-            </tr>
-            <tr>
-                <td>margin: 2px 3px 4px 5px</td><td>上 右 下 左</td>
-            </tr>
+            <tr><td>margin: 2px</td>                <td>上下左右</td></tr>
+            <tr><td>margin: 2px 3px</td>            <td>上下 左右</td></tr>
+            <tr><td>margin: 2px 3px 4px</td>        <td>上 左右 下</td></tr>
+            <tr><td>margin: 2px 3px 4px 5px</td>    <td>上 右 下 左</td></tr>
         </table>
     <h3>color code usage</h3>
     <p>
@@ -416,6 +408,101 @@ rem > 20220722_191322
 <!-- Other -->
 <div id="other_contents">
     <h2>OTHER</h2>
+    <h3>Win10 shortcut.lnk</h3>
+    <p>Ctrl+ドラッグ＆ドロップでファイルのコピーを、Alt+ドラッグ＆ドロップでファイルのショートカットを作成できる。</p>
+    <p>右クリドラッグ＆ドロップでも似たようなことが可能（選択できる）。</p>
+    
+    <p>以下のテキストを「項目の場所」として記述することができる。</p>
+    <ul class="indented">
+        <li><div>
+            <h4>batファイル</h4>
+                <p><code>cmd /c "<i>hogehoge</i>.bat"</code></p>
+        </div></li>
+        <li><div>
+            <h4>online Excelファイル</h4>
+                <p><code>ms-excel:<i>https://example.cheerppy.xyz/hogehoge</i></code></p>
+        </div></li>
+        <li><div>
+            <h4>Desktopを表示</h4>
+                <p><code>explorer shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}</code></p>
+        </div></li>
+    </ul>
+
+    <h3>Run...</h3>
+    <table class="noCodeColor">
+        <tr><th>コマンド</th><th>説明</th></tr>
+        <tr><td><code>shell:startup</code></td><td>スタートアップ</td></tr>
+        <tr><td><code>shell:profile</code></td><td><code>%UserProfile%</code></td></tr>
+        
+        <tr><td><code></code></td><td></td></tr>
+        
+        <!--
+        <tr>
+            <td><code></code></td><td></td>
+        </tr>
+        <tr><td><code></code></td><td></td></tr>
+        -->
+    </table>
+
+    <h3>環境変数</h3>
+    <table class="noCodeColor">
+        <tr><th>変数</th><th>値</th></tr>
+        <tr><td><code>%HomeDrive%</code></td>  <td><code>C:\</code></td></tr>
+        <tr><td><code>%HomePath%</code></td>  <td><code>C:\Users\【ユーザ名】\</code></td></tr>
+        <tr><td><code>%UserProfile%</code></td>  <td><code>%HomePath%</code></td></tr>
+        <tr><td><code></code></td>  <td><code></code></td></tr>
+
+        <!--
+            <tr><td><code>%%</code></td>  <td><code></code></td></tr>
+        -->
+
+    </table>
+    <h3>ショートカットキー</h3>
+        <table>
+            <tr>
+                <th>キー</th><th>説明</th>
+            </tr>
+            <tr>
+                <td>Win+D</td><td>Desktopを表示</td>
+            </tr>
+            <tr>
+                <td>Win+E</td><td>explorerを開く</td>
+            </tr>
+            <tr>
+                <td>Win+L</td><td>画面をロック</td>
+            </tr>
+            <tr>
+                <td>Win+R</td><td>ファイル名を指定して実行</td>
+            </tr>
+            <tr>
+                <td>Win+S</td><td>Search()</td>
+            </tr>
+            <tr>
+                <td>Win+ピリオド(.)</td><td>絵文字パッドを開く</td>
+            </tr>
+            <tr>
+                <td>Win+Pause</td><td>[バージョン情報]を開く</td>
+            </tr>
+            <tr>
+                <td>Win+PrintScreen</td><td>スクリーンショットを"保存"</td>
+            </tr>
+            <!--
+            <tr>
+                <td></td><td></td>
+            </tr>
+            -->
+        </table>
+        <p>
+            補足：<br>
+            <code>Win + PrintScreen</code>で保存される画像は、名前は<code>スクリーンショット.png</code>、保存場所は規定で<code>%UserProfile%\OneDrive\画像\スクリーンショット</code>または<code>%UserProfile%\OneDrive\Pictures\Screenshots</code>であるが、該当フォルダのプロパティ > 場所 から変更可能である。
+        </p>
+
+    <h3>リモートアシスト</h3>
+        <p>
+            「クイックアシスト」を利用する。<br>
+            旧バージョンはWin+Ctrl+Qで開けたが、新バージョンのショートカットは2022/07/23現在無さそう。
+        </p>
+
     <h3>ページの転送（リダイレクト）</h3>
     <p>
         以下のように記述する。
@@ -425,6 +512,9 @@ rem > 20220722_191322
 &lt;/script&gt;
 </pre>
     </p>
+
+    <h3>OSが起動しない時</h3>
+    <p><a href="https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/" target="_blank" rel="noopener noreferrer">https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/</a></p>
 </div>
 
 <!-- Contact -->
