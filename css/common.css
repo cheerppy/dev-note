@@ -138,7 +138,7 @@ td,th{
     border: solid 1px #000000;
     border-style: none, solid, none;
     border-collapse: collapse;
-    padding: 0.3em 0.1em 0em;
+    padding: 0.3em 3px 3px;
 }
     /* --- change color in every row ---*/
     tr{background-color: pink;}
@@ -175,6 +175,7 @@ code{
     background-color: transparent;
 }
 .noCodeColor code{
+    padding: 0px;
     background-color: transparent;
 }
 .noCodeColor{
