@@ -106,6 +106,8 @@ h2{border-bottom: 3px solid #f6adc6;}
 h3{margin: 30px 0;}
 h3{border-bottom: 1px solid #000000;}
 .indented{display: block;text-indent:2em;}
+.noindent{display: auto;text-indent:0em;}
+.leftPadding{padding-left: 2em;}
 
 /* URI --------------------------*/
 a{
