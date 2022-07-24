@@ -426,18 +426,18 @@ rem > 20220722_191322
     <p>右クリドラッグ＆ドロップでも似たようなことが可能（選択できる）。</p>
     
     <p>以下のテキストを「項目の場所」として記述することができる。</p>
-    <ul class="indented">
+    <ul class="leftPadding">
         <li><div>
             <h4>batファイル</h4>
-                <p><code>cmd /c "<i>hogehoge</i>.bat"</code></p>
+            <pre>cmd /c "<i>hogehoge</i>.bat"</pre>
         </div></li>
         <li><div>
-            <h4>online Excelファイル</h4>
-                <p><code>ms-excel:<i>https://example.cheerppy.xyz/hogehoge</i></code></p>
+            <h4>online ExcelファイルをDesktopアプリで開く</h4>
+            <pre>ms-excel:<i>https://cheerppy.xyz/fugafuga</i>.xls</pre>
         </div></li>
         <li><div>
             <h4>Desktopを表示</h4>
-                <p><code>explorer shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}</code></p>
+            <pre>explorer shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}</pre>
         </div></li>
     </ul>
 
@@ -452,19 +452,10 @@ rem > 20220722_191322
         <tr><td><code>shell:screenshots</code></td><td>スクリーンショットフォルダ</td></tr>
         <tr><td><code>ms-clock:</code></td><td>Clock & Alarm</td></tr>
         <tr><td><code>control</code></td><td>すべてのコントロールパネル項目</td></tr>
-        <tr><td><code></code></td><td></td></tr>
-        <tr><td><code></code></td><td></td></tr>
-        
-        <!--
-        <tr>
-            <td><code></code></td><td></td>
-        </tr>
-        <tr><td><code></code></td><td></td></tr>
-        -->
     </table>
 
     <h3>環境変数</h3>
-    <p>自分が分かりやすいように、環境変数の展開値を環境変数を使って書いています。</p>
+    <p>※自分が分かりやすいように、値に環境変数を使って書いています。</p>
     <table class="noCodeColor">
         <tr><th>変数</th><th>値</th></tr>
         <tr><td><code>%HomeDrive%</code></td>  <td><code>C:</code></td></tr>
@@ -473,50 +464,23 @@ rem > 20220722_191322
         <tr><td><code>%AppData%</code></td>  <td><code>%HomePath%\AppData\Roaming</code></td></tr>
         <tr><td><code>%LocalAppData%</code></td>  <td><code>%HomePath%\AppData\Local</code></td></tr>
         <tr><td><code>%TEMP%</code></td>  <td><code>%LocalAppData%\Temp</code></td></tr>
-        <tr><td><code>%%</code></td>  <td><code></code></td></tr>
-        <tr><td><code>%%</code></td>  <td><code></code></td></tr>
-
-        <!--
-            <tr><td><code>%%</code></td>  <td><code></code></td></tr>
-        -->
-
     </table>
     <p><code>%AppData%</code>と<code>%LocalAppData%</code>の違いは、一般的な個人用ユーザーには現れない。学校などRoamingユーザーを利用しているとき、<code>%AppData%</code>内のデータは同じドメインのどのPCからも同様にアクセスできる。</p>
 
 
     <h3>ショートカットキー</h3>
         <table>
-            <tr>
-                <th>キー</th><th>説明</th>
-            </tr>
-            <tr>
-                <td>Win+D</td><td>Desktopを表示</td>
-            </tr>
-            <tr>
-                <td>Win+E</td><td>explorerを開く</td>
-            </tr>
-            <tr>
-                <td>Win+L</td><td>画面をロック</td>
-            </tr>
-            <tr>
-                <td>Win+R</td><td>ファイル名を指定して実行</td>
-            </tr>
-            <tr>
-                <td>Win+S</td><td>Search()</td>
-            </tr>
-            <tr>
-                <td>Win+ピリオド(.)</td><td>絵文字パッドを開く</td>
-            </tr>
-            <tr>
-                <td>Win+Pause</td><td>[バージョン情報]を開く</td>
-            </tr>
-            <tr>
-                <td>Win+PrintScreen</td><td>スクリーンショットを"保存"</td>
-            </tr>
+            <tr><th>キー</th><th>説明</th></tr>
+            <tr><td>Win+D</td><td>Desktopを表示</td></tr>
+            <tr><td>Win+E</td><td>explorerを開く</td></tr>
+            <tr><td>Win+L</td><td>画面をロック</td></tr>
+            <tr><td>Win+R</td><td>ファイル名を指定して実行</td></tr>
+            <tr><td>Win+S</td><td>Search()</td></tr>
+            <tr><td>Win+ピリオド(.)</td><td>絵文字パッドを開く</td></tr>
+            <tr><td>Win+Pause</td><td>[バージョン情報]を開く</td></tr>
+            <tr><td>Win+PrintScreen</td><td>スクリーンショットを"保存"</td></tr>
             <!--
-            <tr>
-                <td></td><td></td>
-            </tr>
+            <tr><td></td><td></td></tr>
             -->
         </table>
         <p>
@@ -524,10 +488,10 @@ rem > 20220722_191322
             <code>Win + PrintScreen</code>で保存される画像は、名前は<code>スクリーンショット.png</code>、保存場所は規定で<code>%UserProfile%\OneDrive\画像\スクリーンショット</code>または<code>%UserProfile%\OneDrive\Pictures\Screenshots</code>であるが、該当フォルダのプロパティ > 場所 から変更可能である。
         </p>
 
-    <h3>リモートアシスト</h3>
+    <h3>リモートで友達のPCを操作する</h3>
         <p>
             「クイックアシスト」を利用する。<br>
-            旧バージョンはWin+Ctrl+Qで開けたが、新バージョンのショートカットは2022/07/23現在無さそう。
+            旧バージョンはWin+Ctrl+Qで開けたが、新バージョンのショートカットは2022/07現在無さそう。
         </p>
 
     <h3>ページの転送（リダイレクト）</h3>
@@ -547,18 +511,12 @@ rem > 20220722_191322
         <p>用語</p>
         <table class="noCodeColor">
             <tr><th>単語</th><th>説明</th></tr>
-            <tr><td>repository</td><td>user/project毎に一つ用意する「フォルダ」。</td></tr>
-            <tr><td>local repository</td><td><code>.git\</code>があるディレクトリ。</td></tr>
-            <tr><td>fetch</td><td>他人のremote repositoryから自分のremote repositoryにコピーすること。</td></tr>
-            <tr><td>clone</td><td>自分のremote repositoryからlocal repositoryにダウンロードすること。</td></tr>
+            <tr><td>repository</td><td>user/project毎に一つ用意する「フォルダ」。以下repo。</td></tr>
+            <tr><td>local repo</td><td><code>.git\</code>があるディレクトリ。</td></tr>
+            <tr><td>fetch</td><td>他人のremote repoから自分のremote repoにコピーすること。</td></tr>
+            <tr><td>clone</td><td>自分のremote repoからlocal repoにダウンロードすること。</td></tr>
         </table>
-        <p>
-            Git Bashなどを使ってCLI操作できる。<br>
-
-
-        </p>
-<pre>
-</pre>
+        <p>Git Bashなどを使ってCLI操作できる。</p>
         <p>まだコミットしていない変更点を破棄</p>
 <pre>
 $ git add .
@@ -574,8 +532,8 @@ $ git stash
 <!-- Contact -->
 <div id="contact_contents">
     <h2>Contact</h2>
-    <p>誤字脱字衍字の指摘等はこちらから</p>
-    <p><a href="https://github.com/cheerppy/dev-note">GitHUB</a></p>
+    <p>誤字脱字衍字や誤情報の指摘等もこちらから</p>
+    <p><a href="https://github.com/cheerppy/dev-note">GitHub</a></p>
 </div>
 
 </main>
