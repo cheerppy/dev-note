@@ -193,6 +193,9 @@ ul,ol{
 ol{
     list-style-type:decimal; /* -- 10進数 -- */
 }
+ul.dot{
+    list-style-type: disc;
+}
 /*----*/
 /*----*/
 /*----*/
