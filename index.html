@@ -283,7 +283,11 @@ const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
     <h2>bat script</h2>
     <p>batファイルのコマンドリファレンス</p>
     <p><a href="https://www.pg-fl.jp/program/dos/doscmd/" target="_blank" rel="noopener noreferrer">https://www.pg-fl.jp/program/dos/doscmd/</a></p>
-    <p>変数を使いたい場合、scriptの頭で<code>setlocal</code>して環境変数の汚染を防ぐ。</p>
+    <p>
+        <code>setLocal</code>を宣言することで環境変数のローカル化を開始する。batファイル終了時に自動的にendLocalが実行される。<br>
+        が、<code>set</code>コマンドはそのプロセス内でのみ有効な設定にすぎない。すなわち、現在のcmd.exeのウィンドウを閉じると変更は元に戻る。<br>
+        よって、グローバル変数の汚染を防ぐという意味で使用する必要は無い。
+    </p>
     
     <h3>エスケープ</h3>
     <p><code>&amp;, &lt;, &gt;, |, \</code>は<code>^</code>でエスケープする。</p>
@@ -302,7 +306,6 @@ const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
     </ol>
 <pre>
 @echo off
-setlocal
 
 :setName
 set /p name="What's your name?" || set name=Annonymous
@@ -320,7 +323,6 @@ if errorlevel == 3 goto choice
     <p>ErrorLevelが引数<strong>以上</strong>の時<code>(...)</code>を実行する</p>
 <pre>
 @echo off
-setlocal
 
 cd > nul
 echo +++ Error hasn't occured. +++
@@ -347,6 +349,17 @@ rem > %errorlevel% = 1
 rem > invoked always
 rem > invoked only when Error occured
 </pre>
+    <p>
+        <code>%ErrorLevel%</code>を直接<code>set</code>してはならない。そうしてしまうと、動的な定義を無効化して上書きしてしまい、期待される挙動を得られなくなってしまう。<br>
+        もし誤って<code>set</code>してしまった場合は、<code>set ErrorLevel=</code>（右辺は何も書かない）とすることで、上書きして作ってしまった環境変数を削除し、元の挙動が得られるようになる。
+    </p>
+    <p>このような動的な環境変数には以下のようなものがある。</p>
+    <ul class="dot">
+        <li><code>%ErrorLevel%</code></li>
+        <li><code>%cd%</code></li>
+        <li><code>%Date%</code>, <code>%Time%</code></li>
+        <li><code>%Random%</code> - 0から32767(15bit)の間でランダムな10進数に展開する。</li>
+    </ul>
 
 
     <h3>遅延環境変数<code class="noCodeColor">!hoge!</code></h3>
@@ -451,18 +464,26 @@ rem > 20220722_191322
     </table>
 
     <h3>環境変数</h3>
+    <p>自分が分かりやすいように、環境変数の展開値を環境変数を使って書いています。</p>
     <table class="noCodeColor">
         <tr><th>変数</th><th>値</th></tr>
-        <tr><td><code>%HomeDrive%</code></td>  <td><code>C:\</code></td></tr>
-        <tr><td><code>%HomePath%</code></td>  <td><code>C:\Users\【ユーザ名】\</code></td></tr>
+        <tr><td><code>%HomeDrive%</code></td>  <td><code>C:</code></td></tr>
+        <tr><td><code>%HomePath%</code></td>  <td><code>C:\Users\【ユーザ名】</code></td></tr>
         <tr><td><code>%UserProfile%</code></td>  <td><code>%HomePath%</code></td></tr>
-        <tr><td><code></code></td>  <td><code></code></td></tr>
+        <tr><td><code>%AppData%</code></td>  <td><code>%HomePath%\AppData\Roaming</code></td></tr>
+        <tr><td><code>%LocalAppData%</code></td>  <td><code>%HomePath%\AppData\Local</code></td></tr>
+        <tr><td><code>%TEMP%</code></td>  <td><code>%LocalAppData%\Temp</code></td></tr>
+        <tr><td><code>%%</code></td>  <td><code></code></td></tr>
+        <tr><td><code>%%</code></td>  <td><code></code></td></tr>
 
         <!--
             <tr><td><code>%%</code></td>  <td><code></code></td></tr>
         -->
 
     </table>
+    <p><code>%AppData%</code>と<code>%LocalAppData%</code>の違いは、一般的な個人用ユーザーには現れない。学校などRoamingユーザーを利用しているとき、<code>%AppData%</code>内のデータは同じドメインのどのPCからも同様にアクセスできる。</p>
+
+
     <h3>ショートカットキー</h3>
         <table>
             <tr>
@@ -553,6 +574,8 @@ $ git stash
 <!-- Contact -->
 <div id="contact_contents">
     <h2>Contact</h2>
+    <p>誤字脱字衍字の指摘等はこちらから</p>
+    <p><a href="https://github.com/cheerppy/dev-note">GitHUB</a></p>
 </div>
 
 </main>
