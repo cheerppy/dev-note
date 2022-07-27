@@ -402,6 +402,12 @@ rem > 20220722_191322
     <p>対話式batスクリプトで使えそう？なので覚え書き。</p>
     <p><a href="https://www.javadrive.jp/command/display/index2.html" target="_blank" rel="noopener noreferrer">https://www.javadrive.jp/command/display/index2.html</a></p>
 
+    <h3><code class="noCodeColor">tasklist</code>, <code class="noCodeColor">taskkill</code></h3>
+    <pre>tasklist /v /fi "imagename eq explorer.exe"</pre>
+    <pre>tasklist /v /fi "imagename eq chrome.exe" | findstr /I ちあぴのデブ活のーと</pre>
+    <pre>taskill /fi "pid eq <i>&lt;pid&gt;</i>"</pre>
+    <p></p>
+
 <!-- Compiled Languages -->
 <div id="compiled_contents">
     <h2>Compiled Languages</h2>
@@ -511,7 +517,8 @@ rem > 20220722_191322
     <h3>リモートで友達のPCを操作する</h3>
         <p>
             「クイックアシスト」を利用する。<br>
-            旧バージョンはWin+Ctrl+Qで開けたが、新バージョンのショートカットは2022/07現在無さそう。
+            旧バージョンはWin+Ctrl+Qで開けたが、新バージョンのショートカットは2022/07現在無さそう。<br>
+            Win+R → <code>quickassist</code>でも旧バージョンを開く模様。
         </p>
 
     <h3>Directory名を英語にしたい</h3>
