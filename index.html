@@ -17,6 +17,7 @@
     </h1>
     <nav><ul>
         <a href="./"><li>HOME</li></a>
+        <a href="#regExp_contents"><li>正規表現</li></a>
         <a href="#html_contents"><li>HTML</li></a>
         <a href="#css_contents"><li>CSS</li></a>
         <a href="#js_contents"><li>JavaScript</li></a>
@@ -30,10 +31,53 @@
         <a href="#others_contents"><li>Others</li></a>
         <a href="#contact_contents"><li>Contact</li></a>
     </ul></nav>
+
+    
+<!-- Contents -->
+<!-- 
+<div id="_contents">
+    <h2>contents</h2>
+
+</div>
+-->
+
     
 </header>
  <!-- pane(予定) <div class="pane container" id="leftPane"></div>  -->
 <main id="main" class="container">
+
+    
+<!-- RegExp -->
+<div id="regExp_contents">
+    <h2>正規表現</h2>
+    <p>ここでは拡張正規表現のみを取り扱う。英語では(Extended) Regular Expression。</p>
+    <p>viなどBasic RegExpのみしか対応していないコマンドもある。</p>
+    <h3>エスケープが必要な文字</h3>
+    <p><code>\</code>によりエスケープされる。</p>
+        <code>\ ^ $ . [ ] * + ? { } ( ) |</code>
+    <p>jsなどで用いられるRegExpはEREをさらに拡張したものである。grepなど多くのコマンドはメタ文字には対応していない。</p>
+    <h3>凡例</h3>
+    <table>
+        <tr><th>正規表現</th><th>説明</th></tr>
+        <tr><td><code>.</code></td><td>任意の一字</td></tr>
+        <tr><td><code>a*</code></td><td><strong>aを</strong>0回以上</td></tr>
+        <tr><td><code>a+</code></td><td><strong>aを</strong>1回以上</td></tr>
+        <tr><td><code>a?</code></td><td><strong>aを</strong>0または1回</td></tr>
+        <tr><td><code><strong>.*</strong></code></td><td>任意の一字を0回以上→なんでもいい</td></tr>
+        <tr><td><code>[abc]</code></td><td>a or b or c</td></tr>
+        <tr><td><code>[^a-zA-Z0-9]</code></td><td>英数字以外の文字一字</td></tr>
+        <tr><th colspan="2">メタ文字</th></tr>
+        <tr><td><code>\d</code>, <code>\D</code></td><td><code>[0-9]</code>, <code>[^0-9]</code></td></tr>
+        <tr><td><code>\w</code>, <code>\W</code></td><td><code>[a-zA-Z_0-9]</code>, <code>[^\w]</code></td></tr>
+        <tr><td><code>\r</code>, <code>\f</code></td><td>復帰文字(CR), 改行文字(LF)</td></tr>
+        <tr><td><code>\s</code>, <code>\S</code></td><td><code>[\t\n\r\f]</code>, <code>[^\s]</code></td></tr>
+
+        <tr><th colspan="2">例</th></tr>
+        <tr><td><code>^(81\+\s|0)[789]0-?\d{4}-?\d{4}$</code></td><td>携帯電話番号</td></tr>
+    </table>
+
+    
+</div>
 
 
 <!-- html -->
@@ -558,7 +602,8 @@ $ fg 1
 
     <h3><code class="noCodeColor">grep</code>単体</h3>
     <p>ファイルから正規表現を検索し、当てはまる行を表示する</p>
-    <code>grep "<i>正規表現</i>" <i>ファイル名</i></code>
+    <p><code>grep -E</code>の代わりに<code>egrep</code>を使用してもよい。</p>
+    <code>grep -E "<i>正規表現</i>" <i>ファイル名</i></code>
 
 
 </div>
