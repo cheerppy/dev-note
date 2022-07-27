@@ -25,7 +25,8 @@
         <a href="#bat_contents"><li>bat Script</li></a>
         <a href="#compiled_contents"><li>Compiled Language</li></a>
         <a href="#lisence_contents"><li>Note For Lisence</li></a>
-        <a href="#other_contents"><li>Other</li></a>
+        <a href="#Windows_contents"><li>Windows</li></a>
+        <a href="#others_contents"><li>Others</li></a>
         <a href="#contact_contents"><li>Contact</li></a>
     </ul></nav>
     
@@ -36,7 +37,7 @@
 
 <!-- html -->
 <div id="html_contents">
-    <h2>html</h2>
+    <h2>HTML</h2>
 
     <h3>HTMLタグのエスケープ</h3>
 
@@ -418,10 +419,9 @@ rem > 20220722_191322
 </div>
 
 
-
-<!-- Other -->
-<div id="other_contents">
-    <h2>OTHER</h2>
+<!-- Windows -->
+<div id="Windows_contents">
+    <h2>Windows</h2>
     <h3>Win10 shortcut.lnk</h3>
     <p>Ctrl+ドラッグ＆ドロップでファイルのコピーを、Alt+ドラッグ＆ドロップでファイルのショートカットを作成できる。</p>
     <p>右クリドラッグ＆ドロップでも似たようなことが可能（選択できる）。</p>
@@ -443,6 +443,8 @@ rem > 20220722_191322
     </ul>
 
     <h3>Run...</h3>
+    <p>一覧以外でもPathさえ通っていれば何でも開く。（規定では拡張子<code>.lnk</code>は省略できないが<code>%PathExt%</code>を編集すると省略可能になる。）</p>
+    <p>Ctrl+Shift+Enterで管理者として実行する。</p>
     <table class="noCodeColor">
         <tr><th>コマンド</th><th>説明</th></tr>
         <tr><td><code>shell:startup</code></td><td><code>%AppData%\Microsoft\Windows\Start Menu\Programs\Startup</code></td></tr>
@@ -454,10 +456,20 @@ rem > 20220722_191322
         <tr><td><code>ms-clock:</code></td><td>Clock & Alarm</td></tr>
         <tr><td><code>calc</code></td><td>電卓</td></tr>
         <tr><td><code>control</code></td><td>すべてのコントロールパネル項目</td></tr>
+        <tr><td><code>rundll32 sysdm.cpl,EditEnvironmentVariables</code></td><td>環境変数の確認・編集（要管理者）</td></tr>
+    </table>
+
+    <p>以下自分用カスタムコマンド</p>
+    <table class="noCodeColor">
+        <tr><th>コマンド</th><th>説明</th></tr>
+        <tr><td><code>%Path%</code></td><td><code>%Path%;C:\cheerppy\shortcuts</code></td></tr>
+        <tr><td><code>note</code></td><td>notepad</td></tr>
+        <tr><td><code>clock</code></td><td>Clock & Alarm</td></tr>
+        <tr><td><code>alarm</code></td><td>Clock & Alarm</td></tr>
     </table>
 
     <h3>環境変数</h3>
-    <p>※自分が分かりやすいように、値に環境変数を使って書いています。</p>
+    <small>※自分が分かりやすいように、値に環境変数を使って書いています。</small>
     <table class="noCodeColor">
         <tr><th>変数</th><th>値</th></tr>
         <tr><td><code>%HomeDrive%</code></td>  <td><code>C:</code></td></tr>
@@ -496,6 +508,20 @@ rem > 20220722_191322
             旧バージョンはWin+Ctrl+Qで開けたが、新バージョンのショートカットは2022/07現在無さそう。
         </p>
 
+    <h3>Directory名を英語にしたい</h3>
+    <p>覚え書き</p>
+    <p><a href="https://ogacha.wordpress.com/2013/10/22/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%91%E3%82%B9%E5%90%8D%E3%81%A7%E3%82%B3%E3%82%B1%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/">https://ogacha.wordpress.com/2013/10/22/日本語パス名でコケる場合の対処法/</a></p>
+
+    <h3>OSが起動しない時</h3>
+    <p><a href="https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/" target="_blank" rel="noopener noreferrer">https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/</a></p>
+
+
+    
+</div>
+
+<!-- Others -->
+<div id="others_contents">
+    <h2>OTHERS</h2>
     <h3>ページの転送（リダイレクト）</h3>
     <p>
         以下のように記述する。
@@ -506,8 +532,6 @@ rem > 20220722_191322
 </pre>
     </p>
 
-    <h3>OSが起動しない時</h3>
-    <p><a href="https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/" target="_blank" rel="noopener noreferrer">https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/</a></p>
 
     <h3>Git</h3>
         <p>用語</p>
@@ -526,10 +550,7 @@ $ git stash
 </pre>
         
 
-    <h3>Directory名を英語にしたい</h3>
-    <p>覚え書き</p>
-    <p><a href="https://ogacha.wordpress.com/2013/10/22/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%91%E3%82%B9%E5%90%8D%E3%81%A7%E3%82%B3%E3%82%B1%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/">https://ogacha.wordpress.com/2013/10/22/日本語パス名でコケる場合の対処法/</a></p>
-
+    
 
 
 
