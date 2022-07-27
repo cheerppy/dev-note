@@ -26,6 +26,7 @@
         <a href="#compiled_contents"><li>Compiled Language</li></a>
         <a href="#lisence_contents"><li>Note For Lisence</li></a>
         <a href="#Windows_contents"><li>Windows</li></a>
+        <a href="#Linux_contents"><li>Linux</li></a>
         <a href="#others_contents"><li>Others</li></a>
         <a href="#contact_contents"><li>Contact</li></a>
     </ul></nav>
@@ -531,6 +532,37 @@ rem > 20220722_191322
 
     
 </div>
+
+
+<!-- Linux -->
+<div id="Linux_contents">
+    <h2>Linux</h2>
+    <h3>Terminal中のショートカットキー</h3>
+    <table>
+        <tr><th>コマンド</th><th>説明</th></tr>
+        <tr><td>Ctrl+A</td><td>行頭に移動</td></tr>
+        <tr><td>Ctrl+E</td><td>行末に移動</td></tr>
+        <tr><td>Ctrl+S</td><td>画面をロック</td></tr>
+        <tr><td>Ctrl+Q</td><td>ロックを解除</td></tr>
+        <tr><td>Ctrl+Z</td><td>処理を中断</td></tr>
+    </table>
+    <h4>Ctrl+Zで中断した処理を再開する</h4>
+    <p><code>jobs</code>でジョブ番号を確認し、<code>fg &lt;job no&gt;</code>を叩くと再開できる。</p>
+<pre>
+$ jobs
+[1]+ 停止       ping 8.8.8.8
+
+$ fg 1
+
+</pre>
+
+    <h3><code class="noCodeColor">grep</code>単体</h3>
+    <p>ファイルから正規表現を検索し、当てはまる行を表示する</p>
+    <code>grep "<i>正規表現</i>" <i>ファイル名</i></code>
+
+
+</div>
+
 
 <!-- Others -->
 <div id="others_contents">
