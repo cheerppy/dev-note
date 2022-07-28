@@ -706,6 +706,17 @@ $ git stash
 <!-- ############################################### -->
 
 <script>
+/*
+    +------------------+
+    | how to add color |
+    +------------------+
+
+  1. prepare color-name and color-code(HEX).
+  2. discription is option.
+  3. push over colors. arguments are: color-name, color-code [, discription].
+  4. that's all.
+
+*/
     const elem = document.getElementById("colorCode");
     const boxSize = {height:"50px",width:"780px",minWidth:"160px"}//[50, 780, 160];//height, width, minWidth
     elem.style.height = "auto";
@@ -714,13 +725,11 @@ $ git stash
     elem.style.border = "solid 1px #000000"
 
     class Color {
-        constructor(name, code, disc){
+        constructor(name, code, disc = ""){
             this.name = name;
             this.code = code;
-            this.disc = disc | "";
+            this.disc = disc;
         }
-
-
     }
 
     const colors = [];
@@ -735,14 +744,14 @@ $ git stash
     colors.push(new Color("pinkLace", "ffddf4"));
     colors.push(new Color("rosePink", "ff66cc"));
     colors.push(new Color("raspberry", "e30b5d", "ピンクっぽい赤"));
-    colors.push(new Color("lavenderblush", "fff0f5", "one of HTML color code and names"));
+    colors.push(new Color("lavenderblush", "fff0f5", "HTML Color Nameのうちの一つ"));
     colors.push(new Color("", ""));
     colors.push(new Color("", ""));
     colors.push(new Color("", ""));
 
     for(color of colors){
-        if(!color.code)continue;
-        elem.insertAdjacentHTML("beforeend", `<p id = ${color.name}>${color.name}<br>#${color.code}</p>`);
+        if(!color.code || !color.name)continue;
+        elem.insertAdjacentHTML("beforeend", `<p id = ${color.name} title="${color.disc}">${color.name}<br>#${color.code}</p>`);
         const box = document.getElementById(color.name);
         box.style.height = boxSize.height;
         box.style.width = "20%";
@@ -755,17 +764,10 @@ $ git stash
         if(
             codes && codes[0]+codes[1]+codes[2] <= 512
         ){box.style.color = "#ffffff"}else{box.style.color = "#000000"}
-        
-
     }
-
-
-
-
-
-
-
 </script>
+
+
 <script>
     const footer = getElementsByTagName("footer")[0]
     //footer.insertAdjacentHTML( "<p>最終更新：" + document.lastModified + "</p>" )
