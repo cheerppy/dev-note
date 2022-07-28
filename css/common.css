@@ -11,6 +11,13 @@
     src: url("https://note.cheerppy.xyz//font/RictyDiminishedDiscord-Regular.ttf") format("truetype");
   }
 
+img.emoji {
+height: 1em;
+width: 1em;
+margin: 0 .05em 0 .1em;
+vertical-align: -0.1em;
+}
+
 /* general box-size -------------*/
 html{
     display: flex;

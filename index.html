@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="src/img/ico/cheerppy.png" type="image/png">
         <title>ちあぴのデブ活のーと♡</title>
         <meta name="description" content="一ノ瀬ちあぴことcheerppyがdevelopper活動（デブ活）の中で学んだことをつらつら書き連ねるサイト。覚え書きとしてもよし、誰かに教えるときの教材としてもよし。そんなサイトを目指しています。">
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 
     </head>
 <body>
@@ -212,6 +213,15 @@
 
     <h3>flex チートシート</h3>
     <a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank" rel="noopener noreferrer">https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet</a>
+
+    <h3>hoverで表示される補足説明</h3>
+    <p><code>title</code>属性を付与することで、hoverで表示される補足説明を実装できる。</p>
+<pre title="example">
+&lt;pre title=&quot;example&quot;&gt; ここにhoverしてね &lt;/pre&gt;
+</pre>
+    <p>見ての通り非常に気づきにくいので、どこかに誘導が必要。CSSの::beforeでhoverしたくなる絵文字✏や画像を挿入するとか。</p>
+
+
 </div>
         
 
@@ -267,6 +277,7 @@
             <tr><td>margin: 2px 3px 4px 5px</td>    <td>上 右 下 左</td></tr>
         </table>
     <h3>color code usage</h3>
+    <p>（一部の色のみ）hoverで補足説明を表示する。</p>
     <p>
         参考サイト<br>
         <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank" rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
@@ -772,5 +783,5 @@ $ git stash
     const footer = getElementsByTagName("footer")[0]
     //footer.insertAdjacentHTML( "<p>最終更新：" + document.lastModified + "</p>" )
 </script>
-
+<script>twemoji.parse(document.body)</script>
 </html>
