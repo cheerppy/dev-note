@@ -1,3 +1,10 @@
+/* -- var -- */
+:root{
+    --pane-width: 300px;
+    --main-width: 1000px;
+}
+
+
 /* font download ----------------*/
 @font-face{
     font-family: "monospace";
@@ -31,7 +38,7 @@ header#header{
     color: #000000;
     background: linear-gradient(-20deg, pink,white, pink); 
     padding: 1rem 10%;
-    border-bottom: 5px solid #ffddf480;
+    border-bottom: 3px solid #ffddf480;
     width: 100%;
 }
 #subtitle{
@@ -43,10 +50,22 @@ footer#footer{
     padding: 2em 1em;
     width: 100%;
 }
+div#wrapper{
+    padding: 1rem calc(20% - 2 * var(--pane-width));
+    width: 100%;
+}
 main#main{
-    min-width: 80vw;
+    flex-grow: 1;
+    max-width: var(--main-width);
     padding: 0 30px;
-    margin: 10%;
+}
+div#leftPane,div#rightMargin{
+    width: var(--pane-width);
+    padding: 0px;
+    margin: 0px;
+}
+div#rightMargin{
+    order: 1;
 }
 a.button{
     cursor: pointer;
@@ -140,6 +159,7 @@ td,th{
     border-style: none, solid, none;
     border-collapse: collapse;
     padding: 0.3em 3px 3px;
+    white-space: nowrap;
 }
     /* --- change color in every row ---*/
     tr{background-color: pink;}
