@@ -745,8 +745,8 @@ $ git stash
         elem.insertAdjacentHTML("beforeend", `<p id = ${color.name}>${color.name}<br>#${color.code}</p>`);
         const box = document.getElementById(color.name);
         box.style.height = boxSize.height;
-        box.style.width = "25%";
-        box.style.maxWidth = "25%";
+        box.style.width = "20%";
+        box.style.flexGrow = 1;
         box.style.minWidth = boxSize.minWidth;
         box.style.backgroundColor = "#" + color.code;
         box.style.textAlign = "center";
