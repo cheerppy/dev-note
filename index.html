@@ -383,7 +383,7 @@ const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
 @echo off
 
 :setName
-set /p name="What's your name?" || set name=Annonymous
+set /p name="What's your name?" || set name=Anonymous
 echo %name% | find /i "cheerppy" && echo Hello World! || echo Hi, %name%
 
 :choice
@@ -400,10 +400,10 @@ if errorlevel == 3 goto choice
 @echo off
 
 cd > nul
-echo +++ Error hasn't occured. +++
+echo +++ Error hasn't occurred. +++
 echo %%errorlevel%% = %errorlevel%
 if errorlevel 0 echo invoked always
-if errorlevel 1 echo invoked only when Error occured
+if errorlevel 1 echo invoked only when Error occurred
 
 rem コマンド cd に成功
 rem 期待される出力結果: 
@@ -412,17 +412,17 @@ rem > invoked always
 
 type
 
-echo +++ Error has occured. +++
+echo +++ Error has occurred. +++
 echo %%errorlevel%% = %errorlevel%
 if errorlevel 0 echo invoked always
-if errorlevel 1 echo invoked only when Error occured
+if errorlevel 1 echo invoked only when Error occurred
 pause>nul
 
 rem typeは引数不足なのでエラーを返す
 rem 期待される出力結果: 
 rem > %errorlevel% = 1
 rem > invoked always
-rem > invoked only when Error occured
+rem > invoked only when Error occurred
 </pre>
     <p>
         <code>%ErrorLevel%</code>を直接<code>set</code>してはならない。そうしてしまうと、動的な定義を無効化して上書きしてしまい、期待される挙動を得られなくなってしまう。<br>
@@ -456,12 +456,12 @@ if %age% == 20 (
     echo %%age%%=%age% in the bracket
     echo ^^!age^^!=!age! in the bracket
 )
-echo %%age%%=%age% outside the blacket
+echo %%age%%=%age% outside the bracket
 
 rem 期待される出力結果: 
 rem > %age%=20 in the bracket
 rem > !age!=21 in the bracket
-rem > %age%=21 outside the blacket
+rem > %age%=21 outside the bracket
 </pre>
 
     <h3>右クリの送るメニューに表示</h3>
@@ -554,7 +554,7 @@ rem > 20220722_191322
     <table class="noCodeColor">
         <tr><th>変数</th><th>値</th></tr>
         <tr><td><code>%HomeDrive%</code></td>  <td><code>C:</code></td></tr>
-        <tr><td><code>%HomePath%</code></td>  <td><code>C:\Users\【ユーザ名】</code></td></tr>
+        <tr><td><code>%HomePath%</code></td>  <td><code>C:\Users\【ユーザー名】</code></td></tr>
         <tr><td><code>%UserProfile%</code></td>  <td><code>%HomePath%</code></td></tr>
         <tr><td><code>%AppData%</code></td>  <td><code>%HomePath%\AppData\Roaming</code></td></tr>
         <tr><td><code>%LocalAppData%</code></td>  <td><code>%HomePath%\AppData\Local</code></td></tr>
@@ -723,8 +723,8 @@ $ git stash
     +------------------+
 
   1. prepare color-name and color-code(HEX).
-  2. discription is option.
-  3. push over colors. arguments are: color-name, color-code [, discription].
+  2. description is option.
+  3. push over colors. arguments are: color-name, color-code [, description].
   4. that's all.
 
 */
@@ -736,10 +736,10 @@ $ git stash
     elem.style.border = "solid 1px #000000"
 
     class Color {
-        constructor(name, code, disc = ""){
+        constructor(name, code, desc = ""){
             this.name = name;
             this.code = code;
-            this.disc = disc;
+            this.desc = desc;
         }
     }
 
