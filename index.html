@@ -307,7 +307,18 @@
 
     <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
 <pre>
-pre{ white-space: pre-wrap; }</pre>
+pre{ white-space: pre-wrap; }
+</pre>
+
+    <h3>変数</h3>
+<pre>
+<span class="comment">/* 変数の宣言 */</span>
+:root{--favorite-color: pink;}
+
+<span class="comment">/* 変数の参照 */</span>
+main{background-color: var(--favorite-color);}
+</pre>
+
 </div>
         
 <!-- JavaScript -->
