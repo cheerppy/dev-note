@@ -93,6 +93,7 @@ nav ul{
 }
 nav a{
     flex:1 1 110px;
+    display: table;
     margin: 1px;
     border: thick ridge pink;
     background-color: pink;
@@ -102,7 +103,6 @@ nav li{
     vertical-align: middle;
     list-style-type: none;
     min-width: 100px;
-    width: 100px;
     height: 3em;
     text-align: center;
 }
