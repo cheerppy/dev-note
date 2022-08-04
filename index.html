@@ -762,7 +762,7 @@ $ git stash
 
     for(color of colors){
         if(!color.code || !color.name)continue;
-        elem.insertAdjacentHTML("beforeend", `<p id = ${color.name} title="${color.disc}">${color.name}<br>#${color.code}</p>`);
+        elem.insertAdjacentHTML("beforeend", `<p id = ${color.name} title="${color.desc}">${color.name}<br>#${color.code}</p>`);
         const box = document.getElementById(color.name);
         box.style.height = boxSize.height;
         box.style.width = "20%";
