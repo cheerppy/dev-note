@@ -9,7 +9,13 @@
 @font-face{
     font-family: "monospace";
     src: url("https://note.cheerppy.xyz//font/RictyDiminishedDiscord-Regular.ttf") format("truetype");
-  }
+}
+
+/*
+html{
+    font-family: "Noto Sans JP", 'Ariel', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}*/
 
 img.emoji {
 height: 1em;
