@@ -624,16 +624,16 @@ rem > 20220722_191322
         <tr><td>Ctrl+A</td><td>行頭に移動</td></tr>
         <tr><td>Ctrl+E</td><td>行末に移動</td></tr>
         <tr><td>Ctrl+S</td><td>画面をロック</td></tr>
-        <tr><td>Ctrl+Q</td><td>ロックを解除</td></tr>
+        <tr><td>Ctrl+Q</td><td>画面ロックを解除</td></tr>
         <tr><td>Ctrl+Z</td><td>処理を中断</td></tr>
     </table>
-    <h4>Ctrl+Zで中断した処理を再開する</h4>
-    <p><code>jobs</code>でジョブ番号を確認し、<code>fg &lt;job no&gt;</code>を叩くと再開できる。</p>
+    <h4></h4>
+    <p>Ctrl+Zで中断した処理は、<code>jobs</code>でジョブ番号を確認し、<code>fg &lt;job no&gt;</code>を叩くと再開できる。</p>
 <pre>
-$ jobs
+<span class="terminal">jobs</span>
 [1]+ 停止       ping 8.8.8.8
 
-$ fg 1
+<span class="terminal">fg 1</span>
 
 </pre>
 
@@ -672,8 +672,8 @@ $ fg 1
         <p>Git Bashなどを使ってCLI操作できる。</p>
         <p>まだコミットしていない変更点を破棄</p>
 <pre>
-$ git add .
-$ git stash
+<span class="terminal">git add .</span>
+<span class="terminal">git stash</span>
 </pre>
 
     <h3>データベース</h3>

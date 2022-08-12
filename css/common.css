@@ -187,6 +187,12 @@ pre,code{
     font-family: "monospace";
     font-size: 1em;
 }
+pre .terminal::before,code .terminal::before{
+    content: "$ ";
+}
+pre .su::before,code .su::before{
+    content: "# ";
+}
 pre{
     background-color: antiquewhite;
     padding: 10px 24px;     /*上下, 左右*/
