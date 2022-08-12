@@ -141,6 +141,7 @@ h3{border-bottom: 1px solid #000000;}
 .indented{display: block;text-indent:2em;}
 .noindent{display: auto;text-indent:0em;}
 .leftPadding{padding-left: 2em;}
+i{margin-right: 0.15em;}
 
 /* URI --------------------------*/
 a{
