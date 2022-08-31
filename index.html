@@ -277,12 +277,13 @@
     <p>16pxのとき約35文字表示される</p>
     <h3>font-size</h3>
     <p>標準は16px, 大き目なら18px</p>
+    <strong>ただし奇数ピクセルにしてはいけない</strong>
     <p>読む前提の文字は英小文字で12px, 日本語なら10pxが最小サイズ</p>
     <p>そもそもChromeは基本10px未満にしても10pxで表示される。</p>
     <p>文字の大きさの参考 <a href="https://blog.upshare.co.jp/2021/07/3730/" target="_blank" rel="noopener noreferrer">https://blog.upshare.co.jp/2021/07/3730/</a></p>
     <pre>html{ font-size: 16px; }</pre>
 
-    <h3>textbox</h3>
+    <h3>textbox風</h3>
     <p>width: auto</p>
 
     <h3>marginとpadding</h3>
@@ -335,8 +336,9 @@
 
     <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
 <pre>
-pre{ white-space: pre-wrap; }
+pre{white-space: pre-wrap;}
 </pre>
+    <p>逆に、長くても折り返さず横スクロールバーのタイプにしたいときは<code>pre{overflow: auto;}</code>にする。</p>
 
     <h3>変数</h3>
 <pre>
@@ -346,6 +348,10 @@ pre{ white-space: pre-wrap; }
 <span class="comment">/* 変数の参照 */</span>
 main{background-color: var(--favorite-color);}
 </pre>
+    
+    <p>正式にはカスタムプロパティ。</p>
+    <p>変数名はハイフン二つで始まる。慣例的に単語の区切りではスペースの代わりにハイフンを用いる。</p>
+    <p>上の例においてrootはただのスコープなので勿論htmlや特定のclass等でも構わない</p>
 
 </div>
         
