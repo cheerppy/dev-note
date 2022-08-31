@@ -658,6 +658,55 @@ rem > 20220722_191322
     <p><code>grep -E</code>の代わりに<code>egrep</code>を使用してもよい。</p>
     <code>grep -E "<i>正規表現</i>" <i>ファイル名</i></code>
 
+    <h3><code class="noCodeColor">awk</code></h3>
+        <p>表示形式を指定できる。Javaの<code>printf</code>のイメージ。</p>
+    <h3><code class="noCodeColor">sed</code></h3>
+        <p>検索・置換できる</p>
+    <h3><code class="noCodeColor">head -1</code></h3>
+        <p><code>tail</code>と同様に表示行数を指定できる。この場合、上から1行を表示。マイナスって意味じゃなくて引数指定のハイフン。</p>
+    <h3><code class="noCodeColor">pgrep -l</code></h3>
+        <p>プロセス名も表示</p>
+    <h3><code class="noCodeColor">pkill -e</code></h3>
+        <p>殺したプロセスを事後表示</p>
+    <h3><code class="noCodeColor">collumn -t -s, &lt;file&gt;</code></h3>
+        <p></p>
+        <table class="noCodeColor"><tr><td><code>-t</code></td><td>入力行のカラム数を判定して整形</td></tr>
+        <tr><td><code>-s</code></td><td>直後の文字を区切り文字として指定</td></tr></table>
+    <h3><code class="noCodeColor">more</code></h3>
+        <table class="noCodeColor">
+            <tr><td><code>h</code></td><td>helpを表示</td></tr>
+            <tr><td><code>/</code></td><td>検索</td></tr>
+            <tr><td><code>n</code></td><td>次の検索結果</td></tr>
+            <tr><td>Enter</td><td>次の行</td></tr>
+            <tr><td><code>d</code></td><td>次の11行</td></tr>
+            <tr><td>スペース</td><td>次のページ</td></tr>
+        </table>
+        <p><code>h</code>の結果が以下</p>
+<pre>
+Most commands optionally preceded by integer argument k.  Defaults in brackets.
+Star (*) indicates argument becomes new default.
+-------------------------------------------------------------------------------
+&lt;space&gt;                 Display next k lines of text [current screen size]
+z                       Display next k lines of text [current screen size]*
+&lt;return&gt;                Display next k lines of text [1]*
+d or ctrl-D             Scroll k lines [current scroll size, initially 11]*
+q or Q or &lt;interrupt&gt;   Exit from more
+s                       Skip forward k lines of text [1]
+f                       Skip forward k screenfuls of text [1]
+b or ctrl-B             Skip backwards k screenfuls of text [1]
+'                       Go to place where previous search started
+=                       Display current line number
+/&lt;regular expression&gt;   Search for kth occurrence of regular expression [1]
+n                       Search for kth occurrence of last r.e [1]
+!&lt;cmd&gt; or :!&lt;cmd&gt;       Execute &lt;cmd&gt; in a subshell
+v                       Start up /usr/bin/vi at current line
+ctrl-L                  Redraw screen
+:n                      Go to kth next file [1]
+:p                      Go to kth previous file [1]
+:f                      Display current file name and line number
+.                       Repeat previous command
+-------------------------------------------------------------------------------
+</pre>
 
 </div>
 
