@@ -248,7 +248,10 @@ ol{
 ul.dot{
     list-style-type: disc;
 }
-/*----*/
+/*-- display --*/
+.inlineBlock{
+    display: inline-block;
+}
 /*----*/
 /*----*/
 /*----*/
