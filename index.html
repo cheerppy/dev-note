@@ -75,7 +75,7 @@
 <div id="regExp_contents">
     <h2>正規表現</h2>
     <p>ここでは拡張正規表現のみを取り扱う。英語では(Extended) Regular Expression。</p>
-    <p>viなどBasic RegExpのみしか対応していないコマンドもある。</p>
+    <p>vimなどBasic RegExpのみしか対応していないコマンドもある。</p>
     <h3>エスケープが必要な文字</h3>
     <p><code>\</code>によりエスケープされる。</p>
         <code>\ ^ $ . [ ] * + ? { } ( ) |</code>
@@ -716,7 +716,34 @@ ctrl-L                  Redraw screen
 -------------------------------------------------------------------------------
 </pre>
 
-
+    <h3>Vim</h3>
+    <p>〈Insert〉モード</p>
+    <table>
+        <tr><td>{Esc}</td> <td>〈normal〉モード</td></tr>
+        <tr><td>{Shift}+↑, ↓</td> <td>Page up/down</td></tr>
+        <tr><td>{Shift}+→, ←</td> <td>次の単語、前の単語</td></tr>
+        <tr><td></td> <td></td></tr>
+        <tr><td></td> <td></td></tr>
+        <tr><td></td> <td></td></tr>
+        <tr><td></td> <td></td></tr>
+    </table>
+    <p>〈normal〉モード</p>
+    <table>
+        <tr><td>i</td> <td>〈Insert〉モード</td></tr>
+        <tr><td>u, :u, :undo</td> <td>Undo</td></tr>
+        <tr><td>{Ctrl}+R, :redo</td> <td>Redo</td></tr>
+        <tr><td>w, b</td> <td>次の単語、前の単語へ移動</td></tr>
+        <tr><td>b. e</td> <td>語頭、語末へ移動</td></tr>
+        <tr><td>0, $</td> <td>行頭、行末へ移動</td></tr>
+        <tr><td>/, n, {Shift}+N</td> <td>検索、次の検索、前の検索</td></tr>
+        <tr><td>v</td> <td>範囲選択開始</td></tr>
+        <tr><td>y, d, p</td> <td>コピー、カット、ペースト</td></tr>
+        <tr><td>yy, dd</td> <td>一行コピー、カット</td></tr>
+        <tr><td>diw</td> <td>単語カット</td></tr>
+        <tr><td></td> <td></td></tr>
+        <tr><td></td> <td></td></tr>
+        <tr><td></td> <td></td></tr>
+    </table>
 
 <!--
     <h3><code class="noCodeColor"></code></h3>
