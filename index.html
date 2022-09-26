@@ -383,6 +383,13 @@ const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
 <!-- Bash Script -->
 <div id="bash_contents">
     <h2>Bash Script</h2>
+    <h3>バッククォートと<code class="noCodeColor">$()</code></h3>
+    <p>どちらも同じように使われる。括弧内がコマンドの実行結果で置換される。バッククォートでネストする場合、エスケープが必要になる。</p>
+<pre>
+    echo "Now is $(date "+%Y/%m/%d %H:%M:%S")"
+    echo "Now is `date "+%Y/%m/%d %H:%M:%S"`"
+    someCommand `echo "Now is \`date "+%Y/%m/%d %H:%M:%S"\`"`
+</pre>
 </div>
 
 
