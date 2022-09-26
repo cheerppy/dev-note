@@ -372,10 +372,39 @@ main{background-color: var(--favorite-color);}
 <!-- node.js -->
 <div id="node_contents">
     <h2>node.js</h2>
-    <p>wait 関数</p>
+    <h3>wait 関数</h3>
 <pre>
 const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
+async function main(){
+    console.log("before 2000 ms");
+    await wait(2000);
+    console.log("after 2000 ms");
+}
+
+main();
 </pre>
+<pre>
+const {sleep, msleep} = require(sleep);
+
+console.log("Hello, World!!");
+msleep(500);
+console.log("after 0.5 second");
+sleep(3);
+console.log("after another 3 seconds");
+</pre>
+
+    <h3>for statement</h3>
+<pre>
+for (let i = 0; i < array.length; i++){
+    console.log(` array[${i}]: ${array[i]}` );
+}
+</pre>
+<pre>
+for (cmd of commands) {
+    execute(cmd);
+}
+</pre>
+
 
 </div>
 
@@ -383,12 +412,12 @@ const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
 <!-- Bash Script -->
 <div id="bash_contents">
     <h2>Bash Script</h2>
-    <h3>バッククォートと<code class="noCodeColor">$()</code></h3>
+    <h3>バッククォート<code class="noCodeColor">` ` </code> と<code class="noCodeColor">$()</code></h3>
     <p>どちらも同じように使われる。括弧内がコマンドの実行結果で置換される。バッククォートでネストする場合、エスケープが必要になる。</p>
 <pre>
-    echo "Now is $(date "+%Y/%m/%d %H:%M:%S")"
-    echo "Now is `date "+%Y/%m/%d %H:%M:%S"`"
-    someCommand `echo "Now is \`date "+%Y/%m/%d %H:%M:%S"\`"`
+echo "Now is $(date "+%Y/%m/%d %H:%M:%S")"
+echo "Now is ` date "+%Y/%m/%d %H:%M:%S"` "
+someCommand ` echo "Now is \` date "+%Y/%m/%d %H:%M:%S"\` "`
 </pre>
 </div>
 
