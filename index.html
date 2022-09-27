@@ -253,11 +253,13 @@
 <div id="css_contents">
     <h2>CSS</h2>
 
+
     <h3>コメントアウト</h3>
     <p>
         一行コメントアウトはなし。
         ブロックコメントは<code>/* */</code>で囲む。
     </p>
+
 
     <h3>改行</h3>
         <p>行末（中括弧の中）にセミコロンが必要</p>
@@ -279,6 +281,8 @@
         画像サイズはmax100%がよい</p>
     <p>文字コンテンツの幅は640pxくらいがおすすめ</p>
     <p>16pxのとき約35文字表示される</p>
+
+
     <h3>font-size</h3>
     <p>標準は16px, 大き目なら18px</p>
     <strong>ただし奇数ピクセルにしてはいけない</strong>
@@ -287,8 +291,10 @@
     <p>文字の大きさの参考 <a href="https://blog.upshare.co.jp/2021/07/3730/" target="_blank" rel="noopener noreferrer">https://blog.upshare.co.jp/2021/07/3730/</a></p>
     <pre>html{ font-size: 16px; }</pre>
 
+
     <h3>textbox風</h3>
     <p>width: auto</p>
+
 
     <h3>marginとpadding</h3>
         <p>marginがborderの外側、paddingが内側</p>
@@ -298,15 +304,14 @@
             <tr><td>margin: 2px 3px 4px</td>        <td>上 左右 下</td></tr>
             <tr><td>margin: 2px 3px 4px 5px</td>    <td>上 右 下 左</td></tr>
         </table>
-    <h3>color code usage</h3>
-    <p>以下の表は（一部の色のみ）hoverで補足説明を表示できるので参照のこと。</p>
-    <p>
-        参考サイト<br>
-        <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank" rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
-    </p>
-    <div id="colorCode" class="flexContainer container"></div>
-    <!-- body下scriptタグにJSで記述 -->
 
+
+    <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
+<pre>
+pre{white-space: pre-wrap;}
+</pre>
+    <p>逆に、長くても折り返さず横スクロールバーのタイプにしたいときは<code>pre{overflow: auto;}</code>にする。</p>
+        
     <h3>複数指定</h3>
     <p>
         複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
@@ -338,11 +343,6 @@
             <p class="child1 child2">World!!</p></div>
     </div>
 
-    <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
-<pre>
-pre{white-space: pre-wrap;}
-</pre>
-    <p>逆に、長くても折り返さず横スクロールバーのタイプにしたいときは<code>pre{overflow: auto;}</code>にする。</p>
 
     <h3>変数</h3>
 <pre>
@@ -352,13 +352,24 @@ pre{white-space: pre-wrap;}
 <span class="comment">/* 変数の参照 */</span>
 main{background-color: var(--favorite-color);}
 </pre>
-    
     <p>正式にはカスタムプロパティ。</p>
     <p>変数名はハイフン二つで始まる。慣例的に単語の区切りではスペースの代わりにハイフンを用いる。</p>
     <p>上の例においてrootはただのスコープなので勿論htmlや特定のclass等でも構わない</p>
 
-</div>
-        
+
+
+
+    <h3>color code usage</h3>
+    <p>以下の表は（一部の色のみ）hoverで補足説明を表示できるので参照のこと。</p>
+    <p>
+        参考サイト<br>
+        <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank" rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
+    </p>
+    <div id="colorCode" class="flexContainer container"></div>
+    <!-- body下scriptタグにJSで記述 -->
+</div><!-- CSS -->
+
+
 <!-- JavaScript -->
 <div id="js_contents">
     <h2>JavaScript</h2>
@@ -904,7 +915,7 @@ rem > 20220722_191322
     colors.push(new Color("rosePink", "ff66cc"));
     colors.push(new Color("raspberry", "e30b5d", "ピンクっぽい赤"));
     colors.push(new Color("lavenderblush", "fff0f5", "HTML Color Nameのうちの一つ"));
-    colors.push(new Color("", ""));
+    colors.push(new Color("", "ddfbff", "ffddf4と同明度・同彩度"));
     colors.push(new Color("", ""));
     colors.push(new Color("", ""));
 
