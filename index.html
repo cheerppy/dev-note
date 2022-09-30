@@ -116,14 +116,21 @@
 
     <p>
         &amp;amp;などの特殊文字に置き換えることでエスケープする。<br>
-        主な記号は以下の通り。<br>
-    </p>
+        主な記号は以下の通り。
         <table>
-
+            <tr><th>記号</th><th>文字参照</th><th>数字参照</th><th>unicode</th></tr>
+            <tr><td>&lt;</td><td>&amp;lt;</td><td>&amp;#60;</td><td>U+3C</td></tr>
+            <tr><td>&gt;</td><td>&amp;gt;</td><td>&amp;#62;</td><td>U+3E</td></tr>
+            <tr><td>&amp;</td><td>&amp;amp;</td><td>&amp;#38;</td><td>U+26</td></tr>
+            <tr><td>&quot;</td><td>&amp;quot;</td><td>&amp;#34;</td><td>U+22</td></tr>
+            <tr><td>&apos;</td><td>&amp;apos;</td><td>&amp;#39;</td><td>U+27</td></tr>
+            <tr><td>&copy;</td><td>&amp;copy;</td><td>&amp;#169;</td><td>U+A9</td></tr>
+            <tr><td>&nbsp;</td><td>&amp;nbsp;</td><td>&amp;#160;</td><td>U+A0</td></tr>
+            <tr><td>&#32;</td><td></td><td>&amp;#32;</td><td>U+20</td></tr>
         </table><br>
-    <p>
-        
-        変換してくれるサイトもある<br>
+        文字参照はXML用、数字参照はHTML用だが、HTMLでも文字参照を使える。&amp;#x20;のように16進の数字参照も可能。<br>
+        変換してくれるサイトもある。<br>
+        nbspは、例えば<code class="noCodeColor">120&nbsp;km</code>のように、空白を置きたいが改行されたくない時に使う。spaceの文字参照は無い。<br>
         <a href="https://tech-unlimited.com/escape.html" target="_blank" rel="noopener noreferrer">https://tech-unlimited.com/escape.html</a>
     </p>
 
