@@ -563,6 +563,12 @@ rem > %age%=21 outside the bracket
 echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%
 rem > 20220722_191322
 </pre>
+
+<pre>
+powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"
+rem > 1675395329
+</pre>
+    
     <h3>プロンプトの変更</h3>
     <p>対話式batスクリプトで使えそう？なので覚え書き。</p>
     <p><a href="https://www.javadrive.jp/command/display/index2.html" target="_blank" rel="noopener noreferrer">https://www.javadrive.jp/command/display/index2.html</a></p>
@@ -681,8 +687,7 @@ rem > 20220722_191322
     <h3>リモートで友達のPCを操作する</h3>
         <p>
             「クイックアシスト」を利用する。<br>
-            旧バージョンはWin+Ctrl+Qで開けたが、新バージョンのショートカットは2022/07現在無さそう。<br>
-            Win+R → <code>quickassist</code>でも旧バージョンを開く模様。
+            Win+Ctrl+QまたはWin+R → <code>quickassist</code>で開く。
         </p>
 
     <h3>Directory名を英語にしたい</h3>
