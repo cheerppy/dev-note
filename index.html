@@ -385,7 +385,36 @@ main{background-color: var(--favorite-color);}
     <h3>ブックマークレット</h3>
     <p>WEBサイトのTitleとURLを取得する</p>
     <pre>javascript:window.prompt("",document.title +"\n"+ location.href);void(0);</pre>
-
+    <h3>環状配列</h3>
+<pre>
+class List{
+    constructor(array){
+        this.members=array;
+        this.#index=0;
+    }
+    get index(){return this.#index}
+    next(){this.#index=(this.#index+1)%this.members.length; return this.#index;}
+}
+</pre>
+    
+    <h3>classのサンプル</h3>
+<pre>
+class Person{
+    constructor(firstName,lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = "NEET"
+    }
+    get fullName(){return this.firstName+" "+this.lastName}
+}
+class Student extends Person{
+    constructor(firstName,lastName,teacher){
+        super(firstName,lastName);
+        this.teacher = teacher || new Teacher("Jane", "Does",[]);
+        this.title = "student"
+    }
+}
+</pre>
 </div>
 <!-- node.js -->
 <div id="node_contents">
