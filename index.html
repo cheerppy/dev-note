@@ -415,6 +415,17 @@ class Student extends Person{
     }
 }
 </pre>
+    <h3>console.logをもっと使いやすく</h3>
+<pre>
+    var black = '\u001b[30m';var red = '\u001b[31m';var green = '\u001b[32m';var yellow = '\u001b[33m';
+    var blue = '\u001b[34m';var magenta = '\u001b[35m';var cyan = '\u001b[36m';var white = '\u001b[37m';
+    var gray = '\u001b[90m';var reset = '\u001b[0m';
+    const consolelog = console.log;console.log = (...a) => consolelog(strJst(getJst()), ...a);
+    const consoleerror = console.error;console.error = (...a) => consoleerror(strJst(getJst()),"<CRP ERROR>\n", yellow, ...a, reset);
+    console.errorln = (...a) => consoleerror(strJst(getJst()),"<CRP ERROR>", yellow, ...a, reset);
+    console.gray = (...a) => consolelog(strJst(getJst()) + gray, ...a, reset);
+</pre>
+
 </div>
 <!-- node.js -->
 <div id="node_contents">
@@ -833,6 +844,17 @@ rem > 1675395329
 <!-- Others -->
 <div id="others_contents">
     <h2>OTHERS</h2>
+    <h3>糖衣構文（シンタックスシュガー；"Syntax Sugar"）とは</h3>
+    <p>同じことを別の書き方でも書けるよ、という意味</p>
+
+<!--
+
+<pre>
+const isAdalt = age =&gt; age 
+</pre>
+
+-->
+
     <h3>ページの転送（リダイレクト）</h3>
     <p>
         以下のように記述する。
