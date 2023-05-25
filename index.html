@@ -857,6 +857,8 @@ rem > 1675395329
 <div id="git_contents">
     <h2>Git</h2>
     <p>Git Bashなどを使ってCLI操作できる。</p>
+    <p>HEADのエイリアスとして<code>@</code>が使える。</p>
+    <p><code>@~n</code>はn個前のコミットの意。</p>
         <h3>用語</h3>
         <table class="noCodeColor">
             <tr><th>単語</th><th>説明</th></tr>
@@ -871,6 +873,16 @@ rem > 1675395329
 <pre>
 <span class="terminal">git add .</span>
 <span class="terminal">git stash</span>
+</pre>
+        <p>
+            <code>git stash apply</code>でもとに戻せる。
+            適用の際にstash listから消したいときは<code>git stash pop</code>とすればよい。
+        </p>
+
+        <h3>直前のコミットをキャンセル</h3>
+        <p>コミット直前（ステージした状態）に戻す</p>
+<pre>
+<span class="terminal">git reset --soft @~</span>
 </pre>
 
         <h3>コミットメッセージの編集</h3>
@@ -889,6 +901,29 @@ rem > 1675395329
             とする。
         </p>
 
+        <h3>最終手段・行動のキャンセル</h3>
+        <p>直前の行動をキャンセルする場合、</p>
+<pre>
+<span class="terminal">git reset --hard <a href="https://culage.hatenablog.com/entry/20151216/p2">ORIG_HEAD</a></span>
+</pre>
+
+        <p>もう少し前に戻したい場合、まず行動履歴を確認する</p>
+<pre>
+<span class="terminal">git reflog</span>
+o32y984 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: add some contents
+2308ru2 HEAD@{1}: commit: fix readme
+a3eyr73 HEAD@{2}: commit: add readme
+aw983f3 HEAD@{3}: commit: initial commit
+</pre>
+        <p>
+            戻りたい位置を指定する。例えばHEAD@{2}（@@{2}）なら、
+<pre>
+<span class="terminal">git reset --hard HEAD@{2}</span>  <span class="comment"># @@{2}でもよい</span>
+</pre>
+            ……resetはresetで取り消す！！
+        </p>
+
+
         <h3>リモートリポジトリの登録</h3>
         <p>
             <code>git init</code>で既にローカルリポジトリ化しているフォルダをリモートリポジトリと結びつける。
@@ -904,6 +939,11 @@ rem > 1675395329
 <span class="terminal">git config --global alias.co 'checkout'</span>
 <span class="terminal">git config --global alias.edit 'commit --amend'</span>
 <span class="terminal">git config --global alias.ah '!cat "git config --global alias.co \'checkout\'"'</span>    <span class="comment"># 外部コマンドも使える</span>
+</pre>
+
+        <p>テキストエディタでエイリアスやconfigを確認</p>
+<pre>
+<span class="terminal">git config --global --edit</span>
 </pre>
 
 </div>
