@@ -210,6 +210,8 @@ pre{
     border-radius: 5px;
     /*white-space: pre-wrap;*/
     overflow: auto;
+    tab-size: 4;
+    -moz-tab-size: 4;
 }
 
 code{
@@ -219,6 +221,8 @@ code{
     padding: 3px;
     font-size: 1em;
     border-radius: 6px;
+    tab-size: 4; /* white-space: pre; じゃないと効かないかも -> https://developer.mozilla.org/ja/docs/Web/CSS/tab-size#comparing_to_the_default_size */
+    -moz-tab-size: 4; /* white-space: pre; じゃないと効かないかも -> https://developer.mozilla.org/ja/docs/Web/CSS/tab-size#comparing_to_the_default_size */
 }
 .noCodeColor pre{
     background-color: transparent;
@@ -252,7 +256,13 @@ ul.dot{
 .inlineBlockContainer > *{
     display: inline-block;
 }
-/*----*/
+
+/*-- deleted line (取り消し線) --*/
+.deleted {
+    color: red;
+    text-decoration: line-through double;
+}
+
 /*----*/
 /*----*/
 /*----*/

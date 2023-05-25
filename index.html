@@ -37,6 +37,7 @@
         <a href="#lisence_contents"><li>Lisence</li></a>
         <a href="#Windows_contents"><li>Windows</li></a>
         <a href="#Linux_contents"><li>Linux</li></a>
+        <a href="#git_contents"><li>Git</li></a>
         <a href="#others_contents"><li>Others</li></a>
         <a href="#contact_contents"><li>Contact</li></a>
     </ul></nav>
@@ -702,6 +703,9 @@ rem > 1675395329
         <tr><td><code>%AppData%</code></td>  <td><code>%HomePath%\AppData\Roaming</code></td></tr>
         <tr><td><code>%LocalAppData%</code></td>  <td><code>%HomePath%\AppData\Local</code></td></tr>
         <tr><td><code>%TEMP%</code></td>  <td><code>%LocalAppData%\Temp</code></td></tr>
+        <tr><td><code>%0</code></td>  <td>コマンド名</td></tr>
+        <tr><td><code>%1</code></td>  <td>第一引数</td></tr>
+
     </table>
     <p><code>%AppData%</code>と<code>%LocalAppData%</code>の違いは、一般的な個人用ユーザーには現れない。学校などRoamingユーザーを利用しているとき、<code>%AppData%</code>内のデータは同じドメインのどのPCからも同様にアクセスできる。</p>
 
@@ -709,6 +713,8 @@ rem > 1675395329
     <h3>ショートカットキー</h3>
         <table>
             <tr><th>キー</th><th>説明</th></tr>
+            <tr><td>Win+X -> C</td><td>cmdを起動</td></tr>
+            <tr><td>Win+X -> A</td><td>cmdを管理者で起動</td></tr>
             <tr><td>Win+D</td><td>Desktopを表示</td></tr>
             <tr><td>Win+E</td><td>explorerを開く</td></tr>
             <tr><td>Win+L</td><td>画面をロック</td></tr>
@@ -848,6 +854,60 @@ rem > 1675395329
 -->
 </div>
 
+<div id="git_contents">
+    <h2>Git</h2>
+    <p>Git Bashなどを使ってCLI操作できる。</p>
+        <h3>用語</h3>
+        <table class="noCodeColor">
+            <tr><th>単語</th><th>説明</th></tr>
+            <tr><td>repository</td><td>user/project毎に一つ用意する「フォルダ」。以下repo。</td></tr>
+            <tr><td>local repo</td><td><code>.git\</code>があるディレクトリ。</td></tr>
+            <tr><td>fetch</td><td>他人のremote repoから自分のremote repoにコピーすること。</td></tr>
+            <tr><td>clone</td><td>自分のremote repoからlocal repoにダウンロードすること。</td></tr>
+        </table>
+
+        <h3>変更の退避</h3>
+        <p>コミットしたくないけどブランチを移動したい、けど後で作業の続きをしたい時などに使う。</p>
+<pre>
+<span class="terminal">git add .</span>
+<span class="terminal">git stash</span>
+</pre>
+
+        <h3>コミットメッセージの編集</h3>
+        <p>ローカルのみ。</p>
+<pre>
+<span class="terminal">git commit --amend -m "修正後メッセージ"</span>
+</pre>
+
+        <h3>コミットの編集　※危険度2</h3>
+        <p>ローカルのみ。リモートのコミットの編集は危険度2。理解して作業すること。</p>
+        <p>
+            直前のコミットを編集するなら、<code>HEAD~2</code>に移動したいので
+<pre>
+<span class="terminal">git rebase -i @~2</span>
+</pre>
+            とする。
+        </p>
+
+        <h3>リモートリポジトリの登録</h3>
+        <p>
+            <code>git init</code>で既にローカルリポジトリ化しているフォルダをリモートリポジトリと結びつける。
+        </p>
+
+<pre>
+<span class="terminal">git remote add origin https://github.com/user-name/repository-name.git</span>
+</pre>
+
+        <h3>エイリアス</h3>
+        <p>詳細は<a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-Git-%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9">こちら</a></p>
+<pre>
+<span class="terminal">git config --global alias.co 'checkout'</span>
+<span class="terminal">git config --global alias.edit 'commit --amend'</span>
+<span class="terminal">git config --global alias.ah '!cat "git config --global alias.co \'checkout\'"'</span>    <span class="comment"># 外部コマンドも使える</span>
+</pre>
+
+</div>
+
 
 <!-- Others -->
 <div id="others_contents">
@@ -877,21 +937,7 @@ const isAdalt = age =&gt; age
     <a href="https://pc-karuma.net/use-bitlocker-for-encryption-on-removable-drives-windows-10/" target="_blank" rel="noopener noreferrer">https://pc-karuma.net/use-bitlocker-for-encryption-on-removable-drives-windows-10/</a>
 
 
-    <h3>Git</h3>
-        <p>用語</p>
-        <table class="noCodeColor">
-            <tr><th>単語</th><th>説明</th></tr>
-            <tr><td>repository</td><td>user/project毎に一つ用意する「フォルダ」。以下repo。</td></tr>
-            <tr><td>local repo</td><td><code>.git\</code>があるディレクトリ。</td></tr>
-            <tr><td>fetch</td><td>他人のremote repoから自分のremote repoにコピーすること。</td></tr>
-            <tr><td>clone</td><td>自分のremote repoからlocal repoにダウンロードすること。</td></tr>
-        </table>
-        <p>Git Bashなどを使ってCLI操作できる。</p>
-        <p>まだコミットしていない変更点を破棄</p>
-<pre>
-<span class="terminal">git add .</span>
-<span class="terminal">git stash</span>
-</pre>
+
 
     <h3>データベース</h3>
         <p>ここを読んで勉強できる。</p>
@@ -901,7 +947,7 @@ const isAdalt = age =&gt; age
         <p>excelなどのタイトルバーにフルパスを表示</p>
         <pre>ActiveWindow.Caption = ActiveWorkbook.FullName</pre>
     <h3>元素</h3>
-    <table title="実はちあぴは化学が専門（クソどうでもいい）">
+    <table title="実はちあぴは化学専攻（クソどうでもいい）">
         <tr><th>番号</th><th>記号</th><th>元素名</th></tr>
         <tr><td>112</td><td>Cn</td><td>コペルニシウム</td></tr>
         <tr><td>113</td><td>Nh</td><td>ニホニウム</td></tr>
