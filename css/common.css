@@ -263,7 +263,12 @@ ul.dot{
     text-decoration: line-through double;
 }
 
-/*----*/
+/*-- header --*/
+header{
+    position: sticky;
+    top:0;
+}
+
 /*----*/
 /*----*/
 /*----*/
