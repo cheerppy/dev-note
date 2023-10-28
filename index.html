@@ -34,7 +34,7 @@
         <a href="#bash_contents"><li>Bash Script</li></a>
         <a href="#bat_contents"><li>bat Script</li></a>
         <a href="#compiled_contents"><li>Compiled Language</li></a>
-        <a href="#lisence_contents"><li>Lisence</li></a>
+        <a href="#license_contents"><li>License</li></a>
         <a href="#Windows_contents"><li>Windows</li></a>
         <a href="#Linux_contents"><li>Linux</li></a>
         <a href="#git_contents"><li>Git</li></a>
@@ -625,18 +625,186 @@ rem > 1675395329
     <h3><code class="noCodeColor">tasklist</code>, <code class="noCodeColor">taskkill</code></h3>
     <pre>tasklist /v /fi "imagename eq explorer.exe"</pre>
     <pre>tasklist /v /fi "imagename eq chrome.exe" | findstr /I ちあぴのデブ活のーと</pre>
-    <pre>taskill /fi "pid eq <i>&lt;pid&gt;</i>"</pre>
+    <pre>taskkill /fi "pid eq <i>&lt;pid&gt;</i>"</pre>
     <p></p>
 
 <!-- Compiled Languages -->
 <div id="compiled_contents">
     <h2>Compiled Languages</h2>
+    <section>
+        <h3>C-Lang</h3>
+
+        <section>
+            <h4>呪文</h4>
+            <p>キーワード(global変数)を使用するためにincludeする</p>
+            <table>
+                <tr></tr>
+            </table>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+int main(void) {
+    // ここにコードを記述
+    return 0;
+}
+</pre>
+        </section>
+
+
+        <section>
+            <h4>標準出力</h4>
+            <p><pre>printf("hello world!\n");</pre></p>
+            <p>最後改行されないので自分で\nを入れる</p>
+        </section>
+        <section>
+            <h4>標準入力</h4>
+<pre>
+int age;
+printf("how old are you?\n\t> ");
+scanf("%d", &amp;age);
+printf("you are %d years old!\n", age);
+</pre>
+            <p>
+                "&amp;"はポインタ
+            </p>
+        </section>
+        <section>
+            <h4>データ型</h4>
+<pre>
+int age;
+double height = 163.1;
+char sex = 'F';
+
+// 文字列はcharの配列で表現し、最後にnull文字('\0'あるいは0)で終わる。
+char text1 [4] = {'F', 'o', 'o', '\0'};
+char text2 [4]; text2[0] = 'B'; text2[1] = 'a'; text2[2] = 'r'; text2[3] = 0;
+char text3 [4] = "Baz";
+printf("%s%s%s", text1, text2, text3); // => FooBarBaz
+</pre>
+
+        </section>
+        <section>
+            <h4>for, if</h4>
+            <p>等価演算子は<code>==</code></p>
+<pre>
+int judgeAdult(int i) {
+    int adultAge = 18;
+
+    if (i &lt; 0) {
+        return 1; // 異常終了
+    }
+    else if (i &gt;= adultAge) {
+        printf(&quot;you are adult!\n&quot;);
+        return 0; // 正常終了
+    }
+    else {
+        printf(&quot;you are too young!\n&quot;);
+        return 0;
+    }
+}
+</pre>
+<pre>
+// C言語の歴史的にはイベントハンドラでよく使われる
+// switch文はフォールスルーできる
+```
+switch (country) {
+    case Country.Japan:
+        lang = Lang.Japanese; break;
+
+    case Country.China:
+        lang = Lang.China; break;
+
+    case Country.Brazil:
+    case Country.Portugal:
+        lang = Lang.Portuguese; break;
+
+    default:
+        lang = Lang.English;
+}
+```
+</pre>
+<pre>
+int i = 0;
+while (i &lt; 3) {
+    i++;
+    printf(&quot;i = %d, &quot;, i);
+}
+printf(&quot;result: %d&quot;, i); // =&gt; 1, 2, 3, result: 3
+</pre>
+<pre>
+for (int i = 0; i &lt; 3; i++) {
+    printf(&quot;i = %d, &quot;, i);
+}
+// 繰返し変数iはブロック外から参照できてしまう
+printf(&quot;result: %d&quot;, i); // =&gt; 0, 1, 2, result: 3
+
+</pre>
+
+        </section>
+        <section>
+            <h4>配列、構造体</h4>
+            
+<pre>
+typedef struct {
+    int age;
+    double height;
+    char sex; // M or F
+} Person;
+
+Person john = {22, 173.2, 'M'};
+Person jane;
+jane.age = 20;
+jane.height = 158.1;
+jane.sex = 'F';
+
+</pre>
+
+        </section>
+        <section>
+            <h4>ポインタ</h4>
+<pre>
+int num; int* pnum;
+
+num = 100;
+printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
+
+printf(&quot;\n// pnumはポインタ変数\n&quot;);
+pnum = &amp;num;
+printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span>
+printf(&quot;&amp;num = %p\n&quot;, &amp;num); <span class="comment">// =&gt; 0x7fff12</span>
+
+printf(&quot;\n// ポインタから参照先の値を取得することもできる\n&quot;);
+printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
+printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span>
+printf(&quot;*(&amp;num) = %d\n&quot;, *(&amp;num)); <span class="comment">// =&gt; 100</span>
+
+printf(&quot;\n// pnumのアドレスも参照できる。intは4byteなので, &amp;pnumは&amp;num+4の値を取る\n&quot;);
+printf(&quot;&amp;num = %p\n&quot;, &amp;num); <span class="comment">// =&gt; 0x7fff12</span>
+printf(&quot;&amp;pnum = %p\n&quot;, &amp;pnum); <span class="comment">// =&gt; 0x7fff16</span>
+
+printf(&quot;\n// pnumの操作がnumに影響を与える\n&quot;);
+*pnum = 200;
+printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span>
+printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span>
+printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
+
+printf(&quot;\n// 逆もまたしかり\n&quot;);
+num = 300;
+printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span>
+printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span>
+printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
+
+</pre>
+        </section>
+    </section>
+
 </div>
 
 
-<!-- LISENCE -->
-<div id="lisence_contents">
-    <h2>LISENCE</h2>
+<!-- LICENSE -->
+<div id="license_contents">
+    <h2>LICENSE</h2>
     <h3>ソフトウェアライセンスおすすめ</h3>
     <p>MIT</p>
     <h3>ライセンス汚染</h3>
@@ -962,7 +1130,7 @@ aw983f3 HEAD@{3}: commit: initial commit
 <!--
 
 <pre>
-const isAdalt = age =&gt; age 
+const isAdult = age =&gt; age 
 </pre>
 
 -->
@@ -977,7 +1145,7 @@ const isAdalt = age =&gt; age
 </pre>
     </p>
     <h3>USBメモリにパスワードをかける方法</h3>
-    <p>Bitlockerを使う。</p>
+    <p>BitLockerを使う。</p>
     <a href="https://pc-karuma.net/use-bitlocker-for-encryption-on-removable-drives-windows-10/" target="_blank" rel="noopener noreferrer">https://pc-karuma.net/use-bitlocker-for-encryption-on-removable-drives-windows-10/</a>
 
 
@@ -1104,12 +1272,22 @@ const isAdalt = age =&gt; age
         const codes = color.code? [color.code.slice(0,2),color.code.slice(2,4),color.code.slice(4,6)].map(hex=>parseInt(hex, 16)):[];
         if(
             codes && codes[0]+codes[1]+codes[2] <= 512
-        ){box.style.color = "#ffffff"}else{box.style.color = "#000000"}
+        ){ box.style.color = "#ffffff" } else { box.style.color = "#000000" }
     }
 </script>
 
 
 <script>
+    const main = document.getElementsByTagName("main")[0]
+    const header = document.getElementsByTagName("header")[0]
+    const headerHeight = header.clientHeight
+    // document.write(headerHeight)
+    // main.style.scrollPaddingTop = headerHeight + "px";
+    main.style.paddingTop = headerHeight + "px";
+    main.style.marginTop = -headerHeight + "px";
+    // document.write(main.style.marginTop)
+    
+
     const footer = getElementsByTagName("footer")[0]
     //footer.insertAdjacentHTML( "<p>最終更新：" + document.lastModified + "</p>" )
 </script>
