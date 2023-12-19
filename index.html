@@ -617,6 +617,30 @@ rem > 20220722_191322
 powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"
 rem > 1675395329
 </pre>
+
+    <h3>クリップボードのイメージに名前を付けて保存</h3>
+<pre>
+@echo off
+setLocal
+
+set dirPath=%UserProfile%\OneDrive\画像
+set fileName=sample-image.jpg
+set filePath=%dirPath%\%fileName%
+
+set script=(Get-Clipboard -Format Image).Save("%filePath%",[System.Drawing.Imaging.ImageFormat]::Jpeg)
+REM script=(Get-Clipboard -Format Image).Save("%PNG_Path%",[System.Drawing.Imaging.ImageFormat]::Png) とすればPNG保存できる
+set script=%script:"=\"%
+powershell -Command "%script%"
+
+if %ERRORLEVEL% neq 0 (
+    echo.
+    echo Press any key to exit . . .
+    pause > null
+    exit 1
+)
+
+explorer /select,"%filePath%"
+</pre>
     
     <h3>プロンプトの変更</h3>
     <p>対話式batスクリプトで使えそう？なので覚え書き。</p>
