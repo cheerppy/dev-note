@@ -2,7 +2,15 @@
 :root{
     --pane-width: 300px;
     --main-width: 1000px;
+    --min-width: 600px;
+    --header-height: 120px;
 }
+
+/* @media (min-width: 1080px) {
+    :root {
+        --header-height: 80px;
+    }
+} */
 
 
 /* font download ----------------*/
@@ -23,6 +31,8 @@
 html{
     font-family: 'Segoe UI', 'メイリオ', 'Meiryo', 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans Japanese', 'Ariel', 'ＭＳ ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
     font-weight: 400;
+    scroll-padding-top: var(--header-height);
+    /* scroll-padding-top: 200px; */
 }
 
 img.emoji {
@@ -56,11 +66,21 @@ body{
     width: 100%;
 }
 header#header{
+    display: flex;
+    justify-content: center;
     color: #000000;
     background: linear-gradient(-20deg, pink,white, pink); 
-    padding: 1rem 10%;
+    /* padding-inline: 5%; */
     border-bottom: 3px solid #ffddf480;
     width: 100%;
+    align-items: center;
+    height: var(--header-height);
+    min-width: var(--min-width);
+}
+header h1 {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 1rem 10%; */
 }
 #subtitle{
     display: inline-block;
@@ -75,9 +95,11 @@ div#wrapper{
     padding: 1rem calc(20% - 2 * var(--pane-width));
     width: 100%;
 }
+body>*>*,
 main#main{
     flex-grow: 1;
     max-width: var(--main-width);
+    min-width: var(--min-width);
     padding: 0 30px;
 }
 div#leftPane,div#rightMargin{
@@ -96,10 +118,34 @@ a.button{
 svg {fill: currentColor;}
 
 
-/* nav --------------------------*/
-nav{
-    margin: 8px;
+:has(#hamburger:checked) svg.hamburger{
+    fill: white;
+    stroke: #f6adc6;
 }
+svg.hamburger {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    fill: #f6adc6;
+    stroke: white;
+}
+
+
+/* nav --------------------------*/
+:has(#hamburger:checked) nav {
+    left: 0%;
+}
+nav{
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    top: var(--header-height);
+    z-index: 5;
+    transition: all 0.15s;
+    left: 100%;
+}
+
+
 nav ul{
     display: flex;
     flex-wrap: wrap;

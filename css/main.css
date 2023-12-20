@@ -1,3 +1,4 @@
+
 /* HTML -------------*/
 /* CSS --------------*/
 #parent見本 .parent,.child2{
@@ -11,7 +12,6 @@
 #parent見本 .child1.child2::after{
     content: "  <- after";
 }
-
 
 /* node -------------*/
 /* JS ---------------*/
