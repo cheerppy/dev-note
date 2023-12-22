@@ -1,113 +1,69 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" href="src/img/ico/cheerppy.png" type="image/png" />
+    <title>ちあぴのデブ活のーと♡</title>
+    <meta name="description" content="一ノ瀬ちあぴことcheerppyがdeveloper活動（デブ活）の中で学んだことをつらつら書き連ねるサイト。覚え書きとしてもよし、誰かに教えるときの教材としてもよし。そんなサイトを目指しています。" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="HOME | ちあぴのデブ活のーと♡" />
+    <meta name="twitter:image" content="src/img/ico/cheerppy.png" />
+    <meta property="og:image" content="src/img/ico/cheerppy.png" />
+    <meta property="og:site_name" content="ちあぴのデブ活のーと♡" />
+    <meta property="og:type" content="website" />
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="css/common.css" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="shortcut icon" href="src/img/ico/cheerppy.png" type="image/png">
-  <title>ちあぴのデブ活のーと♡</title>
-  <meta name="description"
-    content="一ノ瀬ちあぴことcheerppyがdeveloper活動（デブ活）の中で学んだことをつらつら書き連ねるサイト。覚え書きとしてもよし、誰かに教えるときの教材としてもよし。そんなサイトを目指しています。">
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="HOME | ちあぴのデブ活のーと♡" />
-  <meta name="twitter:image" content="src/img/ico/cheerppy.png" />
-  <meta property="og:image" content="src/img/ico/cheerppy.png" />
-  <meta property="og:site_name" content="ちあぴのデブ活のーと♡" />
-  <meta property="og:type" content="website" />
-
-
-  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-
-</head>
-
-<body>
-  <header id="header">
-    <h1>
-      <span>
-        <span>ちあぴのデブ活のーと♡</span>
-        <span class="small" id="subtitle">～developer活動覚え書き～</span>
-      </span>
-      <label for="hamburger">
-        <input type="checkbox" id="hamburger" style="display: none;">
-        <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-          <defs>
-            <style>
-              svg.hamburger line {
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-width: 4px;
-              }
-            </style>
-          </defs>
-          <g>
-            <rect stroke="transparent" width="48" height="48" rx="4" ry="4" />
-            <line x1="10" y1="12" x2="38" y2="12" />
-            <line x1="10" y1="24" x2="38" y2="24" />
-            <line x1="10" y1="36" x2="38" y2="36" />
-          </g>
-        </svg>
-      </label>
-    </h1>
-    <nav>
-      <ul>
-        <a href="./">
-          <li>HOME</li>
-        </a>
-        <a href="#regExp_contents">
-          <li>正規表現</li>
-        </a>
-        <a href="#html_contents">
-          <li>HTML</li>
-        </a>
-        <a href="#css_contents">
-          <li>CSS</li>
-        </a>
-        <a href="#js_contents">
-          <li>JavaScript</li>
-        </a>
-        <a href="#node_contents">
-          <li>node.js</li>
-        </a>
-        <a href="#bash_contents">
-          <li>Bash Script</li>
-        </a>
-        <a href="#bat_contents">
-          <li>bat Script</li>
-        </a>
-        <a href="#compiled_contents">
-          <li>Compiled Language</li>
-        </a>
-        <a href="#license_contents">
-          <li>License</li>
-        </a>
-        <a href="#Windows_contents">
-          <li>Windows</li>
-        </a>
-        <a href="#Linux_contents">
-          <li>Linux</li>
-        </a>
-        <a href="#git_contents">
-          <li>Git</li>
-        </a>
-        <a href="#others_contents">
-          <li>Others</li>
-        </a>
-        <a href="#contact_contents">
-          <li>Contact</li>
-        </a>
-      </ul>
-      <script>
-        const hamburger = document.querySelector("input#hamburger")
-        Array.from(document.querySelector("header#header nav").querySelectorAll("a")).forEach(el => {
-          el.addEventListener("click", () => { hamburger.checked = false })
-        })
-      </script>
-    </nav>
-  </header>
-  <div class="flexContainer" id="wrapper">
-
-    <!--
+  <body>
+    <header id="header">
+      <h1>
+        <span>
+          <span>ちあぴのデブ活のーと♡</span>
+          <span class="small" id="subtitle">～developer活動覚え書き～</span>
+        </span>
+        <label for="hamburger">
+          <input type="checkbox" id="hamburger" style="display: none" />
+          <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <defs><style>svg.hamburger line { stroke-linecap: round; stroke-linejoin: round; stroke-width: 4px; }</style></defs>
+            <g>
+              <rect stroke="transparent" width="48" height="48" rx="4" ry="4" />
+              <line x1="10" y1="12" x2="38" y2="12" />
+              <line x1="10" y1="24" x2="38" y2="24" />
+              <line x1="10" y1="36" x2="38" y2="36" />
+            </g>
+          </svg>
+        </label>
+      </h1>
+      <nav>
+        <ul>
+          <a href="./"><li>HOME</li></a>
+          <a href="#regExp_contents"><li>正規表現</li></a>
+          <a href="#html_contents"><li>HTML</li></a>
+          <a href="#css_contents"><li>CSS</li></a>
+          <a href="#js_contents"><li>JavaScript</li></a>
+          <a href="#node_contents"><li>node.js</li></a>
+          <a href="#bash_contents"><li>Bash Script</li></a>
+          <a href="#bat_contents"><li>bat Script</li></a>
+          <a href="#compiled_contents"><li>Compiled Language</li></a>
+          <a href="#license_contents"><li>License</li></a>
+          <a href="#Windows_contents"><li>Windows</li></a>
+          <a href="#Linux_contents"><li>Linux</li></a>
+          <a href="#git_contents"><li>Git</li></a>
+          <a href="#others_contents"><li>Others</li></a>
+          <a href="#contact_contents"><li>Contact</li></a>
+        </ul>
+        <script>
+          const hamburger = document.querySelector("input#hamburger");
+          Array.from(document.querySelector("header#header nav").querySelectorAll("a")).forEach(el => {
+            el.addEventListener("click", () => { hamburger.checked = false; });
+          });
+        </script>
+      </nav>
+    </header>
+    <div class="flexContainer" id="wrapper">
+      <!--
 <div class="pane container" id="leftPane" style="border: 1px solid;">
 < !-- pane(予定)   -- >
 <p>pane 予定地</p>
@@ -473,7 +429,7 @@
 
 
         <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
-        <pre>
+<pre>
 pre{white-space: pre-wrap;}
 </pre>
         <p>逆に、長くても折り返さず横スクロールバーのタイプにしたいときは<code>pre{overflow: auto;}</code>にする。</p>
@@ -482,14 +438,14 @@ pre{white-space: pre-wrap;}
         <p>
           複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
         </p>
-        <pre>
+<pre>
 &lt;p class=&quot;child2&quot;&gt;outer parent&lt;/p&gt;
 &lt;div class=&quot;parent&quot;&gt;
 &#009;&lt;p class=&quot;child1&quot;&gt;Hello &lt;/p&gt;
 &#009;&lt;p class=&quot;child1 child2&quot;&gt;World!!&lt;/p&gt;
 &lt;/div&gt;
 </pre>
-        <pre>
+<pre>
 .parent,.child2{ <span class="comment">/*-- parent or child2 --*/</span>
     background-color: lawngreen;
     padding:0.1em 2em;
@@ -512,7 +468,7 @@ pre{white-space: pre-wrap;}
 
 
         <h3>変数</h3>
-        <pre>
+<pre>
 <span class="comment">/* 変数の宣言 */</span>
 :root{--favorite-color: pink;}
 
@@ -547,7 +503,7 @@ main{background-color: var(--favorite-color);}
         <p>WEBサイトのTitleとURLを取得する</p>
         <pre>javascript:window.prompt("",document.title +"\n"+ location.href);void(0);</pre>
         <h3>環状配列</h3>
-        <pre>
+<pre>
 class List{
     constructor(array){
         this.members=array;
@@ -559,7 +515,7 @@ class List{
 </pre>
 
         <h3>classのサンプル</h3>
-        <pre>
+<pre>
 class Person{
     constructor(firstName,lastName){
         this.firstName = firstName;
@@ -577,7 +533,7 @@ class Student extends Person{
 }
 </pre>
         <h3>console.logをもっと使いやすく</h3>
-        <pre>
+<pre>
     function getJst(){
         const jst = new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
         return jst
@@ -590,8 +546,8 @@ class Student extends Person{
     var blue = '\u001b[34m';var magenta = '\u001b[35m';var cyan = '\u001b[36m';var white = '\u001b[37m';
     var gray = '\u001b[90m';var reset = '\u001b[0m';
     const consolelog = console.log;console.log = (...a) => consolelog(strJst(getJst()), ...a);
-    const consoleerror = console.error;console.error = (...a) => consoleerror(strJst(getJst()),"<CRP ERROR>\n", yellow, ...a, reset);
-    console.errorln = (...a) => consoleerror(strJst(getJst()),"<CRP ERROR>", yellow, ...a, reset);
+    const consoleerror = console.error;console.error = (...a) => consoleerror(strJst(getJst()),"&lt;CRP ERROR>\n", yellow, ...a, reset);
+    console.errorln = (...a) => consoleerror(strJst(getJst()),"&lt;CRP ERROR>", yellow, ...a, reset);
     console.gray = (...a) => consolelog(strJst(getJst()) + gray, ...a, reset);
 </pre>
 
@@ -602,7 +558,7 @@ class Student extends Person{
         <h3>package.json</h3>
         <p><code>npm init</code>で作れる。<code>node index.js</code>で実行。</p>
         <h3>wait 関数</h3>
-        <pre>
+<pre>
 const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function main(){
     console.log("before 2000 ms");
@@ -612,7 +568,7 @@ async function main(){
 
 main();
 </pre>
-        <pre>
+<pre>
 const {sleep, msleep} = require(sleep);
 
 console.log("Hello, World!!");
@@ -623,12 +579,12 @@ console.log("after another 3 seconds");
 </pre>
 
         <h3>for statement</h3>
-        <pre>
+<pre>
 for (let i = 0; i < array.length; i++){
     console.log(` array[${i}]: ${array[i]}` );
 }
 </pre>
-        <pre>
+<pre>
 for (cmd of commands) {
     execute(cmd);
 }
@@ -643,7 +599,7 @@ for (cmd of commands) {
         <h2>Bash Script</h2>
         <h3>バッククォート<code class="noCodeColor">` ` </code> と<code class="noCodeColor">$()</code></h3>
         <p>どちらも同じように使われる。括弧内がコマンドの実行結果で置換される。バッククォートでネストする場合、エスケープが必要になる。</p>
-        <pre>
+<pre>
 echo "Now is $(date "+%Y/%m/%d %H:%M:%S")"
 echo "Now is ` date "+%Y/%m/%d %H:%M:%S"` "
 someCommand ` echo "Now is \` date "+%Y/%m/%d %H:%M:%S"\` "` 
@@ -679,7 +635,7 @@ someCommand ` echo "Now is \` date "+%Y/%m/%d %H:%M:%S"\` "`
           <li><code>||</code>, <code>&&</code>を用いる方法</li>
           <li> <code>ErrorLevel</code>による分岐</li>
         </ol>
-        <pre>
+<pre>
 @echo off
 
 :setName
@@ -693,10 +649,9 @@ if errorlevel == 2 goto setName
 if errorlevel == 3 goto choice
 </pre>
 
-
         <h3><code class="noCodeColor">If ErrorLevel &lt;int&gt; (...)</code>構文</h3>
         <p>ErrorLevelが引数<strong>以上</strong>の時<code>(...)</code>を実行する</p>
-        <pre>
+<pre>
 @echo off
 
 cd > nul
@@ -745,7 +700,7 @@ rem > invoked only when Error occurred
         </p>
         <p>遅延環境変数を用いると、その変数が呼び出されるコマンドにたどり着いたときに展開される。</p>
         <p>使用するときは<code>setlocal enableDelayedExpansion</code>を宣言し、変数を<code>!</code>で囲む。</p>
-        <pre>
+<pre>
 @echo off
 setlocal enableDelayedExpansion
 
@@ -772,18 +727,18 @@ rem > %age%=21 outside the bracket
       </div>
 
       <h3>タイムスタンプの取得</h3>
-      <pre>
+<pre>
 echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%
 rem > 20220722_191322
 </pre>
 
-      <pre>
+<pre>
 powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"
 rem > 1675395329
 </pre>
 
       <h3>クリップボードのイメージに名前を付けて保存</h3>
-      <pre>
+<pre>
 @echo off
 setLocal
 
@@ -829,7 +784,7 @@ explorer /select,"%filePath%"
             <table>
               <tr></tr>
             </table>
-            <pre>
+<pre>
 #include &lt;stdio.h&gt;
 #include &lt;stdbool.h&gt;
 
@@ -850,7 +805,7 @@ int main(void) {
           </section>
           <section>
             <h4>標準入力</h4>
-            <pre>
+<pre>
 int age;
 printf("how old are you?\n\t> ");
 scanf("%d", &amp;age);
@@ -862,7 +817,7 @@ printf("you are %d years old!\n", age);
           </section>
           <section>
             <h4>データ型</h4>
-            <pre>
+<pre>
 int age;
 double height = 163.1;
 char sex = 'F';
@@ -878,7 +833,7 @@ printf("%s%s%s", text1, text2, text3); // => FooBarBaz
           <section>
             <h4>for, if</h4>
             <p>等価演算子は<code>==</code></p>
-            <pre>
+<pre>
 int judgeAdult(int i) {
     int adultAge = 18;
 
@@ -895,7 +850,7 @@ int judgeAdult(int i) {
     }
 }
 </pre>
-            <pre>
+<pre>
 // C言語の歴史的にはイベントハンドラでよく使われる
 // switch文はフォールスルーできる
 ```
@@ -915,7 +870,7 @@ switch (country) {
 }
 ```
 </pre>
-            <pre>
+<pre>
 int i = 0;
 while (i &lt; 3) {
     i++;
@@ -923,7 +878,7 @@ while (i &lt; 3) {
 }
 printf(&quot;result: %d&quot;, i); // =&gt; 1, 2, 3, result: 3
 </pre>
-            <pre>
+<pre>
 for (int i = 0; i &lt; 3; i++) {
     printf(&quot;i = %d, &quot;, i);
 }
@@ -936,7 +891,7 @@ printf(&quot;result: %d&quot;, i); // =&gt; 0, 1, 2, result: 3
           <section>
             <h4>配列、構造体</h4>
 
-            <pre>
+<pre>
 typedef struct {
     int age;
     double height;
@@ -954,7 +909,7 @@ jane.sex = 'F';
           </section>
           <section>
             <h4>ポインタ</h4>
-            <pre>
+<pre>
 int num; int* pnum;
 
 num = 100;
@@ -1275,7 +1230,7 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
         </table>
         <h4></h4>
         <p>Ctrl+Zで中断した処理は、<code>jobs</code>でジョブ番号を確認し、<code>fg &lt;job no&gt;</code>を叩くと再開できる。</p>
-        <pre>
+<pre>
 <span class="terminal">jobs</span>
 [1]+ 停止       ping 8.8.8.8
 
@@ -1457,7 +1412,7 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
 
         <h3>変更の退避</h3>
         <p>コミットしたくないけどブランチを移動したい、けど後で作業の続きをしたい時などに使う。</p>
-        <pre>
+<pre>
 <span class="terminal">git add .</span>
 <span class="terminal">git stash</span>
 </pre>
@@ -1468,13 +1423,13 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
 
         <h3>直前のコミットをキャンセル</h3>
         <p>コミット直前（ステージした状態）に戻す</p>
-        <pre>
+<pre>
 <span class="terminal">git reset --soft @~</span>
 </pre>
 
         <h3>コミットメッセージの編集</h3>
         <p>ローカルのみ。</p>
-        <pre>
+<pre>
 <span class="terminal">git commit --amend -m "修正後メッセージ"</span>
 </pre>
 
@@ -1482,7 +1437,7 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
         <p>ローカルのみ。リモートのコミットの編集は危険度2。理解して作業すること。</p>
         <p>
           直前のコミットを編集するなら、<code>HEAD~2</code>に移動したいので
-        <pre>
+<pre>
 <span class="terminal">git rebase -i @~2</span>
 </pre>
         とする。
@@ -1490,12 +1445,11 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
 
         <h3>最終手段・行動のキャンセル</h3>
         <p>直前の行動をキャンセルする場合、</p>
-        <pre>
+<pre>
 <span class="terminal">git reset --hard <a href="https://culage.hatenablog.com/entry/20151216/p2">ORIG_HEAD</a></span>
 </pre>
-
-        <p>もう少し前に戻したい場合、まず行動履歴を確認する</p>
-        <pre>
+          <p>もう少し前に戻したい場合、まず行動履歴を確認する</p>
+<pre>
 <span class="terminal">git reflog</span>
 o32y984 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: add some contents
 2308ru2 HEAD@{1}: commit: fix readme
@@ -1504,7 +1458,7 @@ aw983f3 HEAD@{3}: commit: initial commit
 </pre>
         <p>
           戻りたい位置を指定する。例えばHEAD@{2}（@@{2}）なら、
-        <pre>
+<pre>
 <span class="terminal">git reset --hard HEAD@{2}</span>  <span class="comment"># @@{2}でもよい</span>
 </pre>
         ……resetはresetで取り消す！！
@@ -1516,7 +1470,7 @@ aw983f3 HEAD@{3}: commit: initial commit
           <code>git init</code>で既にローカルリポジトリ化しているフォルダをリモートリポジトリと結びつける。
         </p>
 
-        <pre>
+<pre>
 <span class="terminal">git remote add origin https://github.com/user-name/repository-name.git</span>
 </pre>
 
@@ -1524,14 +1478,14 @@ aw983f3 HEAD@{3}: commit: initial commit
         <p>詳細は<a
             href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-Git-%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9">こちら</a>
         </p>
-        <pre>
+<pre>
 <span class="terminal">git config --global alias.co 'checkout'</span>
 <span class="terminal">git config --global alias.edit 'commit --amend'</span>
 <span class="terminal">git config --global alias.ah '!cat "git config --global alias.co \'checkout\'"'</span>    <span class="comment"># 外部コマンドも使える</span>
 </pre>
 
         <p>テキストエディタでエイリアスやconfigを確認</p>
-        <pre>
+<pre>
 <span class="terminal">git config --global --edit</span>
 </pre>
 
@@ -1555,11 +1509,9 @@ const isAdult = age =&gt; age
 </pre>
 
 -->
-
-        <h3>ページの転送（リダイレクト）</h3>
-        <p>
-          以下のように記述する。
-        <pre>
+          <h3>ページの転送（リダイレクト）</h3>
+          <p>以下のように記述する。</p>
+<pre>
 &lt;script type=&quot;text/javascript&quot;&gt;
 &#009;location.href = &quot;移動先URL&quot;;
 &lt;/script&gt;
@@ -1569,8 +1521,6 @@ const isAdult = age =&gt; age
         <p>BitLockerを使う。</p>
         <a href="https://pc-karuma.net/use-bitlocker-for-encryption-on-removable-drives-windows-10/" target="_blank"
           rel="noopener noreferrer">https://pc-karuma.net/use-bitlocker-for-encryption-on-removable-drives-windows-10/</a>
-
-
 
 
         <h3>データベース</h3>
