@@ -36,7 +36,7 @@
           </svg>
         </label>
       </h1>
-      <nav>
+      <nav id="header-navigation">
         <ul>
           <a href="./"><li>HOME</li></a>
           <a href="#regExp_contents"><li>正規表現</li></a>
@@ -75,7 +75,7 @@
     <main id="main" class="container">
 
       <!-- RegExp -->
-      <div id="regExp_contents">
+      <article id="regExp_contents">
         <h2>正規表現</h2>
         <p>ここでは拡張正規表現のみを取り扱う。英語では(Extended) Regular Expression。</p>
         <p>vimなどBasic RegExpのみしか対応していないコマンドもある。</p>
@@ -145,357 +145,378 @@
             <td>携帯電話番号</td>
           </tr>
         </table>
-
-
-      </div>
-
+      </article>
 
       <!-- html -->
-      <div id="html_contents">
+      <article id="html_contents">
         <h2>HTML</h2>
 
-        <h3>HTMLタグのエスケープ</h3>
-
-        <p>
-          &amp;amp;などの特殊文字に置き換えることでエスケープする。<br>
-          主な記号は以下の通り。
-        <table>
-          <tr>
-            <th>記号</th>
-            <th>文字参照</th>
-            <th>数字参照</th>
-            <th>unicode</th>
-          </tr>
-          <tr>
-            <td>&lt;</td>
-            <td>&amp;lt;</td>
-            <td>&amp;#60;</td>
-            <td>U+3C</td>
-          </tr>
-          <tr>
-            <td>&gt;</td>
-            <td>&amp;gt;</td>
-            <td>&amp;#62;</td>
-            <td>U+3E</td>
-          </tr>
-          <tr>
-            <td>&amp;</td>
-            <td>&amp;amp;</td>
-            <td>&amp;#38;</td>
-            <td>U+26</td>
-          </tr>
-          <tr>
-            <td>&quot;</td>
-            <td>&amp;quot;</td>
-            <td>&amp;#34;</td>
-            <td>U+22</td>
-          </tr>
-          <tr>
-            <td>&apos;</td>
-            <td>&amp;apos;</td>
-            <td>&amp;#39;</td>
-            <td>U+27</td>
-          </tr>
-          <tr>
-            <td>&copy;</td>
-            <td>&amp;copy;</td>
-            <td>&amp;#169;</td>
-            <td>U+A9</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&amp;nbsp;</td>
-            <td>&amp;#160;</td>
-            <td>U+A0</td>
-          </tr>
-          <tr>
-            <td>&#32;</td>
-            <td></td>
-            <td>&amp;#32;</td>
-            <td>U+20</td>
-          </tr>
-        </table><br>
-        文字参照はXML用、数字参照はHTML用だが、HTMLでも文字参照を使える。&amp;#x20;のように16進の数字参照も可能。<br>
-        変換してくれるサイトもある。<br>
-        nbspは、例えば<code class="noCodeColor">120&nbsp;km</code>のように、空白を置きたいが改行されたくない時に使う。spaceの文字参照は無い。<br>
-        <a href="https://tech-unlimited.com/escape.html" target="_blank"
-          rel="noopener noreferrer">https://tech-unlimited.com/escape.html</a>
-        </p>
-
-        <h3>コメントアウト</h3>
-        <p>
-          一行コメントアウトはなし。
-          ブロックコメントは<code>&lt;!-- --!&gt;</code>で囲む。<br>
-          コメント内は<code>-</code>の連続使用を避け、<code>=</code>などで代用する。
-        </p>
-
-        <h3>エラーチェック</h3>
-        <p><a href="https://validator.w3.org/nu/#textarea" target="_blank"
-            rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
-
-
-        <h3>脆弱性対策</h3>
-        <p>
-          aタグで<code>target="_blank"</code>するときに<code>rel="noopener noreferrer"</code>を付ける。
-        </p>
-        <small>
+        <section>
+          <h3>HTMLタグのエスケープ</h3>
           <p>
-            <code>window.opener</code>によって移動先リンクから攻撃される脆弱性への対策。<br>
-            アフィリエイトする場合は<code>rel="noopener"</code>のみとする。ただし、IEはnoopener非対応。
+            &amp;amp;などの特殊文字に置き換えることでエスケープする。<br>
+            主な記号は以下の通り。
+          <table>
+            <tr>
+              <th>記号</th>
+              <th>文字参照</th>
+              <th>数字参照</th>
+              <th>unicode</th>
+            </tr>
+            <tr>
+              <td>&lt;</td>
+              <td>&amp;lt;</td>
+              <td>&amp;#60;</td>
+              <td>U+3C</td>
+            </tr>
+            <tr>
+              <td>&gt;</td>
+              <td>&amp;gt;</td>
+              <td>&amp;#62;</td>
+              <td>U+3E</td>
+            </tr>
+            <tr>
+              <td>&amp;</td>
+              <td>&amp;amp;</td>
+              <td>&amp;#38;</td>
+              <td>U+26</td>
+            </tr>
+            <tr>
+              <td>&quot;</td>
+              <td>&amp;quot;</td>
+              <td>&amp;#34;</td>
+              <td>U+22</td>
+            </tr>
+            <tr>
+              <td>&apos;</td>
+              <td>&amp;apos;</td>
+              <td>&amp;#39;</td>
+              <td>U+27</td>
+            </tr>
+            <tr>
+              <td>&copy;</td>
+              <td>&amp;copy;</td>
+              <td>&amp;#169;</td>
+              <td>U+A9</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&amp;nbsp;</td>
+              <td>&amp;#160;</td>
+              <td>U+A0</td>
+            </tr>
+            <tr>
+              <td>&#32;</td>
+              <td></td>
+              <td>&amp;#32;</td>
+              <td>U+20</td>
+            </tr>
+          </table><br>
+          文字参照はXML用、数字参照はHTML用だが、HTMLでも文字参照を使える。&amp;#x20;のように16進の数字参照も可能。<br>
+          変換してくれるサイトもある。<br>
+          nbspは、例えば<code class="noCodeColor">120&nbsp;km</code>のように、空白を置きたいが改行されたくない時に使う。spaceの文字参照は無い。<br>
+          <a href="https://tech-unlimited.com/escape.html" target="_blank"
+            rel="noopener noreferrer">https://tech-unlimited.com/escape.html</a>
           </p>
-        </small>
+        </section>
+        <section>
+          <h3>コメントアウト</h3>
+          <p>
+            一行コメントアウトはなし。
+            ブロックコメントは<code>&lt;!-- --!&gt;</code>で囲む。<br>
+            コメント内は<code>-</code>の連続使用を避け、<code>=</code>などで代用する。
+          </p>
+        </section>
 
-        <h3>タグの使い分け</h3>
-        <p>
-          リファレンスはリンク先で確認できる。<br>
-          <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element" target="_blank"
-            rel="noopener noreferrer">https://developer.mozilla.org/ja/docs/Web/HTML/Element</a>
-        </p>
-
-        <table class="noCodeColor">
-          <tr>
-            <th colspan="2">コンテナ系</th>
-          </tr>
-          <tr>
-            <td><code>head</code></td>
-            <td>コード、メタ部分</td>
-          </tr>
-          <tr>
-            <td><code>body</code></td>
-            <td>ボディ</td>
-          </tr>
-          <tr>
-            <td><code>aside</code></td>
-            <td>左右pane</td>
-          </tr>
-
-          <tr>
-            <th colspan="2">文字要素系</th>
-          </tr>
-          <tr>
-            <td><code>h1</code></td>
-            <td>ページタイトルなど。ページに一度だけ使う。</td>
-          </tr>
-          <tr>
-            <td><code>h2</code></td>
-            <td>大きな見出し。SEO対策に関わる。</td>
-          </tr>
-          <tr>
-            <td><code>h3</code></td>
-            <td>小見出し。章タイトルやコンテンツタイトル。</td>
-          </tr>
-          <tr>
-            <td><code>p</code></td>
-            <td>本文</td>
-          </tr>
-          <tr>
-            <td><code>br</code></td>
-            <td>改行</td>
-          </tr>
-          <tr>
-            <td><code>small</code></td>
-            <td>注釈、免責等習慣的に文字の小さいもの。</td>
-          </tr>
-          <tr>
-            <td><code>a</code></td>
-            <td>リンク。必ず<code>href</code>を伴う。</td>
-          </tr>
-          <tr>
-            <td><code>span</code></td>
-            <td>インライン装飾</td>
-          </tr>
-          <tr>
-            <td><code>code</code></td>
-            <td>インラインコードブロック</td>
-          </tr>
-          <tr>
-            <td><code>pre</code></td>
-            <td>コードブロック</td>
-          </tr>
-
-          <tr>
-            <th colspan="2">追加要素系</th>
-          </tr>
-          <tr>
-            <td><code>table</code>, <code>tr</code></td>
-            <td>表</td>
-          </tr>
-          <tr>
-            <td><code>caption</code></td>
-            <td>図表の見出し</td>
-          </tr>
-          <tr>
-            <td><code>ul</code>, <code>li</code></td>
-            <td>リスト</td>
-          </tr>
-          <!--
-        <tr>
-            <td><code></code></td>
-            <td></td>
-        </tr>
-        -->
-
-        </table>
-
-        <h3>flex チートシート</h3>
-        <a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank"
-          rel="noopener noreferrer">https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet</a>
-
-        <h3>hoverで表示される補足説明</h3>
-        <p><code>title</code>属性を付与することで、hoverで表示される補足説明を実装できる。</p>
-        <pre title="example">
-&lt;pre title=&quot;example&quot;&gt; ここにhoverしてね &lt;/pre&gt;
-</pre>
-        <p>見ての通り非常に気づきにくいので、どこかに誘導が必要。CSSの::beforeでhoverしたくなる<span title="hoverしたくなりましたか？"
-            style="border-bottom: solid 1px; padding-bottom: 0px;">&#9999;絵文字</span>や画像を挿入するとか。</p>
+        <section>
+          <h3>エラーチェック</h3>
+          <p><a href="https://validator.w3.org/nu/#textarea" target="_blank"
+              rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
+        </section>
 
 
-      </div>
+        <section>
+          <h3>脆弱性対策</h3>
+          <p>
+            aタグで<code>target="_blank"</code>するときに<code>rel="noopener noreferrer"</code>を付ける。
+          </p>
+          <small>
+            <p>
+              <code>window.opener</code>によって移動先リンクから攻撃される脆弱性への対策。<br>
+              アフィリエイトする場合は<code>rel="noopener"</code>のみとする。ただし、IEはnoopener非対応。
+            </p>
+          </small>
+        </section>
+
+        <section>
+          <h3>タグの使い分け</h3>
+          <p>
+            リファレンスはリンク先で確認できる。<br>
+            <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element" target="_blank"
+              rel="noopener noreferrer">https://developer.mozilla.org/ja/docs/Web/HTML/Element</a>
+          </p>
+          <table class="noCodeColor">
+            <tr>
+              <th colspan="2">コンテナ系</th>
+            </tr>
+            <tr>
+              <td><code>head</code></td>
+              <td>コード、メタ部分</td>
+            </tr>
+            <tr>
+              <td><code>body</code></td>
+              <td>ボディ</td>
+            </tr>
+            <tr>
+              <td><code>aside</code></td>
+              <td>左右pane</td>
+            </tr>
+            <tr>
+              <td><code>article</code></td>
+              <td>sectionより大きいブロック。独立した記事。</td>
+            </tr>
+            <tr>
+              <td><code>section</code></td>
+              <td>pより大きいブロック。sectionの中には必ずh要素が入る。</td>
+            </tr>
+            <tr>
+              <th colspan="2">文字要素系</th>
+            </tr>
+            <tr>
+              <td><code>h1</code></td>
+              <td>ページタイトルなど。ページに一度だけ使う。</td>
+            </tr>
+            <tr>
+              <td><code>h2</code></td>
+              <td>大きな見出し。SEO対策に関わる。</td>
+            </tr>
+            <tr>
+              <td><code>h3</code></td>
+              <td>小見出し。章タイトルやコンテンツタイトル。</td>
+            </tr>
+            <tr>
+              <td><code>p</code></td>
+              <td>本文</td>
+            </tr>
+            <tr>
+              <td><code>br</code></td>
+              <td>改行</td>
+            </tr>
+            <tr>
+              <td><code>small</code></td>
+              <td>注釈、免責等習慣的に文字の小さいもの。</td>
+            </tr>
+            <tr>
+              <td><code>a</code></td>
+              <td>リンク。必ず<code>href</code>を伴う。</td>
+            </tr>
+            <tr>
+              <td><code>span</code></td>
+              <td>インライン装飾</td>
+            </tr>
+            <tr>
+              <td><code>code</code></td>
+              <td>インラインコードブロック</td>
+            </tr>
+            <tr>
+              <td><code>pre</code></td>
+              <td>コードブロック</td>
+            </tr>
+            <tr>
+              <th colspan="2">追加要素系</th>
+            </tr>
+            <tr>
+              <td><code>table</code>, <code>tr</code></td>
+              <td>表</td>
+            </tr>
+            <tr>
+              <td><code>caption</code></td>
+              <td>図表の見出し</td>
+            </tr>
+            <tr>
+              <td><code>ul</code>, <code>li</code></td>
+              <td>リスト</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h3>flex チートシート</h3>
+          <a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank"
+            rel="noopener noreferrer">https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet</a>
+        </section>
+
+        <section>
+          <h3>hoverで表示される補足説明</h3>
+          <p><code>title</code>属性を付与することで、hoverで表示される補足説明を実装できる。</p>
+          <pre title="example">
+          &lt;pre title=&quot;example&quot;&gt; ここにhoverしてね &lt;/pre&gt;
+          </pre>
+          <p>見ての通り非常に気づきにくいので、どこかに誘導が必要。CSSの::beforeでhoverしたくなる<span title="hoverしたくなりましたか？"
+              style="border-bottom: solid 1px; padding-bottom: 0px;">&#9999;絵文字</span>や画像を挿入するとか。</p>
+        </section>
+
+      </article>
 
 
 
 
 
       <!-- CSS -->
-      <div id="css_contents">
+      <article id="css_contents">
         <h2>CSS</h2>
 
 
-        <h3>コメントアウト</h3>
-        <p>
-          一行コメントアウトはなし。
-          ブロックコメントは<code>/* */</code>で囲む。
-        </p>
+        <section>
+          <h3>コメントアウト</h3>
+          <p>
+            一行コメントアウトはなし。
+            ブロックコメントは<code>/* */</code>で囲む。
+          </p>
+        </section>
 
+        <section>
+          <h3>改行</h3>
+          <p>行末（中括弧の中）にセミコロンが必要</p>
+          <pre>p{color:black;}</pre>
+        </section>
 
-        <h3>改行</h3>
-        <p>行末（中括弧の中）にセミコロンが必要</p>
-        <pre>p{color:black;}</pre>
+        <section>
+          <h3>エラーチェック</h3>
+          <p><a href="https://validator.w3.org/nu/#textarea" target="_blank"
+              rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
+        </section>
 
-        <h3>エラーチェック</h3>
-        <p><a href="https://validator.w3.org/nu/#textarea" target="_blank"
-            rel="noopener noreferrer">https://validator.w3.org/nu/#textarea</a></p>
+        <section>
+          <h3>可読性</h3>
+          <p>可読性について言及したサイト <a href="https://japan-design.jp/design/0052/" target="_blank"
+              rel="noopener noreferrer">https://japan-design.jp/design/0052/</a></p>
+        </section>
 
+        <section>
+          <h3>width</h3>
+          <p>
+            width: auto<br>
+            それ以外→width:100%<br>
+            percentageは親要素に対する割合で指定<br>
+            pxやemで指定するときはmin-width, max-widthを使う<br>
+            画像サイズはmax100%がよい</p>
+          <p>文字コンテンツの幅は640pxくらいがおすすめ</p>
+          <p>16pxのとき約35文字表示される</p>
+        </section>
 
-        <h3>可読性</h3>
-        <p>可読性について言及したサイト <a href="https://japan-design.jp/design/0052/" target="_blank"
-            rel="noopener noreferrer">https://japan-design.jp/design/0052/</a></p>
-        <br>
-        <h3>width</h3>
-        <p>
-          width: auto<br>
-          それ以外→width:100%<br>
-          percentageは親要素に対する割合で指定<br>
-          pxやemで指定するときはmin-width, max-widthを使う<br>
-          画像サイズはmax100%がよい</p>
-        <p>文字コンテンツの幅は640pxくらいがおすすめ</p>
-        <p>16pxのとき約35文字表示される</p>
+        <section>
+          <h3>font-size</h3>
+          <p>標準は16px, 大き目なら18px</p>
+          <strong>ただし奇数ピクセルにしてはいけない</strong>
+          <p>読む前提の文字は英小文字で12px, 日本語なら10pxが最小サイズ</p>
+          <p>そもそもChromeは基本10px未満にしても10pxで表示される。</p>
+          <p>文字の大きさの参考 <a href="https://blog.upshare.co.jp/2021/07/3730/" target="_blank"
+              rel="noopener noreferrer">https://blog.upshare.co.jp/2021/07/3730/</a></p>
+          <pre>html{ font-size: 16px; }</pre>
+        </section>
 
+        <section>
+          <h3>textbox風</h3>
+          <p>width: auto</p>
+        </section>
 
-        <h3>font-size</h3>
-        <p>標準は16px, 大き目なら18px</p>
-        <strong>ただし奇数ピクセルにしてはいけない</strong>
-        <p>読む前提の文字は英小文字で12px, 日本語なら10pxが最小サイズ</p>
-        <p>そもそもChromeは基本10px未満にしても10pxで表示される。</p>
-        <p>文字の大きさの参考 <a href="https://blog.upshare.co.jp/2021/07/3730/" target="_blank"
-            rel="noopener noreferrer">https://blog.upshare.co.jp/2021/07/3730/</a></p>
-        <pre>html{ font-size: 16px; }</pre>
+        <section>
+          <h3>marginとpadding</h3>
+          <p>marginがborderの外側、paddingが内側</p>
+          <table>
+            <tr>
+              <td>margin: 2px</td>
+              <td>上下左右</td>
+            </tr>
+            <tr>
+              <td>margin: 2px 3px</td>
+              <td>上下 左右</td>
+            </tr>
+            <tr>
+              <td>margin: 2px 3px 4px</td>
+              <td>上 左右 下</td>
+            </tr>
+            <tr>
+              <td>margin: 2px 3px 4px 5px</td>
+              <td>上 右 下 左</td>
+            </tr>
+          </table>
+        </section>
 
+        <section>
+          <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
+          <pre>
+          pre{white-space: pre-wrap;}
+          </pre>
+          <p>逆に、長くても折り返さず横スクロールバーのタイプにしたいときは<code>pre{overflow: auto;}</code>にする。</p>
+        </section>
 
-        <h3>textbox風</h3>
-        <p>width: auto</p>
-
-
-        <h3>marginとpadding</h3>
-        <p>marginがborderの外側、paddingが内側</p>
-        <table>
-          <tr>
-            <td>margin: 2px</td>
-            <td>上下左右</td>
-          </tr>
-          <tr>
-            <td>margin: 2px 3px</td>
-            <td>上下 左右</td>
-          </tr>
-          <tr>
-            <td>margin: 2px 3px 4px</td>
-            <td>上 左右 下</td>
-          </tr>
-          <tr>
-            <td>margin: 2px 3px 4px 5px</td>
-            <td>上 右 下 左</td>
-          </tr>
-        </table>
-
-
-        <h3 class="noCodeColor"><code>pre</code>内で折り返す</h3>
-<pre>
-pre{white-space: pre-wrap;}
-</pre>
-        <p>逆に、長くても折り返さず横スクロールバーのタイプにしたいときは<code>pre{overflow: auto;}</code>にする。</p>
-
-        <h3>複数指定</h3>
-        <p>
-          複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
-        </p>
-<pre>
-&lt;p class=&quot;child2&quot;&gt;outer parent&lt;/p&gt;
-&lt;div class=&quot;parent&quot;&gt;
-&#009;&lt;p class=&quot;child1&quot;&gt;Hello &lt;/p&gt;
-&#009;&lt;p class=&quot;child1 child2&quot;&gt;World!!&lt;/p&gt;
-&lt;/div&gt;
-</pre>
-<pre>
-.parent,.child2{ <span class="comment">/*-- parent or child2 --*/</span>
-    background-color: lawngreen;
-    padding:0.1em 2em;
-}
-.parent .child1{ <span class="comment">/*-- child1 in parent --*/</span>
-    background-color: green;
-    color: lavender;
-}
-.child1.child2::after{ <span class="comment">/*-- child1 and child2 --*/</span>
-    content: &quot;  &lt;- after&quot;;
-}
-</pre>
-        <div id="parent見本">
-          <p class="child2">outer parent</p>
-          <div class="parent">
-            <p class="child1">Hello </p>
-            <p class="child1 child2">World!!</p>
+        <section>
+          <h3>複数指定</h3>
+          <p>
+            複数の属性を<code>",", " ", ""</code>のいずれかで接続して指定できる。
+          </p>
+          <pre>
+            &lt;p class=&quot;child2&quot;&gt;outer parent&lt;/p&gt;<br>
+            &lt;div class=&quot;parent&quot;&gt;<br>
+            <span class="tab"></span>&lt;p class=&quot;child1&quot;&gt;Hello &lt;/p&gt;<br>
+            <span class="tab"></span>&lt;p class=&quot;child1 child2&quot;&gt;World!!&lt;/p&gt;<br>
+            &lt;/div&gt;<br>
+          </pre>
+          <pre>
+            .parent,.child2{ <span class="comment">/*-- parent or child2 --*/</span><br>
+            <span class="tab"></span>background-color: lawngreen;<br>
+            <span class="tab"></span>padding:0.1em 2em;<br>
+            }<br>
+            .parent .child1{ <span class="comment">/*-- child1 in parent --*/</span><br>
+            <span class="tab"></span>background-color: green;<br>
+            <span class="tab"></span>color: lavender;<br>
+            }<br>
+            .child1.child2::after{ <span class="comment">/*-- child1 and child2 --*/</span><br>
+            <span class="tab"></span>content: &quot;  &lt;- after&quot;;<br>
+            }<br>
+          </pre>
+          <div id="parent見本">
+            <p class="child2">outer parent</p>
+            <div class="parent">
+              <p class="child1">Hello </p>
+              <p class="child1 child2">World!!</p>
+            </div>
           </div>
-        </div>
+        </section>
 
+        <section>
+          <h3>変数</h3>
+          <pre>
+            <span class="comment">/* 変数の宣言 */</span><br>
+            :root{--favorite-color: pink;}<br>
+            <br>
+            <span class="comment">/* 変数の参照 */</span><br>
+            main{background-color: var(--favorite-color);}<br>
+          </pre>
+          <p>正式にはカスタムプロパティ。</p>
+          <p>変数名はハイフン二つで始まる。慣例的に単語の区切りではスペースの代わりにハイフンを用いる。</p>
+          <p>上の例においてrootはただのスコープなので勿論htmlや特定のclass等でも構わない</p>
+        </section>
 
-        <h3>変数</h3>
-<pre>
-<span class="comment">/* 変数の宣言 */</span>
-:root{--favorite-color: pink;}
+        <section>
+          <h3>color code usage</h3>
+          <p>以下の表は（一部の色のみ）hoverで補足説明を表示できるので参照のこと。</p>
+          <p>
+            参考サイト<br>
+            <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank"
+              rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
+          </p>
+          <div id="colorCode" class="flexContainer container"></div>
+          <!-- body下scriptタグにJSで記述 -->
+        </section>
 
-<span class="comment">/* 変数の参照 */</span>
-main{background-color: var(--favorite-color);}
-</pre>
-        <p>正式にはカスタムプロパティ。</p>
-        <p>変数名はハイフン二つで始まる。慣例的に単語の区切りではスペースの代わりにハイフンを用いる。</p>
-        <p>上の例においてrootはただのスコープなので勿論htmlや特定のclass等でも構わない</p>
-
-
-
-
-        <h3>color code usage</h3>
-        <p>以下の表は（一部の色のみ）hoverで補足説明を表示できるので参照のこと。</p>
-        <p>
-          参考サイト<br>
-          <a href="https://www.colorsexplained.com/shades-of-pink-color-names/" target="_blank"
-            rel="noopener noreferrer">https://www.colorsexplained.com/shades-of-pink-color-names/</a>
-        </p>
-        <div id="colorCode" class="flexContainer container"></div>
-        <!-- body下scriptタグにJSで記述 -->
-      </div><!-- CSS -->
+      </article><!-- CSS -->
 
 
       <!-- JavaScript -->
-      <div id="js_contents">
+      <article id="js_contents">
         <h2>JavaScript</h2>
         <h3>HTML要素の挿入</h3>
         <p><code>document.getElementById("<i>ElementID</i>").insertAdjacentHTML</code>メソッドを使用する。</p>
@@ -503,112 +524,129 @@ main{background-color: var(--favorite-color);}
         <p>WEBサイトのTitleとURLを取得する</p>
         <pre>javascript:window.prompt("",document.title +"\n"+ location.href);void(0);</pre>
         <h3>環状配列</h3>
-<pre>
-class List{
-    constructor(array){
-        this.members=array;
-        this.#index=0;
-    }
-    get index(){return this.#index}
-    next(){this.#index=(this.#index+1)%this.members.length; return this.#index;}
-}
+        <pre>
+        class List{<br>
+        <span class="tab"></span>constructor(array){<br>
+        <span class="tab"></span><span class="tab"></span>this.members=array;<br>
+        <span class="tab"></span><span class="tab"></span>this.#index=0;<br>
+        <span class="tab"></span>}<br>
+        <span class="tab"></span>get index(){return this.#index;}<br>
+        <span class="tab"></span>next(){<br>
+        <span class="tab"></span><span class="tab"></span>this.#index = (this.#index+1) % this.members.length;<br>
+        <span class="tab"></span><span class="tab"></span>return this.#index;<br>
+        }<br>
+        }<br>
 </pre>
 
-        <h3>classのサンプル</h3>
-<pre>
-class Person{
-    constructor(firstName,lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.title = "NEET"
-    }
-    get fullName(){return this.firstName+" "+this.lastName}
-}
-class Student extends Person{
-    constructor(firstName,lastName,teacher){
-        super(firstName,lastName);
-        this.teacher = teacher || new Teacher("Jane", "Does",[]);
-        this.title = "student"
-    }
-}
-</pre>
-        <h3>console.logをもっと使いやすく</h3>
-<pre>
-    function getJst(){
-        const jst = new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
-        return jst
-     }
-     
-     function strJst(jst){
-       return jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + ("0" + jst.getMinutes()).slice(-2) + ":" + ("0" + jst.getSeconds()).slice(-2) + ""
-     }
-    var black = '\u001b[30m';var red = '\u001b[31m';var green = '\u001b[32m';var yellow = '\u001b[33m';
-    var blue = '\u001b[34m';var magenta = '\u001b[35m';var cyan = '\u001b[36m';var white = '\u001b[37m';
-    var gray = '\u001b[90m';var reset = '\u001b[0m';
-    const consolelog = console.log;console.log = (...a) => consolelog(strJst(getJst()), ...a);
-    const consoleerror = console.error;console.error = (...a) => consoleerror(strJst(getJst()),"&lt;CRP ERROR>\n", yellow, ...a, reset);
-    console.errorln = (...a) => consoleerror(strJst(getJst()),"&lt;CRP ERROR>", yellow, ...a, reset);
-    console.gray = (...a) => consolelog(strJst(getJst()) + gray, ...a, reset);
-</pre>
+        <section>
+          <h3>classのサンプル</h3>
+          <pre>
+            class Person{<br>
+            <span class="tab"></span>constructor(firstName,lastName){<br>
+            <span class="tab"></span><span class="tab"></span>this.firstName = firstName;<br>
+            <span class="tab"></span><span class="tab"></span>this.lastName = lastName;<br>
+            <span class="tab"></span><span class="tab"></span>this.title = "NEET"<br>
+            <span class="tab"></span>}<br>
+            <span class="tab"></span>get fullName(){return this.firstName+" "+this.lastName}<br>
+            }<br>
+            class Student extends Person{<br>
+            <span class="tab"></span>constructor(firstName,lastName,teacher){<br>
+            <span class="tab"></span><span class="tab"></span>super(firstName,lastName);<br>
+            <span class="tab"></span><span class="tab"></span>this.teacher = teacher || new Teacher("Jane", "Does",[]);<br>
+            <span class="tab"></span><span class="tab"></span>this.title = "student"<br>
+            <span class="tab"></span>}<br>
+            }<br>
+          </pre>
+        </section>
 
-      </div>
+        <section>
+          <h3>console.logをもっと使いやすく</h3>
+          <pre>
+            function getJst(){<br>
+            <span class="tab"></span>const jst = new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));<br>
+            <span class="tab"></span>return jst<br>
+            }<br>
+            <br>
+            function strJst(jst){<br>
+            <span class="tab"></span>return jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + ("0" + jst.getMinutes()).slice(-2) + ":" + ("0" + jst.getSeconds()).slice(-2) + ""<br>
+            }<br>
+            var black = '\u001b[30m';var red = '\u001b[31m';var green = '\u001b[32m';var yellow = '\u001b[33m';<br>
+            var blue = '\u001b[34m';var magenta = '\u001b[35m';var cyan = '\u001b[36m';var white = '\u001b[37m';<br>
+            var gray = '\u001b[90m';var reset = '\u001b[0m';<br>
+            const consolelog = console.log;console.log = (...a) => consolelog(strJst(getJst()), ...a);<br>
+            const consoleerror = console.error;console.error = (...a) => consoleerror(strJst(getJst()),"&lt;CRP ERROR>\n", yellow, ...a, reset);<br>
+            console.errorln = (...a) => consoleerror(strJst(getJst()),"&lt;CRP ERROR&gt;", yellow, ...a, reset);<br>
+            console.gray = (...a) => consolelog(strJst(getJst()) + gray, ...a, reset);<br>
+          </pre>
+        </section>
+
+      </article>
       <!-- node.js -->
-      <div id="node_contents">
+      <article id="node_contents">
         <h2>node.js</h2>
-        <h3>package.json</h3>
-        <p><code>npm init</code>で作れる。<code>node index.js</code>で実行。</p>
-        <h3>wait 関数</h3>
-<pre>
-const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
-async function main(){
-    console.log("before 2000 ms");
-    await wait(2000);
-    console.log("after 2000 ms");
-}
+        <section>
+          <h3>package.json</h3>
+          <p><code>npm init</code>で作れる。<code>node index.js</code>で実行。</p>
+        </section>
 
-main();
-</pre>
-<pre>
-const {sleep, msleep} = require(sleep);
+        <section>
+          <h3>wait 関数</h3>
+          <pre>
+            const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));<br>
+            async function main(){<br>
+            <span class="tab"></span>console.log("before 2000 ms");<br>
+            <span class="tab"></span>await wait(2000);<br>
+            <span class="tab"></span>console.log("after 2000 ms");<br>
+            }<br>
+            <br>
+            main();<br>
+          </pre>
+          <pre>
+            const {sleep, msleep} = require(sleep);<br>
+            <br>
+            console.log("Hello, World!!");<br>
+            msleep(500);<br>
+            console.log("after 0.5 second");<br>
+            sleep(3);<br>
+            console.log("after another 3 seconds");<br>
+          </pre>
+        </section>
 
-console.log("Hello, World!!");
-msleep(500);
-console.log("after 0.5 second");
-sleep(3);
-console.log("after another 3 seconds");
-</pre>
+        <section>
+          <h3>for statement</h3>
+          <pre>
+            for (let i = 0; i < array.length; i++){<br>
+            <span class="tab"></span>console.log(` array[${i}]: ${array[i]}` );<br>
+            }<br>
+          </pre>
+          <pre>
+            for (cmd of commands) {<br>
+            <span class="tab"></span>execute(cmd);<br>
+            }<br>
+          </pre>
+        </section>
 
-        <h3>for statement</h3>
-<pre>
-for (let i = 0; i < array.length; i++){
-    console.log(` array[${i}]: ${array[i]}` );
-}
-</pre>
-<pre>
-for (cmd of commands) {
-    execute(cmd);
-}
-</pre>
-
-
-      </div>
-
+      </article>
 
       <!-- Bash Script -->
-      <div id="bash_contents">
+      <article id="bash_contents">
         <h2>Bash Script</h2>
-        <h3>バッククォート<code class="noCodeColor">` ` </code> と<code class="noCodeColor">$()</code></h3>
-        <p>どちらも同じように使われる。括弧内がコマンドの実行結果で置換される。バッククォートでネストする場合、エスケープが必要になる。</p>
-<pre>
-echo "Now is $(date "+%Y/%m/%d %H:%M:%S")"
-echo "Now is ` date "+%Y/%m/%d %H:%M:%S"` "
-someCommand ` echo "Now is \` date "+%Y/%m/%d %H:%M:%S"\` "` 
-</pre>
-      </div>
+
+        <section>
+          <h3>バッククォート<code class="noCodeColor">` ` </code> と<code class="noCodeColor">$()</code></h3>
+          <p>どちらも同じように使われる。括弧内がコマンドの実行結果で置換される。バッククォートでネストする場合、エスケープが必要になる。</p>
+          <pre>
+            echo "Now is $(date "+%Y/%m/%d %H:%M:%S")"<br>
+            echo "Now is ` date "+%Y/%m/%d %H:%M:%S"` "<br>
+            someCommand ` echo "Now is \` date "+%Y/%m/%d %H:%M:%S"\` "` <br>
+          </pre>
+        </section>
+
+      </article>
 
 
       <!-- Bat Script -->
-      <div id="bat_contents">
+      <article id="bat_contents">
         <h2>bat script</h2>
         <p>batファイルのコマンドリファレンス</p>
         <p><a href="https://www.pg-fl.jp/program/dos/doscmd/" target="_blank"
@@ -619,161 +657,178 @@ someCommand ` echo "Now is \` date "+%Y/%m/%d %H:%M:%S"\` "`
           よって、グローバル変数の汚染を防ぐという意味で使用する必要は無い。
         </p>
 
-        <h3>エスケープ</h3>
-        <p><code>&amp;, &lt;, &gt;, |, \</code>は<code>^</code>でエスケープする。</p>
-        <p><code>^</code>自身は<code>^^</code>のようにエスケープする。</p>
-        <p><code>enableDelayedExpansion</code>（<a
-            href="#enableDelayedExpansion">後述</a>）設定時は<code>!</code>も<code>^^!</code>のように<code>^</code>2個でエスケープする。
-        <p>例外的に<code>%</code>は<code>%%</code>のようにエスケープする。</p>
-        <p>正規表現を用いて検索ができるstrfind関数内では、<code>\, [, ], ", ., *, ?</code>が<code>\</code>によりエスケープされる。</p>
+        <section>
+          <h3>エスケープ</h3>
+          <p><code>&amp;, &lt;, &gt;, |, \</code>は<code>^</code>でエスケープする。</p>
+          <p><code>^</code>自身は<code>^^</code>のようにエスケープする。</p>
+          <p><code>enableDelayedExpansion</code>（<a
+              href="#enableDelayedExpansion">後述</a>）設定時は<code>!</code>も<code>^^!</code>のように<code>^</code>2個でエスケープする。
+          <p>例外的に<code>%</code>は<code>%%</code>のようにエスケープする。</p>
+          <p>正規表現を用いて検索ができるstrfind関数内では、<code>\, [, ], ", ., *, ?</code>が<code>\</code>によりエスケープされる。</p>
+        </section>
+
+        <section>
+          <h3>プログラムの成否による分岐</h3>
+          <p></p>
+          <ol>
+            <li><code>||</code>, <code>&&</code>を用いる方法</li>
+            <li> <code>ErrorLevel</code>による分岐</li>
+          </ol>
+          <pre>
+            @echo off<br>
+            <br>
+            :setName<br>
+            set /p name="What's your name?" || set name=Anonymous<br>
+            echo %name% | find /i "cheerppy" && echo Hello World! || echo Hi, %name%<br>
+            <br>
+            :choice<br>
+            choice /c ync /m "Are you sure to exit?" <br>
+            if errorlevel == 1 exit<br>
+            if errorlevel == 2 goto setName<br>
+            if errorlevel == 3 goto choice<br>
+          </pre>
+        </section>
+
+        <section>
+          <h3><code class="noCodeColor">If ErrorLevel &lt;int&gt; (...)</code>構文</h3>
+          <p>ErrorLevelが引数<strong>以上</strong>の時<code>(...)</code>を実行する</p>
+          <pre>
+            @echo off<br>
+            <br>
+            cd > nul<br>
+            echo +++ Error hasn't occurred. +++<br>
+            echo %%errorlevel%% = %errorlevel%<br>
+            if errorlevel 0 echo invoked always<br>
+            if errorlevel 1 echo invoked only when Error occurred<br>
+            <br>
+            rem コマンド cd に成功<br>
+            rem 期待される出力結果: <br>
+            rem > %errorlevel% = 0<br>
+            rem > invoked always<br>
+            <br>
+            type<br>
+            <br>
+            echo +++ Error has occurred. +++<br>
+            echo %%errorlevel%% = %errorlevel%<br>
+            if errorlevel 0 echo invoked always<br>
+            if errorlevel 1 echo invoked only when Error occurred<br>
+            pause>nul<br>
+            <br>
+            rem typeは引数不足なのでエラーを返す<br>
+            rem 期待される出力結果: <br>
+            rem > %errorlevel% = 1<br>
+            rem > invoked always<br>
+            rem > invoked only when Error occurred<br>
+          </pre>
+          <p>
+            <code>%ErrorLevel%</code>を直接<code>set</code>してはならない。そうしてしまうと、動的な定義を無効化して上書きしてしまい、期待される挙動を得られなくなってしまう。<br>
+            もし誤って<code>set</code>してしまった場合は、<code>set ErrorLevel=</code>（右辺は何も書かない）とすることで、上書きして作ってしまった環境変数を削除し、元の挙動が得られるようになる。
+          </p>
+          <p>このような動的な環境変数には以下のようなものがある。</p>
+          <ul class="dot">
+            <li><code>%ErrorLevel%</code></li>
+            <li><code>%cd%</code></li>
+            <li><code>%Date%</code>, <code>%Time%</code></li>
+            <li><code>%Random%</code> - 0から32767(15bit)の間でランダムな10進数に展開する。</li>
+          </ul>
+        </section>
 
 
+        <section>
+          <h3>遅延環境変数<code class="noCodeColor">!hoge!</code></h3>
+          <p>
+            環境変数は変数が呼び出されるその行へたどり着いたときに展開（＝読み込み）される。<br>
+            また、<code>( )</code>で括られた部分は一行とみなされる。<br>
+            すなわち、<code>( )</code>内での変数の変化には対応できない。
+          </p>
+          <p>遅延環境変数を用いると、その変数が呼び出されるコマンドにたどり着いたときに展開される。</p>
+          <p>使用するときは<code>setlocal enableDelayedExpansion</code>を宣言し、変数を<code>!</code>で囲む。</p>
+          <pre>
+            @echo off<br>
+            setlocal enableDelayedExpansion<br>
+            <br>
+            set age=20<br>
+            <br>
+            if %age% == 20 (<br>
+            <span class="tab"></span>set /a age=%age%+1<br>
+            <span class="tab"></span>echo %%age%%=%age% in the bracket<br>
+            <span class="tab"></span>echo ^^!age^^!=!age! in the bracket<br>
+            )<br>
+            echo %%age%%=%age% outside the bracket<br>
+            <br>
+            rem 期待される出力結果: <br>
+            rem > %age%=20 in the bracket<br>
+            rem > !age!=21 in the bracket<br>
+            rem > %age%=21 outside the bracket<br>
+          </pre>
+        </section>
 
-        <h3>プログラムの成否による分岐</h3>
+        <section>
+          <h3>右クリの送るメニューに表示</h3>
+          <p>
+            作ったbatスクリプトを<code>%AppData%\Microsoft\Windows\SendTo</code>に入れておくと、ファイル右クリックの送るメニューからファイルを引数<code>%1</code>に取ってスクリプトを実行できる。
+          </p>
+          <p>このディレクトリは<code>shell:sendto</code>からも開ける。</p>
+        </section>
+
+      </article>
+
+      <section>
+        <h3>タイムスタンプの取得</h3>
+        <pre>
+        echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%<br>
+        rem > 20220722_191322<br>
+        </pre>
+        
+        <pre>
+        powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"<br>
+        rem > 1675395329<br>
+        </pre>
+      </section>
+
+      <section>
+        <h3>クリップボードのイメージに名前を付けて保存</h3>
+        <pre>
+          @echo off<br>
+          setLocal<br>
+          <br>
+          set dirPath=%UserProfile%\OneDrive\画像<br>
+          set fileName=sample-image.jpg<br>
+          set filePath=%dirPath%\%fileName%<br>
+          <br>
+          set script=(Get-Clipboard -Format Image).Save("%filePath%",[System.Drawing.Imaging.ImageFormat]::Jpeg)<br>
+          REM script=(Get-Clipboard -Format Image).Save("%PNG_Path%",[System.Drawing.Imaging.ImageFormat]::Png) とすればPNG保存できる<br>
+          set script=%script:"=\"%<br>
+          powershell -Command "%script%"<br>
+          <br>
+          if %ERRORLEVEL% neq 0 (<br>
+          <span class="tab"></span>echo.<br>
+          <span class="tab"></span>echo Press any key to exit . . .<br>
+          <span class="tab"></span>pause > null<br>
+          <span class="tab"></span>exit 1<br>
+          )<br>
+          <br>
+          explorer /select,"%filePath%"<br>
+        </pre>
+      </section>
+
+      <section>
+        <h3>プロンプトの変更</h3>
+        <p>対話式batスクリプトで使えそう？なので覚え書き。</p>
+        <p><a href="https://www.javadrive.jp/command/display/index2.html" target="_blank"
+            rel="noopener noreferrer">https://www.javadrive.jp/command/display/index2.html</a></p>
+      </section>
+
+      <section>
+        <h3><code class="noCodeColor">tasklist</code>, <code class="noCodeColor">taskkill</code></h3>
+        <pre>tasklist /v /fi "imagename eq explorer.exe"</pre>
+        <pre>tasklist /v /fi "imagename eq chrome.exe" | findstr /I ちあぴのデブ活のーと</pre>
+        <pre>taskkill /fi "pid eq <i>&lt;pid&gt;</i>"</pre>
         <p></p>
-        <ol>
-          <li><code>||</code>, <code>&&</code>を用いる方法</li>
-          <li> <code>ErrorLevel</code>による分岐</li>
-        </ol>
-<pre>
-@echo off
-
-:setName
-set /p name="What's your name?" || set name=Anonymous
-echo %name% | find /i "cheerppy" && echo Hello World! || echo Hi, %name%
-
-:choice
-choice /c ync /m "Are you sure to exit?" 
-if errorlevel == 1 exit
-if errorlevel == 2 goto setName
-if errorlevel == 3 goto choice
-</pre>
-
-        <h3><code class="noCodeColor">If ErrorLevel &lt;int&gt; (...)</code>構文</h3>
-        <p>ErrorLevelが引数<strong>以上</strong>の時<code>(...)</code>を実行する</p>
-<pre>
-@echo off
-
-cd > nul
-echo +++ Error hasn't occurred. +++
-echo %%errorlevel%% = %errorlevel%
-if errorlevel 0 echo invoked always
-if errorlevel 1 echo invoked only when Error occurred
-
-rem コマンド cd に成功
-rem 期待される出力結果: 
-rem > %errorlevel% = 0
-rem > invoked always
-
-type
-
-echo +++ Error has occurred. +++
-echo %%errorlevel%% = %errorlevel%
-if errorlevel 0 echo invoked always
-if errorlevel 1 echo invoked only when Error occurred
-pause>nul
-
-rem typeは引数不足なのでエラーを返す
-rem 期待される出力結果: 
-rem > %errorlevel% = 1
-rem > invoked always
-rem > invoked only when Error occurred
-</pre>
-        <p>
-          <code>%ErrorLevel%</code>を直接<code>set</code>してはならない。そうしてしまうと、動的な定義を無効化して上書きしてしまい、期待される挙動を得られなくなってしまう。<br>
-          もし誤って<code>set</code>してしまった場合は、<code>set ErrorLevel=</code>（右辺は何も書かない）とすることで、上書きして作ってしまった環境変数を削除し、元の挙動が得られるようになる。
-        </p>
-        <p>このような動的な環境変数には以下のようなものがある。</p>
-        <ul class="dot">
-          <li><code>%ErrorLevel%</code></li>
-          <li><code>%cd%</code></li>
-          <li><code>%Date%</code>, <code>%Time%</code></li>
-          <li><code>%Random%</code> - 0から32767(15bit)の間でランダムな10進数に展開する。</li>
-        </ul>
-
-
-        <h3>遅延環境変数<code class="noCodeColor">!hoge!</code></h3>
-        <p>
-          環境変数は変数が呼び出されるその行へたどり着いたときに展開（＝読み込み）される。<br>
-          また、<code>( )</code>で括られた部分は一行とみなされる。<br>
-          すなわち、<code>( )</code>内での変数の変化には対応できない。
-        </p>
-        <p>遅延環境変数を用いると、その変数が呼び出されるコマンドにたどり着いたときに展開される。</p>
-        <p>使用するときは<code>setlocal enableDelayedExpansion</code>を宣言し、変数を<code>!</code>で囲む。</p>
-<pre>
-@echo off
-setlocal enableDelayedExpansion
-
-set age=20
-
-if %age% == 20 (
-    set /a age=%age%+1
-    echo %%age%%=%age% in the bracket
-    echo ^^!age^^!=!age! in the bracket
-)
-echo %%age%%=%age% outside the bracket
-
-rem 期待される出力結果: 
-rem > %age%=20 in the bracket
-rem > !age!=21 in the bracket
-rem > %age%=21 outside the bracket
-</pre>
-
-        <h3>右クリの送るメニューに表示</h3>
-        <p>
-          作ったbatスクリプトを<code>%AppData%\Microsoft\Windows\SendTo</code>に入れておくと、ファイル右クリックの送るメニューからファイルを引数<code>%1</code>に取ってスクリプトを実行できる。
-        </p>
-        <p>このディレクトリは<code>shell:sendto</code>からも開ける。</p>
-      </div>
-
-      <h3>タイムスタンプの取得</h3>
-<pre>
-echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%
-rem > 20220722_191322
-</pre>
-
-<pre>
-powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"
-rem > 1675395329
-</pre>
-
-      <h3>クリップボードのイメージに名前を付けて保存</h3>
-<pre>
-@echo off
-setLocal
-
-set dirPath=%UserProfile%\OneDrive\画像
-set fileName=sample-image.jpg
-set filePath=%dirPath%\%fileName%
-
-set script=(Get-Clipboard -Format Image).Save("%filePath%",[System.Drawing.Imaging.ImageFormat]::Jpeg)
-REM script=(Get-Clipboard -Format Image).Save("%PNG_Path%",[System.Drawing.Imaging.ImageFormat]::Png) とすればPNG保存できる
-set script=%script:"=\"%
-powershell -Command "%script%"
-
-if %ERRORLEVEL% neq 0 (
-    echo.
-    echo Press any key to exit . . .
-    pause > null
-    exit 1
-)
-
-explorer /select,"%filePath%"
-</pre>
-
-      <h3>プロンプトの変更</h3>
-      <p>対話式batスクリプトで使えそう？なので覚え書き。</p>
-      <p><a href="https://www.javadrive.jp/command/display/index2.html" target="_blank"
-          rel="noopener noreferrer">https://www.javadrive.jp/command/display/index2.html</a></p>
-
-      <h3><code class="noCodeColor">tasklist</code>, <code class="noCodeColor">taskkill</code></h3>
-      <pre>tasklist /v /fi "imagename eq explorer.exe"</pre>
-      <pre>tasklist /v /fi "imagename eq chrome.exe" | findstr /I ちあぴのデブ活のーと</pre>
-      <pre>taskkill /fi "pid eq <i>&lt;pid&gt;</i>"</pre>
-      <p></p>
+      </section>
 
       <!-- Compiled Languages -->
-      <div id="compiled_contents">
+      <article id="compiled_contents">
         <h2>Compiled Languages</h2>
         <section>
           <h3>C-Lang</h3>
@@ -784,17 +839,16 @@ explorer /select,"%filePath%"
             <table>
               <tr></tr>
             </table>
-<pre>
-#include &lt;stdio.h&gt;
-#include &lt;stdbool.h&gt;
-
-int main(void) {
-    // ここにコードを記述
-    return 0;
-}
-</pre>
+            <pre>
+              #include &lt;stdio.h&gt;<br>
+              #include &lt;stdbool.h&gt;<br>
+              <br>
+              int main(void) {<br>
+              <span class="tab"></span>// ここにコードを記述<br>
+              <span class="tab"></span>return 0;<br>
+              }<br>
+            </pre>
           </section>
-
 
           <section>
             <h4>標準出力</h4>
@@ -805,261 +859,271 @@ int main(void) {
           </section>
           <section>
             <h4>標準入力</h4>
-<pre>
-int age;
-printf("how old are you?\n\t> ");
-scanf("%d", &amp;age);
-printf("you are %d years old!\n", age);
-</pre>
+            <pre>
+              int age;<br>
+              printf("how old are you?\n\t> ");<br>
+              scanf("%d", &amp;age);<br>
+              printf("you are %d years old!\n", age);<br>
+            </pre>
             <p>
               "&amp;"はポインタ
             </p>
           </section>
           <section>
             <h4>データ型</h4>
-<pre>
-int age;
-double height = 163.1;
-char sex = 'F';
-
-// 文字列はcharの配列で表現し、最後にnull文字('\0'あるいは0)で終わる。
-char text1 [4] = {'F', 'o', 'o', '\0'};
-char text2 [4]; text2[0] = 'B'; text2[1] = 'a'; text2[2] = 'r'; text2[3] = 0;
-char text3 [4] = "Baz";
-printf("%s%s%s", text1, text2, text3); // => FooBarBaz
-</pre>
+            <pre>
+              int age;<br>
+              double height = 163.1;<br>
+              char sex = 'F';<br>
+              <br>
+              // 文字列はcharの配列で表現し、最後にnull文字('\0'あるいは0)で終わる。<br>
+              char text1 [4] = {'F', 'o', 'o', '\0'};<br>
+              char text2 [4]; text2[0] = 'B'; text2[1] = 'a'; text2[2] = 'r'; text2[3] = 0;<br>
+              char text3 [4] = "Baz";<br>
+              printf("%s%s%s", text1, text2, text3); // => FooBarBaz<br>
+            </pre>
 
           </section>
           <section>
             <h4>for, if</h4>
             <p>等価演算子は<code>==</code></p>
-<pre>
-int judgeAdult(int i) {
-    int adultAge = 18;
-
-    if (i &lt; 0) {
-        return 1; // 異常終了
-    }
-    else if (i &gt;= adultAge) {
-        printf(&quot;you are adult!\n&quot;);
-        return 0; // 正常終了
-    }
-    else {
-        printf(&quot;you are too young!\n&quot;);
-        return 0;
-    }
-}
-</pre>
-<pre>
-// C言語の歴史的にはイベントハンドラでよく使われる
-// switch文はフォールスルーできる
-```
-switch (country) {
-    case Country.Japan:
-        lang = Lang.Japanese; break;
-
-    case Country.China:
-        lang = Lang.China; break;
-
-    case Country.Brazil:
-    case Country.Portugal:
-        lang = Lang.Portuguese; break;
-
-    default:
-        lang = Lang.English;
-}
-```
-</pre>
-<pre>
-int i = 0;
-while (i &lt; 3) {
-    i++;
-    printf(&quot;i = %d, &quot;, i);
-}
-printf(&quot;result: %d&quot;, i); // =&gt; 1, 2, 3, result: 3
-</pre>
-<pre>
-for (int i = 0; i &lt; 3; i++) {
-    printf(&quot;i = %d, &quot;, i);
-}
-// 繰返し変数iはブロック外から参照できてしまう
-printf(&quot;result: %d&quot;, i); // =&gt; 0, 1, 2, result: 3
-
-</pre>
+            <pre>
+              // if<br>
+              int judgeAdult(int i) {<br>
+              <span class="tab"></span>int adultAge = 18;<br>
+              <br>
+              <span class="tab"></span>if (i &lt; 0) {<br>
+              <span class="tab"></span><span class="tab"></span>return 1; // 異常終了<br>
+              <span class="tab"></span>}<br>
+              <span class="tab"></span>else if (i &gt;= adultAge) {<br>
+              <span class="tab"></span><span class="tab"></span>printf(&quot;you are adult!\n&quot;);<br>
+              <span class="tab"></span><span class="tab"></span>return 0; // 正常終了<br>
+              <span class="tab"></span>}<br>
+              <span class="tab"></span>else {<br>
+              <span class="tab"></span><span class="tab"></span>printf(&quot;you are too young!\n&quot;);<br>
+              <span class="tab"></span><span class="tab"></span>return 0;<br>
+              <span class="tab"></span>}<br>
+              }<br>
+            </pre>
+            <pre>
+              // switch<br>
+              // switch文はフォールスルーできる<br>
+              // C言語の歴史的にはイベントハンドラでよく使われる<br>
+              switch (country) {<br>
+              <span class="tab"></span>case Country.Japan:<br>
+              <span class="tab"></span><span class="tab"></span>lang = Lang.Japanese; break;<br>
+              <br>
+              <span class="tab"></span>case Country.China:<br>
+              <span class="tab"></span><span class="tab"></span>lang = Lang.Chinese; break;<br>
+              <br>
+              <span class="tab"></span>case Country.Brazil:<br>
+              <span class="tab"></span>case Country.Portugal:<br>
+              <span class="tab"></span><span class="tab"></span>lang = Lang.Portuguese; break;<br>
+              <br>
+              <span class="tab"></span>default:<br>
+              <span class="tab"></span><span class="tab"></span>lang = Lang.English;<br>
+              }<br>
+            </pre>
+            <pre>
+              // for<br>
+              for (int i = 0; i &lt; 3; i++) {<br>
+              <span class="tab"></span>printf(&quot;i = %d, &quot;, i);<br>
+              }<br>
+              // 繰返し変数iはブロック外から参照できてしまう<br>
+              printf(&quot;result: %d&quot;, i); // =&gt; 0, 1, 2, result: 3<br>
+              <br>
+            </pre>
+            <pre>
+              // while<br>
+              int i = 0;<br>
+              while (i &lt; 3) {<br>
+              <span class="tab"></span>i++;<br>
+              <span class="tab"></span>printf(&quot;i = %d, &quot;, i);<br>
+              }<br>
+              printf(&quot;result: %d&quot;, i); // =&gt; 1, 2, 3, result: 3<br>
+            </pre>
 
           </section>
           <section>
             <h4>配列、構造体</h4>
-
-<pre>
-typedef struct {
-    int age;
-    double height;
-    char sex; // M or F
-} Person;
-
-Person john = {22, 173.2, 'M'};
-Person jane;
-jane.age = 20;
-jane.height = 158.1;
-jane.sex = 'F';
-
-</pre>
+            <pre>
+              typedef struct {<br>
+              <span class="tab"></span>int age;<br>
+              <span class="tab"></span>double height;<br>
+              <span class="tab"></span>char sex; // M or F<br>
+              } Person;<br>
+              <br>
+              Person john = {22, 173.2, 'M'};<br>
+              Person jane;<br>
+              jane.age = 20;<br>
+              jane.height = 158.1;<br>
+              jane.sex = 'F';<br>
+              <br>
+            </pre>
 
           </section>
           <section>
             <h4>ポインタ</h4>
-<pre>
-int num; int* pnum;
-
-num = 100;
-printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
-
-printf(&quot;\n// pnumはポインタ変数\n&quot;);
-pnum = &amp;num;
-printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span>
-printf(&quot;&amp;num = %p\n&quot;, &amp;num); <span class="comment">// =&gt; 0x7fff12</span>
-
-printf(&quot;\n// ポインタから参照先の値を取得することもできる\n&quot;);
-printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
-printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span>
-printf(&quot;*(&amp;num) = %d\n&quot;, *(&amp;num)); <span class="comment">// =&gt; 100</span>
-
-printf(&quot;\n// pnumのアドレスも参照できる。intは4byteなので, &amp;pnumは&amp;num+4の値を取る\n&quot;);
-printf(&quot;&amp;num = %p\n&quot;, &amp;num); <span class="comment">// =&gt; 0x7fff12</span>
-printf(&quot;&amp;pnum = %p\n&quot;, &amp;pnum); <span class="comment">// =&gt; 0x7fff16</span>
-
-printf(&quot;\n// pnumの操作がnumに影響を与える\n&quot;);
-*pnum = 200;
-printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span>
-printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span>
-printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
-
-printf(&quot;\n// 逆もまたしかり\n&quot;);
-num = 300;
-printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span>
-printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span>
-printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
-
-</pre>
+            <pre>
+              int num; int* pnum;<br>
+              <br>
+              num = 100;<br>
+              printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span><br>
+              <br>
+              printf(&quot;\n// pnumはポインタ変数\n&quot;);<br>
+              pnum = &amp;num;<br>
+              printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span><br>
+              printf(&quot;&amp;num = %p\n&quot;, &amp;num); <span class="comment">// =&gt; 0x7fff12</span><br>
+              <br>
+              printf(&quot;\n// ポインタから参照先の値を取得することもできる\n&quot;);<br>
+              printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span><br>
+              printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span><br>
+              printf(&quot;*(&amp;num) = %d\n&quot;, *(&amp;num)); <span class="comment">// =&gt; 100</span><br>
+              <br>
+              printf(&quot;\n// pnumのアドレスも参照できる。intは4byteなので, &amp;pnumは&amp;num+4の値を取る\n&quot;);<br>
+              printf(&quot;&amp;num = %p\n&quot;, &amp;num); <span class="comment">// =&gt; 0x7fff12</span><br>
+              printf(&quot;&amp;pnum = %p\n&quot;, &amp;pnum); <span class="comment">// =&gt; 0x7fff16</span><br>
+              <br>
+              printf(&quot;\n// pnumの操作がnumに影響を与える\n&quot;);<br>
+              *pnum = 200;<br>
+              printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span><br>
+              printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span><br>
+              printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span><br>
+              <br>
+              printf(&quot;\n// 逆もまたしかり\n&quot;);<br>
+              num = 300;<br>
+              printf(&quot;pnum = %p\n&quot;, pnum); <span class="comment">// =&gt; 0x7fff12</span><br>
+              printf(&quot;*pnum = %d\n&quot;, *pnum); <span class="comment">// =&gt; 100</span><br>
+              printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span><br>
+              <br>
+            </pre>
           </section>
         </section>
 
-      </div>
+      </article>
 
 
       <!-- LICENSE -->
-      <div id="license_contents">
+      <article id="license_contents">
         <h2>LICENSE</h2>
-        <h3>ソフトウェアライセンスおすすめ</h3>
-        <p>MIT</p>
-        <h3>ライセンス汚染</h3>
-        <p>GNU GPL</p>
-      </div>
+
+        <section>
+          <h3>ソフトウェアライセンスおすすめ</h3>
+          <p>MIT</p>
+        </section>
+
+        <section>
+          <h3>ライセンス汚染</h3>
+          <p>GNU GPL</p>
+        </section>
+      </article>
 
 
       <!-- Windows -->
-      <div id="Windows_contents">
+      <article id="Windows_contents">
         <h2>Windows</h2>
-        <h3>Win10 shortcut.lnk</h3>
-        <p>Ctrl+ドラッグ＆ドロップでファイルのコピーを、Alt+ドラッグ＆ドロップでファイルのショートカットを作成できる。</p>
-        <p>右クリドラッグ＆ドロップでも似たようなことが可能（選択できる）。</p>
 
-        <p>以下のテキストを「項目の場所」として記述することができる。</p>
-        <ul class="leftPadding">
-          <li>
-            <div>
-              <h4>batファイル</h4>
-              <pre>cmd /c "<i>hogehoge</i>.bat"</pre>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h4>online ExcelファイルをDesktopアプリで開く</h4>
-              <pre>ms-excel:<i>https://cheerppy.xyz/fugafuga</i>.xls</pre>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h4>Desktopを表示</h4>
-              <pre>explorer shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}</pre>
-            </div>
-          </li>
-        </ul>
+        <section>
+          <h3>Win10 shortcut.lnk</h3>
+          <p>Ctrl+ドラッグ＆ドロップでファイルのコピーを、Alt+ドラッグ＆ドロップでファイルのショートカットを作成できる。</p>
+          <p>右クリドラッグ＆ドロップでも似たようなことが可能（選択できる）。</p>
+          <p>以下のテキストを「項目の場所」として記述することができる。</p>
+          <ul class="leftPadding">
+            <li>
+              <section>
+                <h4>batファイル</h4>
+                <pre>cmd /c "<i>hogehoge</i>.bat"</pre>
+              </section>
+            </li>
+            <li>
+              <section>
+                <h4>online ExcelファイルをDesktopアプリで開く</h4>
+                <pre>ms-excel:<i>https://cheerppy.xyz/fugafuga</i>.xls</pre>
+              </section>
+            </li>
+            <li>
+              <section>
+                <h4>Desktopを表示</h4>
+                <pre>explorer shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}</pre>
+              </section>
+            </li>
+          </ul>
+        </section>
 
-        <h3>Run...</h3>
-        <p>一覧以外でもPathさえ通っていれば何でも開く。（規定では拡張子<code>.lnk</code>は省略できないが<code>%PathExt%</code>を編集すると省略可能になる。）</p>
-        <p>Ctrl+Shift+Enterで管理者として実行する。</p>
-        <table class="noCodeColor">
-          <tr>
-            <th>コマンド</th>
-            <th>説明</th>
-          </tr>
-          <tr>
-            <td><code>shell:startup</code></td>
-            <td><code>%AppData%\Microsoft\Windows\Start Menu\Programs\Startup</code></td>
-          </tr>
-          <tr>
-            <td><code>shell:profile</code></td>
-            <td><code>%UserProfile%</code></td>
-          </tr>
-          <tr>
-            <td><code>shell:sendTo</code></td>
-            <td><code>%AppData%\Microsoft\Windows\SendTo</code></td>
-          </tr>
-          <tr>
-            <td><code>shell:start menu</code></td>
-            <td><code>%AppData%\Microsoft\Windows\Start Menu</code></td>
-          </tr>
-          <tr>
-            <td><code>shell:fonts</code></td>
-            <td><code>C:\Windows\Fonts</code></td>
-          </tr>
-          <tr>
-            <td><code>shell:screenshots</code></td>
-            <td>スクリーンショットフォルダ</td>
-          </tr>
-          <tr>
-            <td><code>ms-clock:</code></td>
-            <td>Clock & Alarm</td>
-          </tr>
-          <tr>
-            <td><code>calc</code></td>
-            <td>電卓</td>
-          </tr>
-          <tr>
-            <td><code>control</code></td>
-            <td>すべてのコントロールパネル項目</td>
-          </tr>
-          <tr>
-            <td><code>rundll32 sysdm.cpl,EditEnvironmentVariables</code></td>
-            <td>環境変数の確認・編集（要管理者）</td>
-          </tr>
-        </table>
-
-        <p>以下自分用カスタムコマンド</p>
-        <table class="noCodeColor">
-          <tr>
-            <th>コマンド</th>
-            <th>説明</th>
-          </tr>
-          <tr>
-            <td><code>%Path%</code></td>
-            <td><code>%Path%;C:\cheerppy\shortcuts</code></td>
-          </tr>
-          <tr>
-            <td><code>note</code></td>
-            <td>notepad</td>
-          </tr>
-          <tr>
-            <td><code>clock</code></td>
-            <td>Clock & Alarm</td>
-          </tr>
-          <tr>
-            <td><code>alarm</code></td>
-            <td>Clock & Alarm</td>
-          </tr>
-        </table>
+        <section>
+          <h3>Run...</h3>
+          <p>一覧以外でもPathさえ通っていれば何でも開く。（規定では拡張子<code>.lnk</code>は省略できないが<code>%PathExt%</code>を編集すると省略可能になる。）</p>
+          <p>Ctrl+Shift+Enterで管理者として実行する。</p>
+          <table class="noCodeColor">
+            <tr>
+              <th>コマンド</th>
+              <th>説明</th>
+            </tr>
+            <tr>
+              <td><code>shell:startup</code></td>
+              <td><code>%AppData%\Microsoft\Windows\Start Menu\Programs\Startup</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:profile</code></td>
+              <td><code>%UserProfile%</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:sendTo</code></td>
+              <td><code>%AppData%\Microsoft\Windows\SendTo</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:start menu</code></td>
+              <td><code>%AppData%\Microsoft\Windows\Start Menu</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:fonts</code></td>
+              <td><code>C:\Windows\Fonts</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:screenshots</code></td>
+              <td>スクリーンショットフォルダ</td>
+            </tr>
+            <tr>
+              <td><code>ms-clock:</code></td>
+              <td>Clock & Alarm</td>
+            </tr>
+            <tr>
+              <td><code>calc</code></td>
+              <td>電卓</td>
+            </tr>
+            <tr>
+              <td><code>control</code></td>
+              <td>すべてのコントロールパネル項目</td>
+            </tr>
+            <tr>
+              <td><code>rundll32 sysdm.cpl,EditEnvironmentVariables</code></td>
+              <td>環境変数の確認・編集（要管理者）</td>
+            </tr>
+          </table>
+          <p>以下自分用カスタムコマンド</p>
+          <table class="noCodeColor">
+            <tr>
+              <th>コマンド</th>
+              <th>説明</th>
+            </tr>
+            <tr>
+              <td><code>%Path%</code></td>
+              <td><code>%Path%;C:\cheerppy\shortcuts</code></td>
+            </tr>
+            <tr>
+              <td><code>note</code></td>
+              <td>notepad</td>
+            </tr>
+            <tr>
+              <td><code>clock</code></td>
+              <td>Clock & Alarm</td>
+            </tr>
+            <tr>
+              <td><code>alarm</code></td>
+              <td>Clock & Alarm</td>
+            </tr>
+          </table>
+        </section>
 
         <h3>環境変数</h3>
         <small>※自分が分かりやすいように、値に環境変数を使って書いています。</small>
@@ -1074,19 +1138,19 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
           </tr>
           <tr>
             <td><code>%HomePath%</code></td>
-            <td><code>C:\Users\【ユーザー名】</code></td>
+            <td><code>\Users\【ユーザー名】</code></td>
           </tr>
           <tr>
             <td><code>%UserProfile%</code></td>
-            <td><code>%HomePath%</code></td>
+            <td><code>%HomeDrive%%HomePath%</code></td>
           </tr>
           <tr>
             <td><code>%AppData%</code></td>
-            <td><code>%HomePath%\AppData\Roaming</code></td>
+            <td><code>%UserProfile%\AppData\Roaming</code></td>
           </tr>
           <tr>
             <td><code>%LocalAppData%</code></td>
-            <td><code>%HomePath%\AppData\Local</code></td>
+            <td><code>%UserProfile%\AppData\Local</code></td>
           </tr>
           <tr>
             <td><code>%TEMP%</code></td>
@@ -1195,11 +1259,11 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
         <pre>code C:\work\work.code-workspace C:\work\test.md</pre>
 
 
-      </div>
+      </article>
 
 
       <!-- Linux -->
-      <div id="Linux_contents">
+      <article id="Linux_contents">
         <h2>Linux</h2>
         <h3>Terminal中のショートカットキー</h3>
         <table>
@@ -1231,11 +1295,11 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
         <h4></h4>
         <p>Ctrl+Zで中断した処理は、<code>jobs</code>でジョブ番号を確認し、<code>fg &lt;job no&gt;</code>を叩くと再開できる。</p>
 <pre>
-<span class="terminal">jobs</span>
-[1]+ 停止       ping 8.8.8.8
-
-<span class="terminal">fg 1</span>
-
+<span class="terminal">jobs</span><br>
+[1]+ 停止       ping 8.8.8.8<br>
+<br>
+<span class="terminal">fg 1</span><br>
+<br>
 </pre>
 
         <h3><code class="noCodeColor">grep</code>単体</h3>
@@ -1379,9 +1443,9 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
         <!--
     <h3><code class="noCodeColor"></code></h3>
 -->
-      </div>
+      </article>
 
-      <div id="git_contents">
+      <article id="git_contents">
         <h2>Git</h2>
         <p>Git Bashなどを使ってCLI操作できる。</p>
         <p>HEADのエイリアスとして<code>@</code>が使える。</p>
@@ -1413,8 +1477,8 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
         <h3>変更の退避</h3>
         <p>コミットしたくないけどブランチを移動したい、けど後で作業の続きをしたい時などに使う。</p>
 <pre>
-<span class="terminal">git add .</span>
-<span class="terminal">git stash</span>
+<span class="terminal">git add .</span><br>
+<span class="terminal">git stash</span><br>
 </pre>
         <p>
           <code>git stash apply</code>でもとに戻せる。
@@ -1423,44 +1487,34 @@ printf(&quot;num = %d\n&quot;, num); <span class="comment">// =&gt; 100</span>
 
         <h3>直前のコミットをキャンセル</h3>
         <p>コミット直前（ステージした状態）に戻す</p>
-<pre>
-<span class="terminal">git reset --soft @~</span>
-</pre>
+<pre><span class="terminal">git reset --soft @~</span></pre>
 
         <h3>コミットメッセージの編集</h3>
         <p>ローカルのみ。</p>
-<pre>
-<span class="terminal">git commit --amend -m "修正後メッセージ"</span>
-</pre>
+<pre><span class="terminal">git commit --amend -m "修正後メッセージ"</span></pre>
 
         <h3>コミットの編集　※危険度2</h3>
         <p>ローカルのみ。リモートのコミットの編集は危険度2。理解して作業すること。</p>
         <p>
           直前のコミットを編集するなら、<code>HEAD~2</code>に移動したいので
-<pre>
-<span class="terminal">git rebase -i @~2</span>
-</pre>
+<pre><span class="terminal">git rebase -i @~2</span></pre>
         とする。
         </p>
 
         <h3>最終手段・行動のキャンセル</h3>
         <p>直前の行動をキャンセルする場合、</p>
-<pre>
-<span class="terminal">git reset --hard <a href="https://culage.hatenablog.com/entry/20151216/p2">ORIG_HEAD</a></span>
-</pre>
+<pre><span class="terminal">git reset --hard <a href="https://culage.hatenablog.com/entry/20151216/p2">ORIG_HEAD</a></span></pre>
           <p>もう少し前に戻したい場合、まず行動履歴を確認する</p>
 <pre>
-<span class="terminal">git reflog</span>
-o32y984 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: add some contents
-2308ru2 HEAD@{1}: commit: fix readme
-a3eyr73 HEAD@{2}: commit: add readme
-aw983f3 HEAD@{3}: commit: initial commit
+<span class="terminal">git reflog</span><br>
+o32y984 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: add some contents<br>
+2308ru2 HEAD@{1}: commit: fix readme<br>
+a3eyr73 HEAD@{2}: commit: add readme<br>
+aw983f3 HEAD@{3}: commit: initial commit<br>
 </pre>
         <p>
           戻りたい位置を指定する。例えばHEAD@{2}（@@{2}）なら、
-<pre>
-<span class="terminal">git reset --hard HEAD@{2}</span>  <span class="comment"># @@{2}でもよい</span>
-</pre>
+<pre><span class="terminal">git reset --hard HEAD@{2}</span>  <span class="comment"># @@{2}でもよい</span></pre>
         ……resetはresetで取り消す！！
         </p>
 
@@ -1470,30 +1524,26 @@ aw983f3 HEAD@{3}: commit: initial commit
           <code>git init</code>で既にローカルリポジトリ化しているフォルダをリモートリポジトリと結びつける。
         </p>
 
-<pre>
-<span class="terminal">git remote add origin https://github.com/user-name/repository-name.git</span>
-</pre>
+<pre><span class="terminal">git remote add origin https://github.com/user-name/repository-name.git</span></pre>
 
         <h3>エイリアス</h3>
         <p>詳細は<a
             href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-Git-%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9">こちら</a>
         </p>
 <pre>
-<span class="terminal">git config --global alias.co 'checkout'</span>
-<span class="terminal">git config --global alias.edit 'commit --amend'</span>
-<span class="terminal">git config --global alias.ah '!cat "git config --global alias.co \'checkout\'"'</span>    <span class="comment"># 外部コマンドも使える</span>
+<span class="terminal">git config --global alias.co 'checkout'</span><br>
+<span class="terminal">git config --global alias.edit 'commit --amend'</span><br>
+<span class="terminal">git config --global alias.ah '!cat "git config --global alias.co \'checkout\'"'</span>    <span class="comment"># 外部コマンドも使える</span><br>
 </pre>
 
         <p>テキストエディタでエイリアスやconfigを確認</p>
-<pre>
-<span class="terminal">git config --global --edit</span>
-</pre>
+<pre><span class="terminal">git config --global --edit</span></pre>
 
-      </div>
+      </article>
 
 
       <!-- Others -->
-      <div id="others_contents">
+      <article id="others_contents">
         <h2>OTHERS</h2>
 
         <h3>encoder</h3>
@@ -1512,9 +1562,9 @@ const isAdult = age =&gt; age
           <h3>ページの転送（リダイレクト）</h3>
           <p>以下のように記述する。</p>
 <pre>
-&lt;script type=&quot;text/javascript&quot;&gt;
-&#009;location.href = &quot;移動先URL&quot;;
-&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;<br>
+<span class="tab"></span>location.href = &quot;移動先URL&quot;;<br>
+&lt;/script&gt;<br>
 </pre>
         </p>
         <h3>USBメモリにパスワードをかける方法</h3>
@@ -1577,15 +1627,15 @@ const isAdult = age =&gt; age
 
 
 
-      </div>
+      </article>
 
       <!-- Contact -->
-      <div id="contact_contents">
+      <article id="contact_contents">
         <h2>Contact</h2>
         <p>誤字脱字衍字や誤情報の指摘等もこちらから</p>
         <p><a href="https://github.com/cheerppy/dev-note" target="_blank" rel="noopener noreferrer">GitHub</a>
         </p>
-      </div>
+      </article>
 
     </main>
   </div> <!-- flexContainer -->
