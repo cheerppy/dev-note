@@ -1322,7 +1322,7 @@
         <p><code>rm -v</code>で削除したファイルを事後表示</p>
         <h3><code class="noCodeColor">mv -v</code></h3>
         <p><code>mv</code>したファイルを事後表示</p>
-        <h3><code class="noCodeColor">collumn -t -s, &lt;file&gt;</code></h3>
+        <h3><code class="noCodeColor">column -t -s, &lt;file&gt;</code></h3>
         <p></p>
         <table class="noCodeColor">
           <tr>
@@ -1517,6 +1517,11 @@ aw983f3 HEAD@{3}: commit: initial commit<br>
 <pre><span class="terminal">git reset --hard HEAD@{2}</span>  <span class="comment"># @@{2}でもよい</span></pre>
         ……resetはresetで取り消す！！
         </p>
+        <p>
+            より厳密には、resetはブランチの先端が指すコミットを変更するコマンド。<br>
+            過去に限らず任意のハッシュを指定できるし、スタッシュとかチェックアウトとかブランチ削除をリセットできるわけではない。br
+            git reflogはHEADの履歴なので、reflogから削除してしまったブランチを復活させることは可能。`git co -b @@{1}`
+        </p>
 
 
         <h3>リモートリポジトリの登録</h3>
@@ -1547,7 +1552,9 @@ aw983f3 HEAD@{3}: commit: initial commit<br>
         <h2>OTHERS</h2>
 
         <h3>encoder</h3>
-        <a href="https://cheerppy.github.io/encoder/">エンコーダー</a>
+        <a href="https://cheerppy.github.io/encoder/">ちあぴ式進数エンコーダー</a>
+        <p>Base64エンコーダー。2進数, 10進数, 16進数, 64進数の変換器付き</p>
+        <!-- 進数コンバーターって名前のほうが良さそう？ -->
 
         <h3>糖衣構文（シンタックスシュガー；"Syntax Sugar"）とは</h3>
         <p>同じことを別の書き方でも書けるよ、という意味</p>
@@ -1581,6 +1588,7 @@ const isAdult = age =&gt; age
         <h3>vba</h3>
         <p>excelなどのタイトルバーにフルパスを表示</p>
         <pre>ActiveWindow.Caption = ActiveWorkbook.FullName</pre>
+
         <h3>元素</h3>
         <table title="実はちあぴは化学専攻（クソどうでもいい）">
           <tr>
