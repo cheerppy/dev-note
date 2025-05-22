@@ -533,7 +533,7 @@
         <span class="tab"></span>next(){<br>
         <span class="tab"></span><span class="tab"></span>this.#index = (this.#index+1) % this.members.length;<br>
         <span class="tab"></span><span class="tab"></span>return this.#index;<br>
-        }<br>
+        <span class="tab"></span>}<br>
         }<br>
 </pre>
 
@@ -700,10 +700,12 @@
             if errorlevel 0 echo invoked always<br>
             if errorlevel 1 echo invoked only when Error occurred<br>
             <br>
-            rem コマンド cd に成功<br>
-            rem 期待される出力結果: <br>
-            rem > %errorlevel% = 0<br>
-            rem > invoked always<br>
+            <span class="comment">
+                rem コマンド cd に成功<br>
+                rem 期待される出力結果: <br>
+                rem > %errorlevel% = 0<br>
+                rem > invoked always<br>
+            </span>
             <br>
             type<br>
             <br>
@@ -713,11 +715,13 @@
             if errorlevel 1 echo invoked only when Error occurred<br>
             pause>nul<br>
             <br>
-            rem typeは引数不足なのでエラーを返す<br>
-            rem 期待される出力結果: <br>
-            rem > %errorlevel% = 1<br>
-            rem > invoked always<br>
-            rem > invoked only when Error occurred<br>
+            <span class="comment">
+                rem typeは引数不足なのでエラーを返す<br>
+                rem 期待される出力結果: <br>
+                rem > %errorlevel% = 1<br>
+                rem > invoked always<br>
+                rem > invoked only when Error occurred<br>
+            </span>
           </pre>
           <p>
             <code>%ErrorLevel%</code>を直接<code>set</code>してはならない。そうしてしまうと、動的な定義を無効化して上書きしてしまい、期待される挙動を得られなくなってしまう。<br>
@@ -755,10 +759,12 @@
             )<br>
             echo %%age%%=%age% outside the bracket<br>
             <br>
-            rem 期待される出力結果: <br>
-            rem > %age%=20 in the bracket<br>
-            rem > !age!=21 in the bracket<br>
-            rem > %age%=21 outside the bracket<br>
+            <span class="comment">
+                rem 期待される出力結果: <br>
+                rem > %age%=20 in the bracket<br>
+                rem > !age!=21 in the bracket<br>
+                rem > %age%=21 outside the bracket<br>
+            </span>
           </pre>
         </section>
 
@@ -776,12 +782,12 @@
         <h3>タイムスタンプの取得</h3>
         <pre>
         echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%<br>
-        rem > 20220722_191322<br>
+        <span class="comment">rem > 20220722_191322</span><br>
         </pre>
         
         <pre>
         powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"<br>
-        rem > 1675395329<br>
+        <span class="comment">rem > 1675395329</span><br>
         </pre>
       </section>
 
@@ -875,7 +881,7 @@
               double height = 163.1;<br>
               char sex = 'F';<br>
               <br>
-              // 文字列はcharの配列で表現し、最後にnull文字('\0'あるいは0)で終わる。<br>
+              <span class="comment">// 文字列はcharの配列で表現し、最後にnull文字('\0'あるいは0)で終わる。<br></span>
               char text1 [4] = {'F', 'o', 'o', '\0'};<br>
               char text2 [4]; text2[0] = 'B'; text2[1] = 'a'; text2[2] = 'r'; text2[3] = 0;<br>
               char text3 [4] = "Baz";<br>
@@ -887,7 +893,7 @@
             <h4>for, if</h4>
             <p>等価演算子は<code>==</code></p>
             <pre>
-              // if<br>
+              <span class="comment">// if 文の例<br></span>
               int judgeAdult(int i) {<br>
               <span class="tab"></span>int adultAge = 18;<br>
               <br>
@@ -905,9 +911,11 @@
               }<br>
             </pre>
             <pre>
-              // switch<br>
-              // switch文はフォールスルーできる<br>
-              // C言語の歴史的にはイベントハンドラでよく使われる<br>
+                <span class="comment">
+                    // switch 文の例<br>
+                    // switch文はフォールスルーできる<br>
+                    // C言語の歴史的にはイベントハンドラでよく使われる<br>
+                </span>
               switch (country) {<br>
               <span class="tab"></span>case Country.Japan:<br>
               <span class="tab"></span><span class="tab"></span>lang = Lang.Japanese; break;<br>
@@ -924,16 +932,16 @@
               }<br>
             </pre>
             <pre>
-              // for<br>
+              <span class="comment">// for 文の例<br></span>
               for (int i = 0; i &lt; 3; i++) {<br>
               <span class="tab"></span>printf(&quot;i = %d, &quot;, i);<br>
               }<br>
-              // 繰返し変数iはブロック外から参照できてしまう<br>
+              <span class="comment">// 繰返し変数iはブロック外から参照できてしまう<br></span>
               printf(&quot;result: %d&quot;, i); // =&gt; 0, 1, 2, result: 3<br>
               <br>
             </pre>
             <pre>
-              // while<br>
+              <span class="comment">// while 文の例<br></span>
               int i = 0;<br>
               while (i &lt; 3) {<br>
               <span class="tab"></span>i++;<br>
@@ -1448,7 +1456,12 @@
         <h2>Git</h2>
         <p>Git Bashなどを使ってCLI操作できる。</p>
         <p>HEADのエイリアスとして<code>@</code>が使える。</p>
-        <p><code>@~n</code>はn個前のコミットの意。</p>
+        <p><code>@@{n}</code>はHEADのn回前の操作前の意。</p>
+        <p><code>@~n</code>はHEADのn個前のコミットの意。</p>
+        <p><code>@^2</code>(<code>@^^</code>)はHEADの傍系上の一つ前の意。<code>@^</code>と<code>@~</code>は同じものを指す。
+            HEADがマージコミットの場合、<code>@^</code>が直系上の一つ前、<code>@^2</code>が傍系上の一つ前。
+        </p>
+        <p>n個前のコミットであるマージコミットの、傍系上の、二つ前のコミットは、<code>@~n^2~</code>と指定できる。</p>
         <h3>用語</h3>
         <table class="noCodeColor">
           <tr>
