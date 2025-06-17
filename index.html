@@ -802,7 +802,7 @@
           set filePath=%dirPath%\%fileName%<br>
           <br>
           set script=(Get-Clipboard -Format Image).Save("%filePath%",[System.Drawing.Imaging.ImageFormat]::Jpeg)<br>
-          REM script=(Get-Clipboard -Format Image).Save("%PNG_Path%",[System.Drawing.Imaging.ImageFormat]::Png) とすればPNG保存できる<br>
+          <span class="comment">@REM script=(Get-Clipboard -Format Image).Save("%PNG_Path%",[System.Drawing.Imaging.ImageFormat]::Png) とすればPNG保存できる</span><br>
           set script=%script:"=\"%<br>
           powershell -Command "%script%"<br>
           <br>
@@ -1293,8 +1293,10 @@
         <p>
           CLI操作：<code>code &lt;options&gt; &lt;dir or workspace&gt; &lt;full file path&gt;</code>
         </p>
-        <p>カレントディレクトリはVSCodeのインストール場所(codeの実行場所）になってしまうので、フルパスで指定する。</p>
+        <p>カレントディレクトリはVSCodeのインストール場所(codeの実行場所)になってしまうので、フルパスで指定する。</p>
         <pre>code C:\work\work.code-workspace C:\work\test.md</pre>
+        <p>VSCodeで開くリンクは以下のように指定する。</p>
+        <pre>code://file/C/work/work.code-workspace</pre>
 
 
       </article>
@@ -1469,8 +1471,8 @@
             <td>一行コピー、カット</td>
           </tr>
           <tr>
-            <td>diw</td>
-            <td>単語カット</td>
+            <td>diw, daw</td>
+            <td>単語カット（区切り文字を含まない/含む）</td>
           </tr>
           <tr>
             <td>:a!</td>
@@ -1487,12 +1489,15 @@
         <h2>Git</h2>
         <p>Git Bashなどを使ってCLI操作できる。</p>
         <p>HEADのエイリアスとして<code>@</code>が使える。</p>
-        <p><code>@@{n}</code>はHEADのn回前の操作前の意。</p>
+        <p><code>@@{n}</code>はHEADのn回前の操作前の意。HEADを意味する@は省略可</p>
         <p><code>@~n</code>はHEADのn個前のコミットの意。</p>
         <p><code>@^2</code>(<code>@^^</code>)はHEADの傍系上の一つ前の意。<code>@^</code>と<code>@~</code>は同じものを指す。
             HEADがマージコミットの場合、<code>@^</code>が直系上の一つ前、<code>@^2</code>が傍系上の一つ前。
         </p>
         <p>n個前のコミットであるマージコミットの、傍系上の、二つ前のコミットは、<code>@~n^2~</code>と指定できる。</p>
+        <p><code>-</code>は直前の場所を意味する。
+            <pre>git reset -</pre>
+        </p>
         <h3>用語</h3>
         <table class="noCodeColor">
           <tr>
