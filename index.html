@@ -44,11 +44,11 @@
           <a href="#js_contents"><li>JavaScript</li></a>
           <a href="#node_contents"><li>node.js</li></a>
           <a href="#bash_contents"><li>Bash Script</li></a>
+          <a href="#Linux_contents"><li>Linux</li></a>
           <a href="#bat_contents"><li>bat Script</li></a>
+          <a href="#Windows_contents"><li>Windows</li></a>
           <a href="#compiled_contents"><li>Compiled Language</li></a>
           <a href="#license_contents"><li>License</li></a>
-          <a href="#Windows_contents"><li>Windows</li></a>
-          <a href="#Linux_contents"><li>Linux</li></a>
           <a href="#git_contents"><li>Git</li></a>
           <a href="#others_contents"><li>Others</li></a>
           <a href="#contact_contents"><li>Contact</li></a>
@@ -643,6 +643,189 @@
 
       </article>
 
+      <!-- Linux -->
+      <article id="Linux_contents">
+        <h2>Linux</h2>
+        <h3>Terminal中のショートカットキー</h3>
+        <table>
+          <tr>
+            <th>コマンド</th>
+            <th>説明</th>
+          </tr>
+          <tr>
+            <td>Ctrl+A</td>
+            <td>行頭に移動</td>
+          </tr>
+          <tr>
+            <td>Ctrl+E</td>
+            <td>行末に移動</td>
+          </tr>
+          <tr>
+            <td>Ctrl+S</td>
+            <td>画面をロック</td>
+          </tr>
+          <tr>
+            <td>Ctrl+Q</td>
+            <td>画面ロックを解除</td>
+          </tr>
+          <tr>
+            <td>Ctrl+Z</td>
+            <td>処理を中断</td>
+          </tr>
+        </table>
+        <h4></h4>
+        <p>Ctrl+Zで中断した処理は、<code>jobs</code>でジョブ番号を確認し、<code>fg &lt;job no&gt;</code>を叩くと再開できる。</p>
+<pre>
+<span class="terminal">jobs</span><br>
+[1]+ 停止       ping 8.8.8.8<br>
+<br>
+<span class="terminal">fg 1</span><br>
+<br>
+</pre>
+
+        <h3><code class="noCodeColor">grep</code>単体</h3>
+        <p>ファイルから正規表現を検索し、当てはまる行を表示する</p>
+        <p><code>grep -E</code>の代わりに<code>egrep</code>を使用してもよい。</p>
+        <code>grep -E "<i>正規表現</i>" <i>ファイル名</i></code>
+
+        <h3><code class="noCodeColor">awk</code></h3>
+        <p>表示形式を指定できる。Javaの<code>printf</code>のイメージ。</p>
+        <h3><code class="noCodeColor">sed</code></h3>
+        <p>検索・置換できる</p>
+        <h3><code class="noCodeColor">head -1</code></h3>
+        <p><code>tail</code>と同様に表示行数を指定できる。この場合、上から1行を表示。マイナスって意味じゃなくて引数指定のハイフン。</p>
+        <h3><code class="noCodeColor">pgrep -l</code></h3>
+        <p>プロセス名も表示</p>
+        <h3><code class="noCodeColor">pkill -e</code></h3>
+        <p>殺したプロセスを事後表示</p>
+        <h3><code class="noCodeColor">rm -frv</code></h3>
+        <p><code>rm -rf</code>でディレクトリごと強制削除</p>
+        <p><code>rm -v</code>で削除したファイルを事後表示</p>
+        <h3><code class="noCodeColor">mv -v</code></h3>
+        <p><code>mv</code>したファイルを事後表示</p>
+        <h3><code class="noCodeColor">column -t -s, &lt;file&gt;</code></h3>
+        <p></p>
+        <table class="noCodeColor">
+          <tr>
+            <td><code>-t</code></td>
+            <td>入力行のカラム数を判定して整形</td>
+          </tr>
+          <tr>
+            <td><code>-s</code></td>
+            <td>直後の文字を区切り文字として指定</td>
+          </tr>
+        </table>
+        <h3><code class="noCodeColor">script</code></h3>
+        <pre>script -afq $(date "+%Y%m%d-%H%M%S").log</pre>
+        <p>a: 同名のファイルが存在する場合は追加書き込み</p>
+        <p>f: 終了後ではなく即時書き込み</p>
+        <p>q: ログ取得開始メッセージを非表示</p>
+        <p>終了時は<code>exit</code>またはCtrl+D</p>
+        <h3><code class="noCodeColor">more</code></h3>
+        <table class="noCodeColor">
+          <tr>
+            <td><code>h</code></td>
+            <td>helpを表示</td>
+          </tr>
+          <tr>
+            <td><code>/</code></td>
+            <td>検索</td>
+          </tr>
+          <tr>
+            <td><code>n</code></td>
+            <td>次の検索結果</td>
+          </tr>
+          <tr>
+            <td>Enter</td>
+            <td>次の行</td>
+          </tr>
+          <tr>
+            <td><code>d</code></td>
+            <td>次の11行</td>
+          </tr>
+          <tr>
+            <td>スペース</td>
+            <td>次のページ</td>
+          </tr>
+          <tr>
+            <td>q</td>
+            <td>exit from more</td>
+          </tr>
+        </table>
+
+        <h3>Vim</h3>
+        <p>〈Insert〉モード</p>
+        <table>
+          <tr>
+            <td>{Esc}</td>
+            <td>〈normal〉モード</td>
+          </tr>
+          <tr>
+            <td>{Shift}+↑, ↓</td>
+            <td>Page up/down</td>
+          </tr>
+          <tr>
+            <td>{Shift}+→, ←</td>
+            <td>次の単語、前の単語</td>
+          </tr>
+        </table>
+        <p>〈normal〉モード</p>
+        <table>
+          <tr>
+            <td>i</td>
+            <td>〈Insert〉モード</td>
+          </tr>
+          <tr>
+            <td>u, :u, :undo</td>
+            <td>Undo</td>
+          </tr>
+          <tr>
+            <td>{Ctrl}+R, :redo</td>
+            <td>Redo</td>
+          </tr>
+          <tr>
+            <td>w, b</td>
+            <td>次の単語、前の単語へ移動</td>
+          </tr>
+          <tr>
+            <td>b. e</td>
+            <td>語頭、語末へ移動</td>
+          </tr>
+          <tr>
+            <td>0, $</td>
+            <td>行頭、行末へ移動</td>
+          </tr>
+          <tr>
+            <td>/, n, {Shift}+N</td>
+            <td>検索、次の検索、前の検索</td>
+          </tr>
+          <tr>
+            <td>v</td>
+            <td>範囲選択開始</td>
+          </tr>
+          <tr>
+            <td>y, d, p</td>
+            <td>コピー、カット、ペースト</td>
+          </tr>
+          <tr>
+            <td>yy, dd</td>
+            <td>一行コピー、カット</td>
+          </tr>
+          <tr>
+            <td>diw, daw</td>
+            <td>単語カット（区切り文字を含まない/含む）</td>
+          </tr>
+          <tr>
+            <td>:a!</td>
+            <td>自動インデントの一時解除</td>
+          </tr>
+        </table>
+
+        <!--
+          <h3><code class="noCodeColor"></code></h3>
+        -->
+      </article>
+
 
       <!-- Bat Script -->
       <article id="bat_contents">
@@ -776,61 +959,285 @@
           <p>このディレクトリは<code>shell:sendto</code>からも開ける。</p>
         </section>
 
-      </article>
-
-      <section>
-        <h3>タイムスタンプの取得</h3>
-        <pre>
-        echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%<br>
-        <span class="comment">rem > 20220722_191322</span><br>
-        </pre>
         
-        <pre>
-        powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"<br>
-        <span class="comment">rem > 1675395329</span><br>
-        </pre>
-      </section>
+        <section>
+          <h3>タイムスタンプの取得</h3>
+          <pre>
+            echo %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%<br>
+            <span class="comment">rem > 20220722_191322</span><br>
+          </pre>
+          
+          <pre>
+            powershell -command "Get-Date (Get-Date -Format U) -UFormat %s"<br>
+            <span class="comment">rem > 1675395329</span><br>
+          </pre>
+        </section>
 
-      <section>
-        <h3>クリップボードのイメージに名前を付けて保存</h3>
-        <pre>
-          @echo off<br>
-          setLocal<br>
-          <br>
-          set dirPath=%UserProfile%\OneDrive\画像<br>
-          set fileName=sample-image.jpg<br>
-          set filePath=%dirPath%\%fileName%<br>
-          <br>
-          set script=(Get-Clipboard -Format Image).Save("%filePath%",[System.Drawing.Imaging.ImageFormat]::Jpeg)<br>
-          <span class="comment">@REM script=(Get-Clipboard -Format Image).Save("%PNG_Path%",[System.Drawing.Imaging.ImageFormat]::Png) とすればPNG保存できる</span><br>
-          set script=%script:"=\"%<br>
-          powershell -Command "%script%"<br>
-          <br>
-          if %ERRORLEVEL% neq 0 (<br>
-          <span class="tab"></span>echo.<br>
-          <span class="tab"></span>echo Press any key to exit . . .<br>
-          <span class="tab"></span>pause > nul<br>
-          <span class="tab"></span>exit 1<br>
-          )<br>
-          <br>
-          explorer /select,"%filePath%"<br>
-        </pre>
-      </section>
+        <section>
+          <h3>クリップボードのイメージに名前を付けて保存</h3>
+          <pre>
+            @echo off<br>
+            setLocal<br>
+            <br>
+            set dirPath=%UserProfile%\OneDrive\画像<br>
+            set fileName=sample-image.jpg<br>
+            set filePath=%dirPath%\%fileName%<br>
+            <br>
+            set script=(Get-Clipboard -Format Image).Save("%filePath%",[System.Drawing.Imaging.ImageFormat]::Jpeg)<br>
+            <span class="comment">@REM script=(Get-Clipboard -Format Image).Save("%PNG_Path%",[System.Drawing.Imaging.ImageFormat]::Png) とすればPNG保存できる</span><br>
+            set script=%script:"=\"%<br>
+            powershell -Command "%script%"<br>
+            <br>
+            if %ERRORLEVEL% neq 0 (<br>
+            <span class="tab"></span>echo.<br>
+            <span class="tab"></span>echo Press any key to exit . . .<br>
+            <span class="tab"></span>pause > nul<br>
+            <span class="tab"></span>exit 1<br>
+            )<br>
+            <br>
+            explorer /select,"%filePath%"<br>
+          </pre>
+        </section>
 
-      <section>
-        <h3>プロンプトの変更</h3>
-        <p>対話式batスクリプトで使えそう？なので覚え書き。</p>
-        <p><a href="https://www.javadrive.jp/command/display/index2.html" target="_blank"
-            rel="noopener noreferrer">https://www.javadrive.jp/command/display/index2.html</a></p>
-      </section>
+        <section>
+          <h3>プロンプトの変更</h3>
+          <p>対話式batスクリプトで使えそう？なので覚え書き。</p>
+          <p>
+            <a href="https://www.javadrive.jp/command/display/index2.html" target="_blank"
+            rel="noopener noreferrer">https://www.javadrive.jp/command/display/index2.html</a>
+          </p>
+        </section>
 
-      <section>
-        <h3><code class="noCodeColor">tasklist</code>, <code class="noCodeColor">taskkill</code></h3>
-        <pre>tasklist /v /fi "imagename eq explorer.exe"</pre>
-        <pre>tasklist /v /fi "imagename eq chrome.exe" | findstr /I ちあぴのデブ活のーと</pre>
-        <pre>taskkill /fi "pid eq <i>&lt;pid&gt;</i>"</pre>
-        <p></p>
-      </section>
+          <section>
+            <h3><code class="noCodeColor">tasklist</code>, <code class="noCodeColor">taskkill</code></h3>
+            <pre>tasklist /v /fi "imagename eq explorer.exe"</pre>
+            <pre>tasklist /v /fi "imagename eq chrome.exe" | findstr /I ちあぴのデブ活のーと</pre>
+            <pre>taskkill /fi "pid eq <i>&lt;pid&gt;</i>"</pre>
+            <p></p>
+          </section>
+        </article>
+
+
+      <!-- Windows -->
+      <article id="Windows_contents">
+        <h2>Windows</h2>
+        <section>
+          <h3>Win10 shortcut.lnk</h3>
+          <p>Ctrl+ドラッグ＆ドロップでファイルのコピーを、Alt+ドラッグ＆ドロップでファイルのショートカットを作成できる。</p>
+          <p>右クリドラッグ＆ドロップでも似たようなことが可能（選択できる）。</p>
+          <p>以下のテキストを「項目の場所」として記述することができる。</p>
+          <ul class="leftPadding">
+            <li>
+              <section>
+                <h4>batファイル</h4>
+                <pre>cmd /c "<i>hogehoge</i>.bat"</pre>
+              </section>
+            </li>
+            <li>
+              <section>
+                <h4>online ExcelファイルをDesktopアプリで開く</h4>
+                <pre>ms-excel:<i>https://cheerppy.xyz/fugafuga</i>.xls</pre>
+              </section>
+            </li>
+            <li>
+              <section>
+                <h4>Desktopを表示</h4>
+                <pre>explorer shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}</pre>
+              </section>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Run...</h3>
+          <p>一覧以外でもPathさえ通っていれば何でも開く。（規定では拡張子<code>.lnk</code>は省略できないが<code>%PathExt%</code>を編集すると省略可能になる。）</p>
+          <p>Ctrl+Shift+Enterで管理者として実行する。</p>
+          <table class="noCodeColor">
+            <tr>
+              <th>コマンド</th>
+              <th>説明</th>
+            </tr>
+            <tr>
+              <td><code>shell:startup</code></td>
+              <td><code>%AppData%\Microsoft\Windows\Start Menu\Programs\Startup</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:profile</code></td>
+              <td><code>%UserProfile%</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:sendTo</code></td>
+              <td><code>%AppData%\Microsoft\Windows\SendTo</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:start menu</code></td>
+              <td><code>%AppData%\Microsoft\Windows\Start Menu</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:fonts</code></td>
+              <td><code>C:\Windows\Fonts</code></td>
+            </tr>
+            <tr>
+              <td><code>shell:screenshots</code></td>
+              <td>スクリーンショットフォルダ</td>
+            </tr>
+            <tr>
+              <td><code>ms-clock:</code></td>
+              <td>Clock & Alarm</td>
+            </tr>
+            <tr>
+              <td><code>calc</code></td>
+              <td>電卓</td>
+            </tr>
+            <tr>
+              <td><code>control</code></td>
+              <td>すべてのコントロールパネル項目</td>
+            </tr>
+            <tr>
+              <td><code>rundll32 sysdm.cpl,EditEnvironmentVariables</code></td>
+              <td>環境変数の確認・編集（要管理者）</td>
+            </tr>
+          </table>
+          <p>以下自分用カスタムコマンド</p>
+          <table class="noCodeColor">
+            <tr>
+              <th>コマンド</th>
+              <th>説明</th>
+            </tr>
+            <tr>
+              <td><code>%Path%</code></td>
+              <td><code>%Path%;C:\cheerppy\shortcuts</code></td>
+            </tr>
+            <tr>
+              <td><code>note</code></td>
+              <td>notepad</td>
+            </tr>
+            <tr>
+              <td><code>clock</code></td>
+              <td>Clock & Alarm</td>
+            </tr>
+            <tr>
+              <td><code>alarm</code></td>
+              <td>Clock & Alarm</td>
+            </tr>
+          </table>
+        </section>
+        <h3>環境変数</h3>
+        <small>※自分が分かりやすいように、値に環境変数を使って書いています。</small>
+        <table class="noCodeColor">
+          <tr>
+            <th>変数</th>
+            <th>値</th>
+          </tr>
+          <tr>
+            <td><code>%HomeDrive%</code></td>
+            <td><code>C:</code></td>
+          </tr>
+          <tr>
+            <td><code>%HomePath%</code></td>
+            <td><code>\Users\【ユーザー名】</code></td>
+          </tr>
+          <tr>
+            <td><code>%UserProfile%</code></td>
+            <td><code>%HomeDrive%%HomePath%</code></td>
+          </tr>
+          <tr>
+            <td><code>%AppData%</code></td>
+            <td><code>%UserProfile%\AppData\Roaming</code></td>
+          </tr>
+          <tr>
+            <td><code>%LocalAppData%</code></td>
+            <td><code>%UserProfile%\AppData\Local</code></td>
+          </tr>
+          <tr>
+            <td><code>%TEMP%</code></td>
+            <td><code>%LocalAppData%\Temp</code></td>
+          </tr>
+          <tr>
+            <td><code>%0</code></td>
+            <td>コマンド名</td>
+          </tr>
+          <tr>
+            <td><code>%1</code></td>
+            <td>第一引数</td>
+          </tr>
+        </table>
+        <p>
+          <code>%AppData%</code>と<code>%LocalAppData%</code>の違いは、一般的な個人用ユーザーには現れない。学校などRoamingユーザーを利用しているとき、<code>%AppData%</code>内のデータは同じドメインのどのPCからも同様にアクセスできる。
+        </p>
+        <h3>ショートカットキー</h3>
+        <table>
+          <tr>
+            <th>キー</th>
+            <th>説明</th>
+          </tr>
+          <tr>
+            <td>Win+X -> C</td>
+            <td>cmdを起動</td>
+          </tr>
+          <tr>
+            <td>Win+X -> A</td>
+            <td>cmdを管理者で起動</td>
+          </tr>
+          <tr>
+            <td>Win+D</td>
+            <td>Desktopを表示</td>
+          </tr>
+          <tr>
+            <td>Win+E</td>
+            <td>explorerを開く</td>
+          </tr>
+          <tr>
+            <td>Win+L</td>
+            <td>画面をロック</td>
+          </tr>
+          <tr>
+            <td>Win+R</td>
+            <td>ファイル名を指定して実行</td>
+          </tr>
+          <tr>
+            <td>Win+S</td>
+            <td>Search()</td>
+          </tr>
+          <tr>
+            <td>Win+ピリオド(.)</td>
+            <td>絵文字パッドを開く</td>
+          </tr>
+          <tr>
+            <td>Win+Pause</td>
+            <td>[バージョン情報]を開く</td>
+          </tr>
+          <tr>
+            <td>Win+PrintScreen</td>
+            <td>スクリーンショットを"保存"</td>
+          </tr>
+          <!--
+                  <tr><td></td><td></td></tr>
+                  -->
+        </table>
+        <p> 補足：<br>
+          <code>Win + PrintScreen</code>で保存される画像は、名前は<code>スクリーンショット.png</code>、保存場所は規定で<code>%UserProfile%\OneDrive\画像\スクリーンショット</code>または<code>%UserProfile%\OneDrive\Pictures\Screenshots</code>であるが、該当フォルダのプロパティ > 場所 から変更可能である。
+        </p>
+        <h3>Windows標準icon</h3>
+        <p><code>C:\Windows\System32\</code>内に意外とたくさんのアイコンがdll形式で格納されている。</p>
+        <p>リファレンス</p>
+        <a href="https://4thsight.xyz/13325">https://4thsight.xyz/13325</a>
+        <h3>リモートで友達のPCを操作する</h3>
+        <p> 「クイックアシスト」を利用する。<br> Win+Ctrl+QまたはWin+R → <code>quickassist</code>で開く。 </p>
+        <h3>Directory名を英語にしたい</h3>
+        <p>覚え書き</p>
+        <p><a href="https://ogacha.wordpress.com/2013/10/22/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%91%E3%82%B9%E5%90%8D%E3%81%A7%E3%82%B3%E3%82%B1%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/">https://ogacha.wordpress.com/2013/10/22/日本語パス名でコケる場合の対処法/</a>
+        </p>
+        <h3>OSが起動しない時</h3>
+        <p><a href="https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/" target="_blank" rel="noopener noreferrer">https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/</a>
+        </p>
+        <h3>VSCode</h3>
+        <p> CLI操作：<code>code &lt;options&gt; &lt;dir or workspace&gt; &lt;full file path&gt;</code>
+        </p>
+        <p>カレントディレクトリはVSCodeのインストール場所(codeの実行場所)になってしまうので、フルパスで指定する。</p>
+        <pre>code C:\work\work.code-workspace C:\work\test.md</pre>
+        <p>VSCodeで開くリンクは以下のように指定する。</p>
+        <pre>code://file/C/work/work.code-workspace</pre>
+      </article>
 
       <!-- Compiled Languages -->
       <article id="compiled_contents">
@@ -1056,434 +1463,6 @@
         </section>
       </article>
 
-
-      <!-- Windows -->
-      <article id="Windows_contents">
-        <h2>Windows</h2>
-
-        <section>
-          <h3>Win10 shortcut.lnk</h3>
-          <p>Ctrl+ドラッグ＆ドロップでファイルのコピーを、Alt+ドラッグ＆ドロップでファイルのショートカットを作成できる。</p>
-          <p>右クリドラッグ＆ドロップでも似たようなことが可能（選択できる）。</p>
-          <p>以下のテキストを「項目の場所」として記述することができる。</p>
-          <ul class="leftPadding">
-            <li>
-              <section>
-                <h4>batファイル</h4>
-                <pre>cmd /c "<i>hogehoge</i>.bat"</pre>
-              </section>
-            </li>
-            <li>
-              <section>
-                <h4>online ExcelファイルをDesktopアプリで開く</h4>
-                <pre>ms-excel:<i>https://cheerppy.xyz/fugafuga</i>.xls</pre>
-              </section>
-            </li>
-            <li>
-              <section>
-                <h4>Desktopを表示</h4>
-                <pre>explorer shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}</pre>
-              </section>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Run...</h3>
-          <p>一覧以外でもPathさえ通っていれば何でも開く。（規定では拡張子<code>.lnk</code>は省略できないが<code>%PathExt%</code>を編集すると省略可能になる。）</p>
-          <p>Ctrl+Shift+Enterで管理者として実行する。</p>
-          <table class="noCodeColor">
-            <tr>
-              <th>コマンド</th>
-              <th>説明</th>
-            </tr>
-            <tr>
-              <td><code>shell:startup</code></td>
-              <td><code>%AppData%\Microsoft\Windows\Start Menu\Programs\Startup</code></td>
-            </tr>
-            <tr>
-              <td><code>shell:profile</code></td>
-              <td><code>%UserProfile%</code></td>
-            </tr>
-            <tr>
-              <td><code>shell:sendTo</code></td>
-              <td><code>%AppData%\Microsoft\Windows\SendTo</code></td>
-            </tr>
-            <tr>
-              <td><code>shell:start menu</code></td>
-              <td><code>%AppData%\Microsoft\Windows\Start Menu</code></td>
-            </tr>
-            <tr>
-              <td><code>shell:fonts</code></td>
-              <td><code>C:\Windows\Fonts</code></td>
-            </tr>
-            <tr>
-              <td><code>shell:screenshots</code></td>
-              <td>スクリーンショットフォルダ</td>
-            </tr>
-            <tr>
-              <td><code>ms-clock:</code></td>
-              <td>Clock & Alarm</td>
-            </tr>
-            <tr>
-              <td><code>calc</code></td>
-              <td>電卓</td>
-            </tr>
-            <tr>
-              <td><code>control</code></td>
-              <td>すべてのコントロールパネル項目</td>
-            </tr>
-            <tr>
-              <td><code>rundll32 sysdm.cpl,EditEnvironmentVariables</code></td>
-              <td>環境変数の確認・編集（要管理者）</td>
-            </tr>
-          </table>
-          <p>以下自分用カスタムコマンド</p>
-          <table class="noCodeColor">
-            <tr>
-              <th>コマンド</th>
-              <th>説明</th>
-            </tr>
-            <tr>
-              <td><code>%Path%</code></td>
-              <td><code>%Path%;C:\cheerppy\shortcuts</code></td>
-            </tr>
-            <tr>
-              <td><code>note</code></td>
-              <td>notepad</td>
-            </tr>
-            <tr>
-              <td><code>clock</code></td>
-              <td>Clock & Alarm</td>
-            </tr>
-            <tr>
-              <td><code>alarm</code></td>
-              <td>Clock & Alarm</td>
-            </tr>
-          </table>
-        </section>
-
-        <h3>環境変数</h3>
-        <small>※自分が分かりやすいように、値に環境変数を使って書いています。</small>
-        <table class="noCodeColor">
-          <tr>
-            <th>変数</th>
-            <th>値</th>
-          </tr>
-          <tr>
-            <td><code>%HomeDrive%</code></td>
-            <td><code>C:</code></td>
-          </tr>
-          <tr>
-            <td><code>%HomePath%</code></td>
-            <td><code>\Users\【ユーザー名】</code></td>
-          </tr>
-          <tr>
-            <td><code>%UserProfile%</code></td>
-            <td><code>%HomeDrive%%HomePath%</code></td>
-          </tr>
-          <tr>
-            <td><code>%AppData%</code></td>
-            <td><code>%UserProfile%\AppData\Roaming</code></td>
-          </tr>
-          <tr>
-            <td><code>%LocalAppData%</code></td>
-            <td><code>%UserProfile%\AppData\Local</code></td>
-          </tr>
-          <tr>
-            <td><code>%TEMP%</code></td>
-            <td><code>%LocalAppData%\Temp</code></td>
-          </tr>
-          <tr>
-            <td><code>%0</code></td>
-            <td>コマンド名</td>
-          </tr>
-          <tr>
-            <td><code>%1</code></td>
-            <td>第一引数</td>
-          </tr>
-
-        </table>
-        <p>
-          <code>%AppData%</code>と<code>%LocalAppData%</code>の違いは、一般的な個人用ユーザーには現れない。学校などRoamingユーザーを利用しているとき、<code>%AppData%</code>内のデータは同じドメインのどのPCからも同様にアクセスできる。
-        </p>
-
-
-        <h3>ショートカットキー</h3>
-        <table>
-          <tr>
-            <th>キー</th>
-            <th>説明</th>
-          </tr>
-          <tr>
-            <td>Win+X -> C</td>
-            <td>cmdを起動</td>
-          </tr>
-          <tr>
-            <td>Win+X -> A</td>
-            <td>cmdを管理者で起動</td>
-          </tr>
-          <tr>
-            <td>Win+D</td>
-            <td>Desktopを表示</td>
-          </tr>
-          <tr>
-            <td>Win+E</td>
-            <td>explorerを開く</td>
-          </tr>
-          <tr>
-            <td>Win+L</td>
-            <td>画面をロック</td>
-          </tr>
-          <tr>
-            <td>Win+R</td>
-            <td>ファイル名を指定して実行</td>
-          </tr>
-          <tr>
-            <td>Win+S</td>
-            <td>Search()</td>
-          </tr>
-          <tr>
-            <td>Win+ピリオド(.)</td>
-            <td>絵文字パッドを開く</td>
-          </tr>
-          <tr>
-            <td>Win+Pause</td>
-            <td>[バージョン情報]を開く</td>
-          </tr>
-          <tr>
-            <td>Win+PrintScreen</td>
-            <td>スクリーンショットを"保存"</td>
-          </tr>
-          <!--
-            <tr><td></td><td></td></tr>
-            -->
-        </table>
-        <p>
-          補足：<br>
-          <code>Win + PrintScreen</code>で保存される画像は、名前は<code>スクリーンショット.png</code>、保存場所は規定で<code>%UserProfile%\OneDrive\画像\スクリーンショット</code>または<code>%UserProfile%\OneDrive\Pictures\Screenshots</code>であるが、該当フォルダのプロパティ
-          > 場所 から変更可能である。
-        </p>
-
-
-        <h3>Windows標準icon</h3>
-        <p><code>C:\Windows\System32\</code>内に意外とたくさんのアイコンがdll形式で格納されている。</p>
-        <p>リファレンス</p>
-        <a href="https://4thsight.xyz/13325">https://4thsight.xyz/13325</a>
-
-        <h3>リモートで友達のPCを操作する</h3>
-        <p>
-          「クイックアシスト」を利用する。<br>
-          Win+Ctrl+QまたはWin+R → <code>quickassist</code>で開く。
-        </p>
-
-        <h3>Directory名を英語にしたい</h3>
-        <p>覚え書き</p>
-        <p><a
-            href="https://ogacha.wordpress.com/2013/10/22/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%91%E3%82%B9%E5%90%8D%E3%81%A7%E3%82%B3%E3%82%B1%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/">https://ogacha.wordpress.com/2013/10/22/日本語パス名でコケる場合の対処法/</a>
-        </p>
-
-        <h3>OSが起動しない時</h3>
-        <p><a href="https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/" target="_blank"
-            rel="noopener noreferrer">https://jpwinsup.github.io/blog/2021/05/07/Performance/NoBoot/NoBoot-Solution/</a>
-        </p>
-
-
-        <h3>VSCode</h3>
-        <p>
-          CLI操作：<code>code &lt;options&gt; &lt;dir or workspace&gt; &lt;full file path&gt;</code>
-        </p>
-        <p>カレントディレクトリはVSCodeのインストール場所(codeの実行場所)になってしまうので、フルパスで指定する。</p>
-        <pre>code C:\work\work.code-workspace C:\work\test.md</pre>
-        <p>VSCodeで開くリンクは以下のように指定する。</p>
-        <pre>code://file/C/work/work.code-workspace</pre>
-
-
-      </article>
-
-
-      <!-- Linux -->
-      <article id="Linux_contents">
-        <h2>Linux</h2>
-        <h3>Terminal中のショートカットキー</h3>
-        <table>
-          <tr>
-            <th>コマンド</th>
-            <th>説明</th>
-          </tr>
-          <tr>
-            <td>Ctrl+A</td>
-            <td>行頭に移動</td>
-          </tr>
-          <tr>
-            <td>Ctrl+E</td>
-            <td>行末に移動</td>
-          </tr>
-          <tr>
-            <td>Ctrl+S</td>
-            <td>画面をロック</td>
-          </tr>
-          <tr>
-            <td>Ctrl+Q</td>
-            <td>画面ロックを解除</td>
-          </tr>
-          <tr>
-            <td>Ctrl+Z</td>
-            <td>処理を中断</td>
-          </tr>
-        </table>
-        <h4></h4>
-        <p>Ctrl+Zで中断した処理は、<code>jobs</code>でジョブ番号を確認し、<code>fg &lt;job no&gt;</code>を叩くと再開できる。</p>
-<pre>
-<span class="terminal">jobs</span><br>
-[1]+ 停止       ping 8.8.8.8<br>
-<br>
-<span class="terminal">fg 1</span><br>
-<br>
-</pre>
-
-        <h3><code class="noCodeColor">grep</code>単体</h3>
-        <p>ファイルから正規表現を検索し、当てはまる行を表示する</p>
-        <p><code>grep -E</code>の代わりに<code>egrep</code>を使用してもよい。</p>
-        <code>grep -E "<i>正規表現</i>" <i>ファイル名</i></code>
-
-        <h3><code class="noCodeColor">awk</code></h3>
-        <p>表示形式を指定できる。Javaの<code>printf</code>のイメージ。</p>
-        <h3><code class="noCodeColor">sed</code></h3>
-        <p>検索・置換できる</p>
-        <h3><code class="noCodeColor">head -1</code></h3>
-        <p><code>tail</code>と同様に表示行数を指定できる。この場合、上から1行を表示。マイナスって意味じゃなくて引数指定のハイフン。</p>
-        <h3><code class="noCodeColor">pgrep -l</code></h3>
-        <p>プロセス名も表示</p>
-        <h3><code class="noCodeColor">pkill -e</code></h3>
-        <p>殺したプロセスを事後表示</p>
-        <h3><code class="noCodeColor">rm -frv</code></h3>
-        <p><code>rm -rf</code>でディレクトリごと強制削除</p>
-        <p><code>rm -v</code>で削除したファイルを事後表示</p>
-        <h3><code class="noCodeColor">mv -v</code></h3>
-        <p><code>mv</code>したファイルを事後表示</p>
-        <h3><code class="noCodeColor">column -t -s, &lt;file&gt;</code></h3>
-        <p></p>
-        <table class="noCodeColor">
-          <tr>
-            <td><code>-t</code></td>
-            <td>入力行のカラム数を判定して整形</td>
-          </tr>
-          <tr>
-            <td><code>-s</code></td>
-            <td>直後の文字を区切り文字として指定</td>
-          </tr>
-        </table>
-        <h3><code class="noCodeColor">script</code></h3>
-        <pre>script -afq $(date "+%Y%m%d-%H%M%S").log</pre>
-        <p>a: 同名のファイルが存在する場合は追加書き込み</p>
-        <p>f: 終了後ではなく即時書き込み</p>
-        <p>q: ログ取得開始メッセージを非表示</p>
-        <p>終了時は<code>exit</code>またはCtrl+D</p>
-        <h3><code class="noCodeColor">more</code></h3>
-        <table class="noCodeColor">
-          <tr>
-            <td><code>h</code></td>
-            <td>helpを表示</td>
-          </tr>
-          <tr>
-            <td><code>/</code></td>
-            <td>検索</td>
-          </tr>
-          <tr>
-            <td><code>n</code></td>
-            <td>次の検索結果</td>
-          </tr>
-          <tr>
-            <td>Enter</td>
-            <td>次の行</td>
-          </tr>
-          <tr>
-            <td><code>d</code></td>
-            <td>次の11行</td>
-          </tr>
-          <tr>
-            <td>スペース</td>
-            <td>次のページ</td>
-          </tr>
-          <tr>
-            <td>q</td>
-            <td>exit from more</td>
-          </tr>
-        </table>
-
-        <h3>Vim</h3>
-        <p>〈Insert〉モード</p>
-        <table>
-          <tr>
-            <td>{Esc}</td>
-            <td>〈normal〉モード</td>
-          </tr>
-          <tr>
-            <td>{Shift}+↑, ↓</td>
-            <td>Page up/down</td>
-          </tr>
-          <tr>
-            <td>{Shift}+→, ←</td>
-            <td>次の単語、前の単語</td>
-          </tr>
-        </table>
-        <p>〈normal〉モード</p>
-        <table>
-          <tr>
-            <td>i</td>
-            <td>〈Insert〉モード</td>
-          </tr>
-          <tr>
-            <td>u, :u, :undo</td>
-            <td>Undo</td>
-          </tr>
-          <tr>
-            <td>{Ctrl}+R, :redo</td>
-            <td>Redo</td>
-          </tr>
-          <tr>
-            <td>w, b</td>
-            <td>次の単語、前の単語へ移動</td>
-          </tr>
-          <tr>
-            <td>b. e</td>
-            <td>語頭、語末へ移動</td>
-          </tr>
-          <tr>
-            <td>0, $</td>
-            <td>行頭、行末へ移動</td>
-          </tr>
-          <tr>
-            <td>/, n, {Shift}+N</td>
-            <td>検索、次の検索、前の検索</td>
-          </tr>
-          <tr>
-            <td>v</td>
-            <td>範囲選択開始</td>
-          </tr>
-          <tr>
-            <td>y, d, p</td>
-            <td>コピー、カット、ペースト</td>
-          </tr>
-          <tr>
-            <td>yy, dd</td>
-            <td>一行コピー、カット</td>
-          </tr>
-          <tr>
-            <td>diw, daw</td>
-            <td>単語カット（区切り文字を含まない/含む）</td>
-          </tr>
-          <tr>
-            <td>:a!</td>
-            <td>自動インデントの一時解除</td>
-          </tr>
-        </table>
-
-        <!--
-    <h3><code class="noCodeColor"></code></h3>
--->
-      </article>
 
       <article id="git_contents">
         <h2>Git</h2>
