@@ -48,6 +48,8 @@
           <a href="#bat_contents"><li>bat Script</li></a>
           <a href="#Windows_contents"><li>Windows</li></a>
           <a href="#compiled_contents"><li>Compiled Language</li></a>
+          <a href="#sql_contents"><li>SQL</li></a>
+          
           <a href="#license_contents"><li>License</li></a>
           <a href="#git_contents"><li>Git</li></a>
           <a href="#others_contents"><li>Others</li></a>
@@ -1447,6 +1449,188 @@
 
       </article>
 
+      <article id="sql_contents">
+        <h2>SQL</h2>
+        <section>
+          <h3>SQLの種類</h3>
+          <p>SQLは大きく分けて以下の4種類に分類される。</p>
+          <ul class="dot">
+            <li>DDL (Data Definition Language) - データ定義言語</li>
+            <li>DML (Data Manipulation Language) - データ操作言語</li>
+            <li>DCL (Data Control Language) - データ制御言語</li>
+            <li>TCL (Transaction Control Language) - トランザクション制御言語</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>SQLの文法</h3>
+          <p>SQLの文法は、基本的に以下のような構造を持つ。</p>
+<pre>
+&lt;sql&gt;<br>
+<span class="tab"></span>:= &lt;statement&gt; ";"<br>
+<span class="tab"></span> | &lt;statement&gt; ";" &lt;sql&gt;<br>
+<br>
+&lt;statement&gt;<br>
+<span class="tab"></span>:= &lt;select&gt;<br>
+<span class="tab"></span> | &lt;insert&gt;<br>
+<span class="tab"></span> | &lt;update&gt;<br>
+<span class="tab"></span> | &lt;delete&gt;<br>
+<span class="tab"></span> | &lt;create-table&gt;<br>
+
+&lt;select&gt;<br>
+<span class="tab"></span>:= "SELECT" &lt;select-list&gt;<br>
+<span class="tab"></span><span class="tab"></span>"FROM" &lt;table-list&gt;<br>
+<span class="tab"></span><span class="tab"></span>&lt;where-clause&gt;<br>
+<span class="tab"></span><span class="tab"></span>&lt;group-clause&gt;<br>
+<span class="tab"></span><span class="tab"></span>&lt;having-clause&gt;<br>
+<span class="tab"></span><span class="tab"></span>&lt;order-clause&gt;<br>
+
+&lt;select-list&gt; := "*"
+                | &lt;column-list&gt;<br>
+<br>
+&lt;column-list&gt; := &lt;column&gt;
+                | &lt;column&gt; "," &lt;column-list&gt;<br>
+<br>
+&lt;table-list&gt; := &lt;table&gt;
+               | &lt;table&gt; "," &lt;table-list&gt;<br>
+<br>
+</pre>
+<pre>
+&lt;where-clause&gt; := ""
+                 | "WHERE" &lt;condition&gt;<br>
+&lt;group-clause&gt; := ""
+                 | "GROUP BY" &lt;column-list&gt;<br>
+&lt;having-clause&gt; := ""
+                  | "HAVING" &lt;condition&gt;<br>
+&lt;order-clause&gt; := ""
+                 | "ORDER BY" &lt;order-list&gt;
+
+&lt;order-list&gt; := &lt;order-item&gt;
+               | &lt;order-item&gt; "," &lt;order-list&gt;
+
+&lt;order-item&gt; := &lt;column&gt;
+               | &lt;column&gt; "ASC"
+               | &lt;column&gt; "DESC"<br>
+<br>
+&lt;insert&gt; := "INSERT INTO" &lt;table&gt;
+             "VALUES" "(" &lt;value-list&gt; ")"
+
+&lt;value-list&gt; := &lt;value&gt;
+               | &lt;value&gt; "," &lt;value-list&gt;<br>
+<br>
+&lt;update&gt; := "UPDATE" &lt;table&gt;
+             "SET" &lt;assignment-list&gt;
+             &lt;where-clause&gt;
+
+&lt;assignment-list&gt; := &lt;assignment&gt;
+                    | &lt;assignment&gt; "," &lt;assignment-list&gt;
+
+&lt;assignment&gt; := &lt;column&gt; "=" &lt;value&gt;
+
+&lt;delete&gt; := "DELETE FROM" &lt;table&gt;
+             &lt;where-clause&gt;<br>
+<br>
+&lt;create-table&gt; := "CREATE TABLE" &lt;table&gt;
+                   "(" &lt;column-definition-list&gt; ")"
+
+&lt;column-definition-list&gt; := &lt;column-definition&gt;
+                           | &lt;column-definition&gt; ","
+                             &lt;column-definition-list&gt;
+
+&lt;column-definition&gt; := &lt;column&gt; &lt;data-type&gt;<br>
+<br>
+</pre>
+<pre>
+&lt;data-type&gt;<br>
+<span class="tab">:= "INTEGER"<br>
+<span class="tab"></span> | "VARCHAR" "(" &lt;integer&gt; ")"<br>
+<span class="tab"></span> | "BOOLEAN"<br>
+<span class="tab"></span> | "DATE"<br>
+<br>
+
+&lt;condition&gt;<br>
+<span class="tab">:= &lt;predicate&gt;<br>
+<span class="tab"></span> | "(" &lt;condition&gt; ")"<br>
+<span class="tab"></span> | &lt;condition&gt; "AND" &lt;predicate&gt;<br>
+<span class="tab"></span> | &lt;condition&gt; "OR" &lt;predicate&gt;<br>
+<span class="tab"></span> | "NOT" &lt;condition&gt;<br>
+<br>
+
+&lt;predicate&gt; := &lt;value&gt; &lt;comparison&gt; &lt;value&gt;<br>
+<br>
+&lt;comparison&gt;<br>
+<span class="tab">:= "="<br>
+<span class="tab"></span> | "&lt;&gt;"<br>
+<span class="tab"></span> | "&lt;"<br>
+<span class="tab"></span> | "&gt;"<br>
+<span class="tab"></span> | "&lt;="<br>
+<span class="tab"></span> | "&gt;="<br>
+<br>
+
+&lt;value&gt; := &lt;column&gt;<br>
+<span class="tab"></span> | &lt;integer&gt;<br>
+<span class="tab"></span> | &lt;string&gt;<br>
+<span class="tab"></span> | "NULL"<br>
+<br>
+&lt;table&gt; := &lt;identifier&gt;<br>
+&lt;column&gt; := &lt;identifier&gt;<br>
+
+</pre>
+        </section>
+
+        <section>
+          <h3>SQLの基本構文</h3>
+          <p>SQLの基本的な構文は以下の通りである。</p>
+<pre>
+WITH cte1 AS (SELECT ...), cte2 AS (SELECT ...),
+SELECT column1, column2, ...
+FROM table1 JOIN table2 ON table1.column = table2.column
+WHERE condition
+ORDER BY column1, column2, ... ASC|DESC;
+</pre>
+        </section>
+        <section>
+          <h3>コメントアウト</h3>
+          <pre>-- これはコメントアウトです</pre>
+        </section>
+        <section>
+          <h3>パターンマッチ</h3>
+          <pre>
+            <span class="comment">-- Any sequence of characters</span><br>
+            SELECT * FROM users WHERE name LIKE 'John%';<br>
+            <span class="comment">-- Any single character</span><br>
+            SELECT * FROM users WHERE name LIKE 'Jo_n';<br>
+          </pre>
+        </section>
+        <section>
+          <h3>NULL値の扱い</h3>
+          <p>
+            NULL値は<code>NULL</code>で表現される。<br>
+            通常の比較演算子を適用すると結果は<code>UNKNOWN</code>になり、
+            WHERE句の抽出から除外される。<br>
+            代わりに、<code>IS NULL</code>または<code>IS NOT NULL</code>を使用する必要がある。
+          </p>
+        </section>
+        <section> 
+          <h3>重複を除外する</h3>
+          <p>
+            <pre>
+              SELECT DISTINCT column1, column2 FROM table_name;
+            </pre>
+          </p>
+        </section>
+        <section>
+          <h3>集約関数</h3>
+          <p>SQLにはいくつかの集約関数が用意されている。</p>
+          <ul class="dot">
+            <li><code>COUNT()</code> - 行数をカウントする</li>
+            <li><code>SUM()</code> - 数値の合計を計算する</li>
+            <li><code>AVG()</code> - 数値の平均を計算する</li>
+            <li><code>MIN()</code> - 最小値を取得する</li>
+            <li><code>MAX()</code> - 最大値を取得する</li>
+          </ul>
+          <p>これらはWHEREの中では使えない。代わりにHAVINGを使用する。</p>
+      </article>
 
       <!-- LICENSE -->
       <article id="license_contents">
@@ -1615,6 +1799,9 @@ const isAdult = age =&gt; age
         <h3>vba</h3>
         <p>excelなどのタイトルバーにフルパスを表示</p>
         <pre>ActiveWindow.Caption = ActiveWorkbook.FullName</pre>
+
+        <h3>疑似言語</h3>
+        <p>形式文法を表す方法としてBNF（Backus-Naur Form）がある。</p>
 
         <h3>元素</h3>
         <table title="実はちあぴは化学専攻（クソどうでもいい）">
